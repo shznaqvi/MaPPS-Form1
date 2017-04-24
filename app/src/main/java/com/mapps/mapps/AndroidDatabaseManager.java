@@ -213,13 +213,13 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 
                     tvmessage.setBackgroundColor(Color.parseColor("#2ecc71"));
                     if (c4 != null) {
-                        tvmessage.setText("Queru Executed successfully.Number of rows returned :" + c4.getCount());
+                        tvmessage.setText("Query Executed successfully. Number of rows returned :" + c4.getCount());
                         if (c4.getCount() > 0) {
                             indexInfo.maincursor = c4;
                             refreshTable(1);
                         }
                     } else {
-                        tvmessage.setText("Queru Executed successfully");
+                        tvmessage.setText("Query Executed successfully");
                         refreshTable(1);
                     }
 
@@ -407,7 +407,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
                                                                         ArrayList<Cursor> aldropt = dbm.getData(Query6);
                                                                         Cursor tempc = aldropt.get(1);
                                                                         tempc.moveToLast();
-                                                                        Log.d("Drop table Mesage", tempc.getString(0));
+                                                                        Log.d("Drop table Message", tempc.getString(0));
                                                                         if (tempc.getString(0).equalsIgnoreCase("Success")) {
                                                                             tvmessage.setBackgroundColor(Color.parseColor("#2ecc71"));
                                                                             tvmessage.setText(indexInfo.table_name + "Dropped successfully");

@@ -87,6 +87,9 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
             connection.setRequestMethod("POST");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("charset", "utf-8");
+
+
+
             connection.setUseCaches(false);
             connection.connect();
 

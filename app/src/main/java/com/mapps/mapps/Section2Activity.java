@@ -323,7 +323,7 @@ public class Section2Activity extends Activity {
                     CVars var = new CVars();
                     var.Store_ismale("2");
 
-                    if (var.Get_ismale().equals("2") && var.Get_isingle().equals("1")) {
+                    if (var.Get_ismale().equals("2")) {
                         vu_s2q15k2.setVisibility(View.GONE);
                         vu_s2q15lmp.setVisibility(View.GONE);
                         vu_s2q15gest.setVisibility(View.GONE);
@@ -1438,7 +1438,7 @@ public class Section2Activity extends Activity {
 
                 if (!IsLMP_Greater()) {
 
-                    if (IsMemberExists_Household() == false) {
+                    if (!IsMemberExists_Household()) {
 
                         if (IsValidValues()) {
 

@@ -1337,13 +1337,14 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
         String[] selectionArgs = {String.valueOf(MAPPSApp.fc.get_ID())};
 
-        db.close();
 
         int count = db.update(Sec1Entry.TABLE_NAME,
                 values,
                 selection,
                 null);
         return count;
+
+
     }
 
 
@@ -1380,7 +1381,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 fc.setROW_S1Q11(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q11)));
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q12)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q12)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q12)) == null) {
                     fc.setROW_S1Q12("");
                 } else {
@@ -1388,7 +1389,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q13)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q13)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q13)) == null) {
                     fc.setROW_S1Q13("");
                 } else {
@@ -1396,7 +1397,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q14)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q14)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q14)) == null) {
                     fc.setROW_S1Q14("");
                 } else {
@@ -1404,7 +1405,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_USERID)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_USERID)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_USERID)) == null) {
                     fc.setROW_USERID("");
                 } else {
@@ -1414,7 +1415,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
                 fc.setROW_ENTRYDATE(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_ENTRYDATE)));
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S3)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S3)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S3)) == null) {
                     fc.setROW_S3("");
                 } else {
@@ -1422,7 +1423,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_UUID)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_UUID)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_UUID)) == null) {
                     fc.setROW_UID("");
                 } else {
@@ -1430,7 +1431,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LNG)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LNG)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LNG)) == null) {
                     fc.setROW_GPS_LANG("0");
                 } else {
@@ -1438,7 +1439,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LAT)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LAT)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_LAT)) == null) {
                     fc.setROW_GPS_LAT("0");
                 } else {
@@ -1446,7 +1447,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_DT)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_DT)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_DT)) == null) {
                     fc.setROW_GPS_DT("0");
                 } else {
@@ -1454,7 +1455,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_ACC)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_ACC)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_GPS_ACC)) == null) {
                     fc.setROW_GPS_ACC("0");
                 } else {
@@ -1495,7 +1496,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 // Adding contact to list
                 formList.add(fc);
             } while (cursor.moveToNext());
-            db.close();
+
         }
 
         // return contact list
@@ -1522,7 +1523,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
                 sc.set_ID(cursor.getLong(cursor.getColumnIndex(Section2Entry._ID)));
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_DEVID)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_DEVID)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_DEVID)) == null) {
                     sc.setROW_DEVID("");
                 } else {
@@ -1530,7 +1531,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2CLUSTER)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2CLUSTER)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2CLUSTER)) == null) {
                     sc.setROW_S2CLUSTER("");
                 } else {
@@ -1538,7 +1539,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2LHW)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2LHW)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2LHW)) == null) {
                     sc.setROW_S2LHW("");
                 } else {
@@ -1546,7 +1547,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2HH)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2HH)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2HH)) == null) {
                     sc.setROW_S2HH("");
                 } else {
@@ -1554,7 +1555,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_SNO)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_SNO)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_SNO)) == null) {
                     sc.setROW_SNO("");
                 } else {
@@ -1562,7 +1563,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q1)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q1)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q1)) == null) {
                     sc.setROW_S2Q1("");
                 } else {
@@ -1570,7 +1571,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15a)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15a)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15a)) == null) {
                     sc.setROW_S2Q15a("");
                 } else {
@@ -1578,7 +1579,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15i)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15i)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15i)) == null) {
                     sc.setROW_S2Q15i("");
                 } else {
@@ -1586,7 +1587,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15b)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15b)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15b)) == null) {
                     sc.setROW_S2Q15b("");
                 } else {
@@ -1594,7 +1595,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cf)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cf)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cf)) == null) {
                     sc.setROW_S2Q15cf("");
                 } else {
@@ -1602,7 +1603,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cm)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cm)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cm)) == null) {
                     sc.setROW_S2Q15cm("");
                 } else {
@@ -1610,7 +1611,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15d)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15d)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15d)) == null) {
                     sc.setROW_S2Q15d("");
                 } else {
@@ -1618,7 +1619,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e1)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e1)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e1)) == null) {
                     sc.setROW_S2Q15e1("");
                 } else {
@@ -1626,7 +1627,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e)) == null) {
                     sc.setROW_S2Q15e("");
                 } else {
@@ -1634,7 +1635,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fy)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fy)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fy)) == null) {
                     sc.setROW_S2Q15fy("");
                 } else {
@@ -1642,7 +1643,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fm)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fm)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fm)) == null) {
                     sc.setROW_S2Q15fm("");
                 } else {
@@ -1650,7 +1651,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fy)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fy)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fy)) == null) {
                     sc.setROW_fy("");
                 } else {
@@ -1658,7 +1659,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fm)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fm)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fm)) == null) {
                     sc.setROW_fm("");
                 } else {
@@ -1666,7 +1667,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15g)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15g)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15g)) == null) {
                     sc.setROW_S2Q15g("");
                 } else {
@@ -1674,7 +1675,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15h)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15h)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15h)) == null) {
                     sc.setROW_S2Q15h("");
                 } else {
@@ -1682,7 +1683,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15j)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15j)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15j)) == null) {
                     sc.setROW_S2Q15j("");
                 } else {
@@ -1690,7 +1691,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15k)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15k)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15k)) == null) {
                     sc.setROW_S2Q15k("");
                 } else {
@@ -1698,7 +1699,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15l1)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15l1)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15l1)) == null) {
                     sc.setROW_S2Q15l1("");
                 } else {
@@ -1706,7 +1707,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15lmp)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15lmp)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15lmp)) == null) {
                     sc.setROW_S2Q15lmp("");
                 } else {
@@ -1714,7 +1715,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15gest)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15gest)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15gest)) == null) {
                     sc.setROW_S2Q15gest("");
                 } else {
@@ -1725,7 +1726,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 sc.setROW_iselig(cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_iselig)));
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_UUID)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_UUID)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_UUID)) == null) {
                     sc.setROW_UID("");
                 } else {
@@ -1737,7 +1738,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 formList.add(sc);
             } while (cursor.moveToNext());
 
-            db.close();
+
         }
 
         // return contact list
@@ -1765,7 +1766,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 sc.set_ID(cursor.getLong(cursor.getColumnIndex(Section4Entry._ID)));
                 sc.setROW_DEVID(cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_DEVID)));
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4CLUSTER)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4CLUSTER)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4CLUSTER)) == null) {
                     sc.setROW_S4CLUSTER("");
                 } else {
@@ -1773,7 +1774,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4LHW)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4LHW)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4LHW)) == null) {
                     sc.setROW_S4LHW("");
                 } else {
@@ -1781,7 +1782,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4HH)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4HH)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4HH)) == null) {
                     sc.setROW_S4HH("");
                 } else {
@@ -1789,7 +1790,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_SNO)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_SNO)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_SNO)) == null) {
                     sc.setROW_SNO("");
                 } else {
@@ -1797,7 +1798,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q1)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q1)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q1)) == null) {
                     sc.setROW_S4Q1("");
                 } else {
@@ -1805,7 +1806,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28a)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28a)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28a)) == null) {
                     sc.setROW_S4Q28a("");
                 } else {
@@ -1813,7 +1814,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28b)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28b)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28b)) == null) {
                     sc.setROW_S4Q28b("");
                 } else {
@@ -1821,7 +1822,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28c)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28c)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28c)) == null) {
                     sc.setROW_S4Q28c("");
                 } else {
@@ -1829,7 +1830,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28d)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28d)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28d)) == null) {
                     sc.setROW_S4Q28d("");
                 } else {
@@ -1837,7 +1838,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28oth)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28oth)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28oth)) == null) {
                     sc.setROW_S4Q28oth("");
                 } else {
@@ -1845,7 +1846,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28e)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28e)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28e)) == null) {
                     sc.setROW_S4Q28e("");
                 } else {
@@ -1853,7 +1854,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f)) == null) {
                     sc.setROW_S4Q28f("");
                 } else {
@@ -1861,7 +1862,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f1)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f1)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f1)) == null) {
                     sc.setROW_S4Q28f1("");
                 } else {
@@ -1869,7 +1870,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f2)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f2)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f2)) == null) {
                     sc.setROW_S4Q28f2("");
                 } else {
@@ -1877,7 +1878,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f3)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f3)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f3)) == null) {
                     sc.setROW_S4Q28f3("");
                 } else {
@@ -1885,7 +1886,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f4)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f4)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f4)) == null) {
                     sc.setROW_S4Q28f4("");
                 } else {
@@ -1893,7 +1894,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f5)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f5)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f5)) == null) {
                     sc.setROW_S4Q28f5("");
                 } else {
@@ -1901,7 +1902,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f6)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f6)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f6)) == null) {
                     sc.setROW_S4Q28f6("");
                 } else {
@@ -1909,7 +1910,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f7)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f7)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f7)) == null) {
                     sc.setROW_S4Q28f7("");
                 } else {
@@ -1917,7 +1918,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f8)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f8)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f8)) == null) {
                     sc.setROW_S4Q28f8("");
                 } else {
@@ -1925,7 +1926,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f9)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f9)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f9)) == null) {
                     sc.setROW_S4Q28f9("");
                 } else {
@@ -1933,7 +1934,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28g)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28g)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28g)) == null) {
                     sc.setROW_S4Q28g("");
                 } else {
@@ -1941,7 +1942,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28h)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28h)).equals("") ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28h)) == null) {
                     sc.setROW_S4Q28h("");
                 } else {
@@ -1949,7 +1950,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_UUID)) == "" ||
+                if (cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_UUID)).equals("")  ||
                         cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_UUID)) == null) {
                     sc.setROW_UID("");
                 } else {
@@ -1960,7 +1961,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 // Adding contact to list
                 formList.add(sc);
             } while (cursor.moveToNext());
-            db.close();
+
         }
 
         // return contact list

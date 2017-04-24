@@ -277,7 +277,7 @@ public class Section4Activity extends Activity {
 
                 if (checkedId == rDOS4q28c2.getId()) {
 
-                    if (var_s4q28c == "2" && var_s4q28d == "2" && var_s4q28e == "2") {
+                    if (var_s4q28c.equals("2") && var_s4q28d.equals("2") && var_s4q28e.equals("2")) {
                         vu_s4q28g.setVisibility(View.VISIBLE);
                     }
 
@@ -334,12 +334,12 @@ public class Section4Activity extends Activity {
 
                 if (checkedId == rDOS4q28d2.getId()) {
 
-                    if (var_s4q28c == "2" && var_s4q28d == "2" && var_s4q28e == "2") {
+                    if (var_s4q28c.equals("2")  && var_s4q28d.equals("2")  && var_s4q28e.equals("2")) {
                         vu_s4q28g.setVisibility(View.VISIBLE);
                     }
 
                     vu_s4q28oth.setVisibility(View.GONE);
-                    s4q28oth.setText("");
+                    s4q28oth.setText(null);
 
                     rDOS4q28e1.requestFocus();
 
@@ -398,7 +398,7 @@ public class Section4Activity extends Activity {
 
                 if (checkedId == rDOS4q28e2.getId()) {
 
-                    if (var_s4q28c == "2" && var_s4q28d == "2" && var_s4q28e == "2") {
+                    if (var_s4q28c.equals("2") && var_s4q28d.equals("2") && var_s4q28e.equals("2")) {
                         radioS4q28g.clearCheck();
                         vu_s4q28g.setVisibility(View.VISIBLE);
                     }
@@ -453,7 +453,7 @@ public class Section4Activity extends Activity {
                     Intent sec2_intent = new Intent(this, MainPageActivity.class);
                     startActivity(sec2_intent);
 
-                    vars.Storehhno("");
+                    vars.Storehhno(null);
                 } else {
                     Toast.makeText(getApplicationContext(), "Number of members must be equal to number of woman between 14 - 24 in this household ", Toast.LENGTH_SHORT).show();
                 }
@@ -590,7 +590,7 @@ public class Section4Activity extends Activity {
 
         MAPPSApp.sc4.setROW_S4Q28e(var_s4q28e);
 
-        if (var_s4q28c == "1" && var_s4q28d == "1" && var_s4q28e == "1") {
+        if (var_s4q28c.equals("1") && var_s4q28d.equals("1") && var_s4q28e.equals("1")) {
             MAPPSApp.sc4.setROW_S4Q28f("1");
         } else {
             MAPPSApp.sc4.setROW_S4Q28f("2");
@@ -777,7 +777,7 @@ public class Section4Activity extends Activity {
                 break;
         }
 
-        if (var_s4q28d == "1" && getS4q28oth().getText().toString().isEmpty() || s4q28oth.getText().toString() == null) {
+        if (var_s4q28d.equals("1") && getS4q28oth().getText().toString().isEmpty()) {
             s4q28oth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter name of LHW \r\n", Toast.LENGTH_LONG).show();
             s4q28oth.requestFocus();
@@ -807,16 +807,16 @@ public class Section4Activity extends Activity {
                 break;
         }
 
-        if (var_s4q28e == "1") {
-            if (chk_s3q28f_1.isChecked() == false
-                    && chk_s3q28f_2.isChecked() == false
-                    && chk_s3q28f_3.isChecked() == false
-                    && chk_s3q28f_4.isChecked() == false
-                    && chk_s3q28f_5.isChecked() == false
-                    && chk_s3q28f_6.isChecked() == false
-                    && chk_s3q28f_7.isChecked() == false
-                    && chk_s3q28f_8.isChecked() == false
-                    && chk_s3q28f_9.isChecked() == false) {
+        if (var_s4q28e.equals("1")) {
+            if (!chk_s3q28f_1.isChecked()
+                    && !chk_s3q28f_2.isChecked()
+                    && !chk_s3q28f_3.isChecked()
+                    && !chk_s3q28f_4.isChecked()
+                    && !chk_s3q28f_5.isChecked()
+                    && !chk_s3q28f_6.isChecked()
+                    && !chk_s3q28f_7.isChecked()
+                    && !chk_s3q28f_8.isChecked()
+                    && !chk_s3q28f_9.isChecked()) {
 
                 chk_s3q28f_1.setError(getString(R.string.rdoterr));
                 Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
@@ -828,7 +828,7 @@ public class Section4Activity extends Activity {
         }
 
 
-        if (var_s4q28c == "2" && var_s4q28d == "2" && var_s4q28e == "2") {
+        if (var_s4q28c.equals("2") && var_s4q28d.equals("2")&& var_s4q28e.equals("2")) {
             rdo_s4q28g = radioS4q28g.getCheckedRadioButtonId();
 
             if (rdo_s4q28g == -1) {
@@ -918,7 +918,7 @@ public class Section4Activity extends Activity {
         chk_s3q28f_8.setChecked(false);
         chk_s3q28f_9.setChecked(false);
 
-        s4q28oth.setText("");
+        s4q28oth.setText(null);
     }
 
 }

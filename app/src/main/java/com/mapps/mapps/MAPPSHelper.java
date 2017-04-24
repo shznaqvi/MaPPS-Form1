@@ -1123,7 +1123,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             }
         }
 
-        mCursor.close();
+        db.close();
 
         return isexists;
     }
@@ -1137,6 +1137,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             if (mCursor.getCount() > 0) {
                 return true;
             }
+            db.close();
         }
         return false;
     }
@@ -1181,6 +1182,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
         } catch (Exception e) {
         }
+        db.close();
 
         return newRowId;
     }
@@ -1334,6 +1336,8 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         String selection = " _ID = " + MAPPSApp.fc.get_ID();
 
         String[] selectionArgs = {String.valueOf(MAPPSApp.fc.get_ID())};
+
+        db.close();
 
         int count = db.update(Sec1Entry.TABLE_NAME,
                 values,
@@ -1491,6 +1495,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 // Adding contact to list
                 formList.add(fc);
             } while (cursor.moveToNext());
+            db.close();
         }
 
         // return contact list
@@ -1731,6 +1736,8 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 // Adding contact to list
                 formList.add(sc);
             } while (cursor.moveToNext());
+
+            db.close();
         }
 
         // return contact list
@@ -1953,6 +1960,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 // Adding contact to list
                 formList.add(sc);
             } while (cursor.moveToNext());
+            db.close();
         }
 
         // return contact list

@@ -28,6 +28,7 @@ import java.lang.reflect.Member;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -291,6 +292,7 @@ public class Section2Activity extends Activity {
 
         lbl_hhhead_count.setText("Total Members : " + lst_f.size() + lst_m.size());
         lbl_hhhead_count.setTextColor(Color.RED);
+        s2q15e.setMaxDate(new Date().getTime());
 
 
         radioS2q15i.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -309,19 +311,19 @@ public class Section2Activity extends Activity {
                     radioS2q15k.clearCheck();
                     radioS2q15l1.clearCheck();
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
 
                 } else if (checkedId == rDOS2q15i2.getId()) {
 
                     CVars var = new CVars();
                     var.Store_ismale("2");
 
-                    if (var.Get_ismale() == "2" && var.Get_isingle() == "1") {
+                    if (var.Get_ismale().equals("2") && var.Get_isingle().equals("1")) {
                         vu_s2q15k2.setVisibility(View.GONE);
                         vu_s2q15lmp.setVisibility(View.GONE);
                         vu_s2q15gest.setVisibility(View.GONE);
@@ -333,9 +335,9 @@ public class Section2Activity extends Activity {
                         vu_s2q15k.setVisibility(View.GONE);
                     }
 
-                    s2q15fy.setText("");
-                    s2q15fm.setText("");
-                    s2q15gest.setText("");
+                    s2q15fy.setText(null);
+                    s2q15fm.setText(null);
+                    s2q15gest.setText(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(s2q15fm.getWindowToken(), 0);
@@ -360,8 +362,8 @@ public class Section2Activity extends Activity {
                     vu_s2q15age.setVisibility(View.VISIBLE);
                     vu_s2q15e1.setVisibility(View.GONE);
 
-                    s2q15fy.setText("");
-                    s2q15fm.setText("");
+                    s2q15fy.setText(null);
+                    s2q15fm.setText(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(s2q15fm.getWindowToken(), 0);
@@ -384,7 +386,7 @@ public class Section2Activity extends Activity {
 
                     var.Store_issingle("5");
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
 
                     radioS2q15k.clearCheck();
                     radioS2q15l1.clearCheck();
@@ -399,8 +401,8 @@ public class Section2Activity extends Activity {
                     vu_s2q15lmp.setVisibility(View.GONE);
                     vu_s2q15gest.setVisibility(View.GONE);
 
-                    s2q15joth.setText("");
-                    s2q15gest.setText("");
+                    s2q15joth.setText(null);
+                    s2q15gest.setText(null);
 
                     var.Store_issingle("1");
 
@@ -412,12 +414,12 @@ public class Section2Activity extends Activity {
 
                 } else if (checkedId == rDOS2q15j2.getId() || checkedId == rDOS2q15j3.getId() || checkedId == rDOS2q15j4.getId()) {
 
-                    if (var.Get_ismale() == "1" || var.Get_ismale() == null) {
+                    if (var.Get_ismale().equals("1") || var.Get_ismale() == null) {
 
                         vu_s2q15joth.setVisibility(View.GONE);
                         vu_s2q15k2.setVisibility(View.GONE);
 
-                        s2q15joth.setText("");
+                        s2q15joth.setText(null);
 
                         var.Store_issingle("2");
 
@@ -431,7 +433,7 @@ public class Section2Activity extends Activity {
 
                         var.Store_issingle("3");
 
-                        s2q15joth.setText("");
+                        s2q15joth.setText(null);
                         radioS2q15k.clearCheck();
 
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -452,7 +454,7 @@ public class Section2Activity extends Activity {
                     vu_s2q15lmp.setVisibility(View.GONE);
                     vu_s2q15gest.setVisibility(View.GONE);
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
                     radioS2q15l1.clearCheck();
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -464,7 +466,7 @@ public class Section2Activity extends Activity {
                     vu_s2q15lmp.setVisibility(View.GONE);
                     vu_s2q15gest.setVisibility(View.GONE);
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
                     radioS2q15l1.clearCheck();
                 }
             }
@@ -479,7 +481,7 @@ public class Section2Activity extends Activity {
                     vu_s2q15lmp.setVisibility(View.VISIBLE);
                     vu_s2q15gest.setVisibility(View.GONE);
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
@@ -489,7 +491,7 @@ public class Section2Activity extends Activity {
                     vu_s2q15gest.setVisibility(View.VISIBLE);
                     vu_s2q15lmp.setVisibility(View.GONE);
 
-                    s2q15gest.setText("");
+                    s2q15gest.setText(null);
 
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(s2q15gest.getWindowToken(), 0);
@@ -506,7 +508,7 @@ public class Section2Activity extends Activity {
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(radioS2q15b.getWindowToken(), 0);
                 } else {
-                    s2q15both.setText("");
+                    s2q15both.setText(null);
                     vu_s2q15both.setVisibility(View.GONE);
                 }
             }
@@ -521,7 +523,7 @@ public class Section2Activity extends Activity {
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(radioS2q15g.getWindowToken(), 0);
                 } else {
-                    s2q15goth.setText("");
+                    s2q15goth.setText(null);
                     vu_s2q15goth.setVisibility(View.GONE);
                 }
             }
@@ -1838,14 +1840,14 @@ public class Section2Activity extends Activity {
 
         MAPPSApp.sc.setROW_S2Q15e1(var_s2q15e1);
 
-        if (var_s2q15e1 == "1") {
+        if (var_s2q15e1.equals("1")) {
             MAPPSApp.sc.setROW_S2Q15e(spDateT);
         } else {
             MAPPSApp.sc.setROW_S2Q15e("");
         }
 
 
-        if (var_s2q15e1 == "1") {
+        if (var_s2q15e1.equals("1")) {
             MAPPSApp.sc.setROW_fy(vars.GetAgeYY());
             MAPPSApp.sc.setROW_fm(vars.GetAgeMM());
         } else {
@@ -2002,7 +2004,7 @@ public class Section2Activity extends Activity {
 
         MAPPSApp.sc.setROW_S2Q15l1(var_s2q15l1);
 
-        if (var_s2q15l1 == "1") {
+        if (var_s2q15l1.equals("1")) {
             MAPPSApp.sc.setROW_S2Q15lmp(spDateLMP);
         } else {
             MAPPSApp.sc.setROW_S2Q15lmp("");
@@ -2024,7 +2026,7 @@ public class Section2Activity extends Activity {
     private boolean ValidateForm() {
         //Toast.makeText(getApplicationContext(), "Validating Form", Toast.LENGTH_SHORT).show();
 
-        if (getS2q15a().getText().toString().isEmpty() || s2q15a.getText().toString() == null) {
+        if (getS2q15a().getText().toString().isEmpty()) {
             s2q15a.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter name \r\n", Toast.LENGTH_LONG).show();
             s2q15a.requestFocus();
@@ -2075,7 +2077,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15b == "11" && getS2q15both().getText().toString().isEmpty() || s2q15both.getText().toString() == null) {
+        if (var_s2q15b.equals("11") && getS2q15both().getText().toString().isEmpty()) {
             s2q15both.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other relation with head of household \r\n", Toast.LENGTH_LONG).show();
             s2q15both.requestFocus();
@@ -2120,7 +2122,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15e1 == "2" && getS2q15fy().getText().toString().isEmpty() || s2q15fy.getText().toString() == null) {
+        if (var_s2q15e1.equals("2") && getS2q15fy().getText().toString().isEmpty()) {
             s2q15fy.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter age in years \r\n", Toast.LENGTH_LONG).show();
             s2q15fy.requestFocus();
@@ -2130,7 +2132,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15e1 == "2" && getS2q15fm().getText().toString().isEmpty() || s2q15fm.getText().toString() == null) {
+        if (var_s2q15e1.equals("2")  && getS2q15fm().getText().toString().isEmpty()) {
             s2q15fm.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter age in months \r\n", Toast.LENGTH_LONG).show();
             s2q15fm.requestFocus();
@@ -2159,7 +2161,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15g == "13" && getS2q15goth().getText().toString().isEmpty() || s2q15goth.getText().toString() == null) {
+        if (var_s2q15g.equals("13")  && getS2q15goth().getText().toString().isEmpty()) {
             s2q15goth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other educational level \r\n", Toast.LENGTH_LONG).show();
             s2q15goth.requestFocus();
@@ -2188,7 +2190,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15h == "11" && getS2q15hoth().getText().toString().isEmpty() || s2q15hoth.getText().toString() == null) {
+        if (var_s2q15h.equals("11")  && getS2q15hoth().getText().toString().isEmpty()) {
             s2q15hoth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other occupation \r\n", Toast.LENGTH_LONG).show();
             s2q15hoth.requestFocus();
@@ -2230,7 +2232,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15j == "5" && getS2q15joth().getText().toString().isEmpty() || s2q15joth.getText().toString() == null) {
+        if (var_s2q15j.equals("5")  && getS2q15joth().getText().toString().isEmpty()) {
             s2q15joth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other marital status \r\n", Toast.LENGTH_LONG).show();
             s2q15joth.requestFocus();
@@ -2254,9 +2256,9 @@ public class Section2Activity extends Activity {
                 break;
         }
 
-        if (var_s2q15j == "2" || var_s2q15j == "3" || var_s2q15j == "4") {
+        if (var_s2q15j.equals("2")  || var_s2q15j.equals("3") || var_s2q15j.equals("4") ) {
 
-            if (var_s2q15i == "2" && rdo_s2q15k == -1) {
+            if (var_s2q15i.equals("2") && rdo_s2q15k == -1) {
                 rDOS2q15k1.setError(getString(R.string.rdoterr));
                 Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
                 rDOS2q15k1.requestFocus();
@@ -2281,11 +2283,11 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15j == "2" || var_s2q15j == "3" || var_s2q15j == "4") {
+        if (var_s2q15j.equals("2")  || var_s2q15j.equals("3") || var_s2q15j.equals("4")) {
 
-            if (var_s2q15k == "1") {
+            if (var_s2q15b.equals("1")) {
 
-                if (var_s2q15i == "2" && rdo_s2q15l == -1) {
+                if (var_s2q15i.equals("2") && rdo_s2q15l == -1) {
                     rDOS2q15l11.setError(getString(R.string.rdoterr));
                     Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
                     rDOS2q15l11.requestFocus();
@@ -2297,13 +2299,13 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15j != "1" || var_s2q15j != "5") {
+        if (!var_s2q15j.equals("1") || !var_s2q15j.equals("5")) {
 
-            if (var_s2q15k == "1") {
+            if (var_s2q15k.equals("1")) {
 
-                if (var_s2q15l == "2") {
+                if (var_s2q15l.equals("2")) {
 
-                    if (var_s2q15i == "2" && getS2q15gest().getText().toString().isEmpty() || s2q15gest.getText().toString() == null) {
+                    if (var_s2q15i.equals("2") && getS2q15gest().getText().toString().isEmpty()) {
                         s2q15gest.setError(getString(R.string.txterr));
                         Toast.makeText(getApplicationContext(), "Please enter gestational age \r\n", Toast.LENGTH_LONG).show();
                         s2q15gest.requestFocus();
@@ -2316,9 +2318,9 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15e1 == "2") {
+        if (var_s2q15e1.equals("2")) {
 
-            if (!s2q15fy.getText().toString().isEmpty() && s2q15fy.getText().toString() != null) {
+            if (!s2q15fy.getText().toString().isEmpty()) {
                 if (Integer.parseInt(s2q15fy.getText().toString()) < 0 ||
                         Integer.parseInt(s2q15fy.getText().toString()) > 110) {
                     Toast.makeText(getApplicationContext(), "Age in years must be 0 - 110", Toast.LENGTH_LONG).show();
@@ -2328,7 +2330,7 @@ public class Section2Activity extends Activity {
             }
 
 
-            if (!s2q15fm.getText().toString().isEmpty() && s2q15fm.getText().toString() != null) {
+            if (!s2q15fm.getText().toString().isEmpty()) {
                 if (Integer.parseInt(s2q15fm.getText().toString()) < 0 ||
                         Integer.parseInt(s2q15fm.getText().toString()) > 11) {
                     Toast.makeText(getApplicationContext(), "Age in months must be 0 - 11", Toast.LENGTH_LONG).show();
@@ -2349,7 +2351,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15l == "1") {
+        if (var_s2q15l.equals("1")) {
 
             CVars var = new CVars();
             if (Integer.parseInt(var.getLMP_Months()) > 9) {
@@ -2364,14 +2366,14 @@ public class Section2Activity extends Activity {
 
 
     private void ClearFields() {
-        s2q15a.setText("");
-        s2q15both.setText("");
-        s2q15fy.setText("");
-        s2q15fm.setText("");
-        s2q15goth.setText("");
-        s2q15hoth.setText("");
-        s2q15joth.setText("");
-        s2q15gest.setText("");
+        s2q15a.setText(null);
+        s2q15both.setText(null);
+        s2q15fy.setText(null);
+        s2q15fm.setText(null);
+        s2q15goth.setText(null);
+        s2q15hoth.setText(null);
+        s2q15joth.setText(null);
+        s2q15gest.setText(null);
 
         radioS2q15b.clearCheck();
         radioS2q15d.clearCheck();
@@ -2385,7 +2387,7 @@ public class Section2Activity extends Activity {
     }
 
     private boolean IsValidValues() {
-        if (!s2q15gest.getText().toString().isEmpty() && s2q15gest.getText().toString() != null) {
+        if (!s2q15gest.getText().toString().isEmpty()) {
             if (Integer.parseInt(s2q15gest.getText().toString()) < 4 ||
                     Integer.parseInt(s2q15gest.getText().toString()) > 42) {
                 Toast.makeText(getApplicationContext(), "Gestational age cannot be greater than 4 - 42 weeks ", Toast.LENGTH_LONG).show();
@@ -2449,7 +2451,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15i == "1" && var_s2q15b == "2") {
+        if (var_s2q15i.equals("1") && var_s2q15b.equals("2")) {
             Toast.makeText(getApplicationContext(), "if the gender is male you cannot select 2 option of relationship", Toast.LENGTH_SHORT).show();
             radioS2q15i.requestFocus();
             return false;
@@ -2543,14 +2545,14 @@ public class Section2Activity extends Activity {
                 break;
         }
 
-        if (var_s2q15g == "1" && var_s2q15h == "1") {
+        if (var_s2q15g.equals("1") && var_s2q15h.equals("1")) {
             Toast.makeText(getApplicationContext(), "if person is Illiterate you cannot select 1 option", Toast.LENGTH_SHORT).show();
             radioS2q15g.requestFocus();
             return false;
         }
 
 
-        if (var_s2q15g == "1" && var_s2q15h == "2") {
+        if (var_s2q15g.equals("1") && var_s2q15h.equals("2")) {
             Toast.makeText(getApplicationContext(), "if person is Illiterate you cannot select 2 option", Toast.LENGTH_SHORT).show();
             radioS2q15g.requestFocus();
             return false;

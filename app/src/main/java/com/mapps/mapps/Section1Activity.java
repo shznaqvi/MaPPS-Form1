@@ -402,15 +402,15 @@ public class Section1Activity extends Activity {
 
             if (spDateT.equals(dt1)) {
 
-                if (IsHouseHoldExists_InCluster() == false) {
+                if (!IsHouseHoldExists_InCluster()) {
 
-                    if (CheckInvalidChars()) {
+                    //if (CheckInvalidChars()) {
 
                         if (SaveDraft()) {
 
                             if (UpdateDB()) {
 
-                                if (var_s1q12 == "1") {
+                                if (var_s1q12.equals("1")) {
 
                                     Intent sec2_intent = new Intent(this, Section2Activity.class);
                                     startActivity(sec2_intent);
@@ -425,7 +425,7 @@ public class Section1Activity extends Activity {
                                 Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
                             }
                         }
-                    }
+                    //}
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Household number already exists in this cluster ", Toast.LENGTH_SHORT).show();
@@ -579,7 +579,7 @@ public class Section1Activity extends Activity {
         }*/
 
 
-        if (getS1q3().getText().toString().isEmpty() || s1q3.getText().toString() == null) {
+        if (getS1q3().getText().toString().isEmpty() ) {
             s1q3.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter village name \r\n", Toast.LENGTH_LONG).show();
             s1q3.requestFocus();
@@ -589,7 +589,7 @@ public class Section1Activity extends Activity {
         }
 
 
-        if (getS1q4().getText().toString().isEmpty() || s1q4.getText().toString() == null) {
+        if (getS1q4().getText().toString().isEmpty()) {
             s1q4.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter land mark/address note \r\n", Toast.LENGTH_LONG).show();
             s1q4.requestFocus();
@@ -599,7 +599,7 @@ public class Section1Activity extends Activity {
         }
 
 
-        if (getS1q5().getText().toString().isEmpty() || s1q5.getText().toString() == null) {
+        if (getS1q5().getText().toString().isEmpty()) {
             s1q5.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter household number \r\n", Toast.LENGTH_LONG).show();
             s1q5.requestFocus();
@@ -609,7 +609,7 @@ public class Section1Activity extends Activity {
         }
 
 
-        if (getS1q6().getText().toString().isEmpty() || s1q6.getText().toString() == null) {
+        if (getS1q6().getText().toString().isEmpty()) {
             s1q6.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter respondent name \r\n", Toast.LENGTH_LONG).show();
             s1q6.requestFocus();
@@ -618,7 +618,7 @@ public class Section1Activity extends Activity {
             s1q6.setError(null);
         }
 
-        if (getS1q7().getText().toString().isEmpty() || s1q7.getText().toString() == null) {
+        if (getS1q7().getText().toString().isEmpty()) {
             s1q7.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter household head name \r\n", Toast.LENGTH_LONG).show();
             s1q7.requestFocus();
@@ -627,7 +627,7 @@ public class Section1Activity extends Activity {
             s1q7.setError(null);
         }
 
-        if (getS1q8().getText().toString().isEmpty() || s1q8.getText().toString() == null) {
+        if (getS1q8().getText().toString().isEmpty() ) {
             s1q8.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter contact number \r\n", Toast.LENGTH_LONG).show();
             s1q8.requestFocus();
@@ -637,7 +637,7 @@ public class Section1Activity extends Activity {
         }
 
 
-        if (getS1q9a().getText().toString().isEmpty() || s1q9a.getText().toString() == null) {
+        if (getS1q9a().getText().toString().isEmpty() ) {
             s1q9a.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter study personnel name \r\n", Toast.LENGTH_LONG).show();
             s1q9a.requestFocus();
@@ -646,7 +646,7 @@ public class Section1Activity extends Activity {
             s1q9a.setError(null);
         }
 
-        if (getS1q9b().getText().toString().isEmpty() || s1q9b.getText().toString() == null) {
+        if (getS1q9b().getText().toString().isEmpty()) {
             s1q9b.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter study personnel id  \r\n", Toast.LENGTH_LONG).show();
             s1q9b.requestFocus();
@@ -676,7 +676,7 @@ public class Section1Activity extends Activity {
 
         rdo_s1q13 = radioS1q13.getCheckedRadioButtonId();
 
-        if (var_s1q12 == "1" && rdo_s1q13 == -1) {
+        if (var_s1q12.equals("1")  && rdo_s1q13 == -1) {
             rDOS1q131.setError(getString(R.string.rdoterr));
             Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
             rDOS1q131.requestFocus();
@@ -711,14 +711,14 @@ public class Section1Activity extends Activity {
 
 
     private void ClearFields() {
-        s1q3.setText("");
-        s1q4.setText("");
-        s1q5.setText("");
-        s1q6.setText("");
-        s1q7.setText("");
-        s1q8.setText("");
-        s1q9a.setText("");
-        s1q9b.setText("");
+        s1q3.setText(null);
+        s1q4.setText(null);
+        s1q5.setText(null);
+        s1q6.setText(null);
+        s1q7.setText(null);
+        s1q8.setText(null);
+        s1q9a.setText(null);
+        s1q9b.setText(null);
         radioS1q12.clearCheck();
         radioS1q13.clearCheck();
     }
@@ -741,7 +741,7 @@ public class Section1Activity extends Activity {
             String acc = GPSPref.getString("Accuracy", "0");
             String dt = GPSPref.getString("date", "0");
 
-            if (lat == "0" && lang == "0") {
+            if (lat.equals("0") && lang.equals("0")) {
                 Toast.makeText(this, "Could not obtained GPS points", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();

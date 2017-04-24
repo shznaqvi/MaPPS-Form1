@@ -86,7 +86,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="textCapWords"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"/>
 
                 <TextView
                     android:id="@+id/lbl_s3q18a"
@@ -130,7 +131,8 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="number"
-                        android:maxLength="2" />
+                        android:maxLength="2"
+                        android:digits="0123456789"/>
 
                     <TextView
                         android:id="@+id/lbl_s3q18m"
@@ -144,7 +146,8 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="number"
-                        android:maxLength="2" />
+                        android:maxLength="2"
+                        android:digits="0123456789"/>
 
                     <TextView
                         android:id="@+id/lbl_s3q19"
@@ -215,7 +218,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 
@@ -311,7 +314,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 

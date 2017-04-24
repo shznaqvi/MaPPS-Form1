@@ -360,8 +360,8 @@ public class Section3Activity extends Activity {
                     vu_s3q19oth.setVisibility(View.GONE);
                     vu_s3q20.setVisibility(View.GONE);
 
-                    s3q18d.setText("");
-                    s3q18m.setText("");
+                    s3q18d.setText(null);
+                    s3q18m.setText(null);
 
                     radioS3q19.clearCheck();
 
@@ -395,7 +395,7 @@ public class Section3Activity extends Activity {
                 } else {
 
                     vu_s3q19oth.setVisibility(View.GONE);
-                    s3q19oth.setText("");
+                    s3q19oth.setText(null);
                     chk_s3q20_1.requestFocus();
                 }
             }
@@ -415,7 +415,7 @@ public class Section3Activity extends Activity {
                 } else {
 
                     vu_s3q20oth.setVisibility(View.GONE);
-                    s3q20oth.setText("");
+                    s3q20oth.setText(null);
                     rDOS3q211.requestFocus();
                 }
             }
@@ -438,8 +438,8 @@ public class Section3Activity extends Activity {
                     vu_s3q22.setVisibility(View.GONE);
                     vu_s3q23oth.setVisibility(View.GONE);
 
-                    s3q22d.setText("");
-                    s3q22m.setText("");
+                    s3q22d.setText(null);
+                    s3q22m.setText(null);
 
                     chk_s3q23_1.setChecked(false);
                     chk_s3q23_2.setChecked(false);
@@ -471,7 +471,7 @@ public class Section3Activity extends Activity {
                 } else {
 
                     vu_s3q23oth.setVisibility(View.GONE);
-                    s3q23oth.setText("");
+                    s3q23oth.setText(null);
                     chk_s3q23_1.requestFocus();
                 }
             }
@@ -493,7 +493,7 @@ public class Section3Activity extends Activity {
                     vu_s3q26.setVisibility(View.GONE);
                     vu_s3q27oth.setVisibility(View.GONE);
 
-                    s3q27oth.setText("");
+                    s3q27oth.setText(null);
 
                     chk_s3q27_1.setChecked(false);
                     chk_s3q27_2.setChecked(false);
@@ -522,7 +522,7 @@ public class Section3Activity extends Activity {
                 } else {
 
                     vu_s3q27oth.setVisibility(View.GONE);
-                    s3q27oth.setText("");
+                    s3q27oth.setText(null);
                 }
             }
         });
@@ -953,7 +953,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1" && getS3q17().getText().toString().isEmpty() || s3q17.getText().toString() == null) {
+        if (var_s3q16.equals("1")  && getS3q17().getText().toString().isEmpty()) {
             s3q17.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter name of LHW \r\n", Toast.LENGTH_LONG).show();
             s3q17.requestFocus();
@@ -963,7 +963,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1") {
+        if (var_s3q16.equals("1") ) {
             rdo_s3q18a = radioS3q18a.getCheckedRadioButtonId();
 
             if (rdo_s3q18a == -1) {
@@ -985,8 +985,8 @@ public class Section3Activity extends Activity {
                 break;
         }
 
-        if (var_s3q16 == "1") {
-            if (var_s3q18a != "99" && getS3q18d().getText().toString().isEmpty() || s3q18d.getText().toString() == null) {
+        if (var_s3q16.equals("1") ) {
+            if (!var_s3q18a.equals("99")  && getS3q18d().getText().toString().isEmpty() ) {
                 s3q18d.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "Please enter number of days \r\n", Toast.LENGTH_LONG).show();
                 s3q18d.requestFocus();
@@ -996,7 +996,7 @@ public class Section3Activity extends Activity {
             }
 
 
-            if (var_s3q18a != "99" && getS3q18m().getText().toString().isEmpty() || s3q18m.getText().toString() == null) {
+            if (!var_s3q18a.equals("99")  && getS3q18m().getText().toString().isEmpty()) {
                 s3q18m.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "Please enter number of months \r\n", Toast.LENGTH_LONG).show();
                 s3q18m.requestFocus();
@@ -1008,8 +1008,8 @@ public class Section3Activity extends Activity {
 
         rdo_s3q19 = radioS3q19.getCheckedRadioButtonId();
 
-        if (var_s3q16 == "1") {
-            if (var_s3q18a != "99" && rdo_s3q19 == -1) {
+        if (var_s3q16.equals("1") ) {
+            if (!var_s3q18a.equals("99") && rdo_s3q19 == -1) {
                 rDOS3q191.setError(getString(R.string.rdoterr));
                 Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
                 rDOS3q191.requestFocus();
@@ -1026,11 +1026,11 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1") {
+        if (var_s3q16.equals("1") ) {
 
-            if (var_s3q18a != "99") {
+            if (!var_s3q18a.equals("99")) {
 
-                if (var_s3q19 == "6" && getS3q19oth().getText().toString().isEmpty() || s3q19oth.getText().toString() == null) {
+                if (var_s3q19.equals("6") && getS3q19oth().getText().toString().isEmpty()) {
                     s3q19oth.setError(getString(R.string.txterr));
                     Toast.makeText(getApplicationContext(), "Please specify others \r\n", Toast.LENGTH_LONG).show();
                     s3q19oth.requestFocus();
@@ -1042,20 +1042,20 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1") {
+        if (var_s3q16.equals("1")) {
 
-            if (var_s3q18a != "99") {
+            if (!var_s3q18a.equals("99")) {
 
-                if (chk_s3q20_1.isChecked() == false
-                        && chk_s3q20_2.isChecked() == false
-                        && chk_s3q20_3.isChecked() == false
-                        && chk_s3q20_4.isChecked() == false
-                        && chk_s3q20_5.isChecked() == false
-                        && chk_s3q20_6.isChecked() == false
-                        && chk_s3q20_7.isChecked() == false
-                        && chk_s3q20_8.isChecked() == false
-                        && chk_s3q20_9.isChecked() == false
-                        && chk_s3q20_88.isChecked() == false) {
+                if (!chk_s3q20_1.isChecked()
+                        && !chk_s3q20_2.isChecked()
+                        && !chk_s3q20_3.isChecked()
+                        && !chk_s3q20_4.isChecked()
+                        && !chk_s3q20_5.isChecked()
+                        && !chk_s3q20_6.isChecked()
+                        && !chk_s3q20_7.isChecked()
+                        && !chk_s3q20_8.isChecked()
+                        && !chk_s3q20_9.isChecked()
+                        && !chk_s3q20_88.isChecked()) {
 
 
                     chk_s3q20_1.setError(getString(R.string.rdoterr));
@@ -1075,9 +1075,9 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1") {
+        if (var_s3q16.equals("1")) {
 
-            if (var_s3q20 == "88" && getS3q20oth().getText().toString().isEmpty() || s3q20oth.getText().toString() == null) {
+            if (var_s3q20.equals("88")  && getS3q20oth().getText().toString().isEmpty()) {
                 s3q20oth.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "Please specify others \r\n", Toast.LENGTH_LONG).show();
                 s3q20oth.requestFocus();
@@ -1109,7 +1109,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q21 == "1" && getS3q22d().getText().toString().isEmpty() || s3q22d.getText().toString() == null) {
+        if (var_s3q21.equals("1") && getS3q22d().getText().toString().isEmpty()) {
             s3q22d.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter number of days \r\n", Toast.LENGTH_LONG).show();
             s3q22d.requestFocus();
@@ -1119,7 +1119,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q21 == "1" && getS3q22m().getText().toString().isEmpty() || s3q22m.getText().toString() == null) {
+        if (var_s3q21.equals("1")  && getS3q22m().getText().toString().isEmpty()) {
             s3q22m.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter number of months \r\n", Toast.LENGTH_LONG).show();
             s3q22m.requestFocus();
@@ -1129,18 +1129,18 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q21 == "1") {
+        if (var_s3q21.equals("1")) {
 
-            if (chk_s3q23_1.isChecked() == false
-                    && chk_s3q23_2.isChecked() == false
-                    && chk_s3q23_3.isChecked() == false
-                    && chk_s3q23_4.isChecked() == false
-                    && chk_s3q23_5.isChecked() == false
-                    && chk_s3q23_6.isChecked() == false
-                    && chk_s3q23_7.isChecked() == false
-                    && chk_s3q23_8.isChecked() == false
-                    && chk_s3q23_9.isChecked() == false
-                    && chk_s3q23_88.isChecked() == false) {
+            if (!chk_s3q23_1.isChecked()
+                    && !chk_s3q23_2.isChecked()
+                    && !chk_s3q23_3.isChecked()
+                    && !chk_s3q23_4.isChecked()
+                    && !chk_s3q23_5.isChecked()
+                    && !chk_s3q23_6.isChecked()
+                    && !chk_s3q23_7.isChecked()
+                    && !chk_s3q23_8.isChecked()
+                    && !chk_s3q23_9.isChecked()
+                    && !chk_s3q23_88.isChecked()) {
 
                 chk_s3q23_1.setError(getString(R.string.rdoterr));
                 Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
@@ -1156,8 +1156,8 @@ public class Section3Activity extends Activity {
             var_s3q23 = "88";
         }
 
-        if (var_s3q21 == "1") {
-            if (var_s3q23 == "88" && getS3q23oth().getText().toString().isEmpty() || s3q23oth.getText().toString() == null) {
+        if (var_s3q21.equals("1")) {
+            if (var_s3q23.equals("88") && getS3q23oth().getText().toString().isEmpty()) {
                 s3q23oth.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "Please specify others \r\n", Toast.LENGTH_LONG).show();
                 s3q23oth.requestFocus();
@@ -1179,7 +1179,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (getS3q25().getText().toString().isEmpty() || s3q25.getText().toString() == null) {
+        if (getS3q25().getText().toString().isEmpty()) {
             s3q25.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter distance in kms \r\n", Toast.LENGTH_LONG).show();
             s3q25.requestFocus();
@@ -1210,14 +1210,14 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q26 == "2") {
-            if (chk_s3q27_1.isChecked() == false
-                    && chk_s3q27_2.isChecked() == false
-                    && chk_s3q27_3.isChecked() == false
-                    && chk_s3q27_4.isChecked() == false
-                    && chk_s3q27_5.isChecked() == false
-                    && chk_s3q27_6.isChecked() == false
-                    && chk_s3q27_7.isChecked() == false) {
+        if (var_s3q26.equals("2")) {
+            if (!chk_s3q27_1.isChecked()
+                    && !chk_s3q27_2.isChecked()
+                    && !chk_s3q27_3.isChecked()
+                    && !chk_s3q27_4.isChecked()
+                    && !chk_s3q27_5.isChecked()
+                    && !chk_s3q27_6.isChecked()
+                    && !chk_s3q27_7.isChecked()) {
 
                 chk_s3q27_1.setError(getString(R.string.rdoterr));
                 Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
@@ -1233,8 +1233,8 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q26 == "2") {
-            if (var_s3q27 == "7" && getS3q27oth().getText().toString().isEmpty() || s3q27oth.getText().toString() == null) {
+        if (var_s3q26.equals("2")) {
+            if (var_s3q27.equals("7") && getS3q27oth().getText().toString().isEmpty()) {
                 s3q27oth.setError(getString(R.string.txterr));
                 Toast.makeText(getApplicationContext(), "Please specify others \r\n", Toast.LENGTH_LONG).show();
                 s3q27oth.requestFocus();
@@ -1245,9 +1245,9 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q16 == "1") {
+        if (var_s3q16.equals("1")) {
 
-            if (s3q18d.getText().toString().isEmpty() || s3q18d.getText().toString() == null) {
+            if (s3q18d.getText().toString().isEmpty()) {
 
             } else {
                 if (Integer.parseInt(s3q18d.getText().toString()) < 0 ||
@@ -1259,7 +1259,7 @@ public class Section3Activity extends Activity {
             }
 
 
-            if (s3q18m.getText().toString().isEmpty() || s3q18m.getText().toString() == null) {
+            if (s3q18m.getText().toString().isEmpty()) {
 
             } else {
                 if (Integer.parseInt(s3q18m.getText().toString()) < 0 ||
@@ -1272,9 +1272,9 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (var_s3q21 == "1") {
+        if (var_s3q21.equals("1")) {
 
-            if (s3q22d.getText().toString().isEmpty() || s3q22d.getText().toString() == null) {
+            if (s3q22d.getText().toString().isEmpty()) {
 
             } else {
                 if (Integer.parseInt(s3q22d.getText().toString()) < 0 ||
@@ -1286,7 +1286,7 @@ public class Section3Activity extends Activity {
             }
 
 
-            if (s3q22m.getText().toString().isEmpty() || s3q22m.getText().toString() == null) {
+            if (s3q22m.getText().toString().isEmpty()) {
 
             } else {
                 if (Integer.parseInt(s3q22m.getText().toString()) < 0 ||
@@ -1299,7 +1299,7 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (s3q25.getText().toString().isEmpty() || s3q25.getText().toString() == null) {
+        if (s3q25.getText().toString().isEmpty()) {
 
         } else {
 

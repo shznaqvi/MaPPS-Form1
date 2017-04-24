@@ -45,7 +45,8 @@
                 android:imeOptions="actionUnspecified"
                 android:inputType="text"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:text="admin"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -63,7 +64,8 @@
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:text="admin.123"/>
 
             <Button
                 android:id="@+id/email_sign_in_button"

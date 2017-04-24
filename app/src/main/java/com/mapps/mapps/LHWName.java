@@ -10,7 +10,6 @@ public class LHWName {
 
     public LHWName() {
 
-
     }
 
     public LHWName(String id, String nme) {

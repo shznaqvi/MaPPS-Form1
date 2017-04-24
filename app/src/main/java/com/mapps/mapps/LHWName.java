@@ -9,6 +9,8 @@ public class LHWName {
     String nme;
 
     public LHWName() {
+
+
     }
 
     public LHWName(String id, String nme) {

@@ -1,0 +1,257 @@
+<resources>
+    <string name="app_name">MAPPS Ver 1.3</string>
+
+    <string name="prompt_email">User ID</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="ddlusers">Select Users</string>
+    <string name="error_invalid_email">This user id address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="urlusers">URL</string>
+
+    <string name="btnDBAccess">Database Access</string>
+    <string name="btnGetHF">Get Cluster / Health Facility / Users </string>
+    <string name="btnGetHF1">Get Cluster / Health Facility</string>
+    <string name="btnGetLHW">Get LHW List</string>
+    <string name="btnGetUsers">Get Users List</string>
+    <string name="btnAdd">Add Another Member</string>
+    <string name="sec2">Section 2</string>
+    <string name="sec3">Section 3</string>
+    <string name="sec4">Section 4</string>
+    <string name="sec5">Section 5</string>
+    <string name="sec6">Section 6</string>
+    <string name="sec7">Section 7</string>
+    <string name="sec8">Section 8</string>
+    <string name="savedata">Save Data</string>
+
+    <string name="txterr">Required field</string>
+    <string name="rdoterr">Please select at least one option</string>
+    <string name="chkterr">Please select at least one option</string>
+
+    <string name="btnPrev">Previous Page</string>
+    <string name="btnOpenForm">Form Open</string>
+    <string name="btnSyncData1">Synchronize Data Section 1</string>
+    <string name="btnSyncData2">Synchronize Data Section 2</string>
+    <string name="btnSyncData4">Synchronize Data Section 4</string>
+    <string name="btnLogout">Logout</string>
+
+    <string name="title_activity_main_page">Main</string>
+
+    0<!--          Section 1          !-->
+
+    <string name="baseline_s1q1">ڪلسٽر جو نالو</string>
+    <string name="baseline_s1q2">ڳوٺ لاء مقرر ٿيل ايل ايچ ڊبليو جو نالو </string>
+    <string name="baseline_s1q3">ڳوٺ جو نالو</string>
+    <string name="baseline_s1q4">مڪمل پتو</string>
+    <string name="baseline_s1q5">خاندان نمبر</string>
+    <string name="baseline_s1q6">جواب ڏيندڙ</string>
+    <string name="baseline_s1q7">گھر جي سربراه  جو نالو</string>
+    <string name="baseline_s1q8">رابطي لاء نمبر</string>
+    <string name="baseline_s1q9a">تحقيق ڪندڙ جو  نالو</string>
+    <string name="baseline_s1q9b">تحقيق ڪندڙ جي آئي ڊي</string>
+    <string name="baseline_s1q10">تاريخ</string>
+    <string name="baseline_s1q11">وقت</string>
+    <string name="baseline_s1q12">زباني اجا ز ت</string>
+    <string name="baseline_s1q12_1">ها</string>
+    <string name="baseline_s1q12_2">نه</string>
+    <string name="baseline_s1q13">ملاقات جي جڳهه</string>
+    <string name="baseline_s1q13_1">گھر</string>
+    <string name="baseline_s1q13_2">اسڪول</string>
+    <string name="baseline_s1q14">انٽرويو جو نتيجو</string>
+    <string name="baseline_s1q14_1">پورو ٿيو</string>
+    <string name="baseline_s1q14_2">مڪمل نه ٿيو</string>
+    <string name="baseline_s1q14_3">انڪار ڪيو</string>
+    <string name="baseline_s1q14_4">ٻن دورن کان پوء ڪير به موجود نه هو</string>
+    <string name="baseline_s1q14_5">.لڏي وئي</string>
+    <string name="baseline_s1q14_6">گھر بند</string>
+
+
+    <!--          Section 2          !-->
+
+    <string name="baseline_s2q1">Household ID</string>
+    <string name="baseline_s2q15a">نالو</string>
+    <string name="baseline_s2q15a1">پي جو نالو</string>
+    <string name="baseline_s2q15a2">ماء جو نالو</string>
+    <string name="baseline_s2q15b">گھر جي سربراه سان تعلق</string>
+    <string name="baseline_s2q15b_1">گھر جو وڏو</string>
+    <string name="baseline_s2q15b_2">گھر جي وڏي جي زال يا مڙس</string>
+    <string name="baseline_s2q15b_3">گهر جي وڏي جو پٽ/ڌي </string>
+    <string name="baseline_s2q15b_4">گهر جي وڏي جو پٽ/ڌي جو مڙس/زال</string>
+    <string name="baseline_s2q15b_5">پوٽو يا پوٽِي</string>
+    <string name="baseline_s2q15b_6">پوٽو يا پوٽِي جي زال يا مڙس</string>
+    <string name="baseline_s2q15b_7">گھر جي وڏي جو ڀاءُ/ڀيڻ</string>
+    <string name="baseline_s2q15b_8">گھر جي وڏي جو ڀاءُ/ڀيڻ جي زال يا مڙس</string>
+    <string name="baseline_s2q15b_9">گھر جي وڏي جو ڀا ئيٽو/ ڀائيٽِي</string>
+    <string name="baseline_s2q15b_10">گھر جي وڏي جو ڀا ئيٽو/ ڀائيٽِي جي زال يا مڙس </string>
+    <string name="baseline_s2q15b_11">ٻيا مائيٽ</string>
+    <string name="baseline_s2q15b_12">ڌاريا</string>
+    <string name="baseline_s2q15both">ٻيا مائيٽ</string>
+    <string name="baseline_s2q15cf">پي جي آئي ڊي</string>
+    <string name="baseline_s2q15cm">ماء ۽ جي آئي ڊي</string>
+    <string name="baseline_s2q15d">رهائش جي حيثيت</string>
+    <string name="baseline_s2q15d_1">پنهنجو</string>
+    <string name="baseline_s2q15d_2">عارضي</string>
+    <string name="baseline_s2q15e">ڄمڻ جي تاريخ</string>
+    <string name="baseline_s2q15fy">عمرسال</string>
+    <string name="baseline_s2q15fm">عمرمهينا</string>
+    <string name="baseline_s2q15g">تعليم</string>
+    <string name="baseline_s2q15g_1">اڻ پڙهه</string>
+    <string name="baseline_s2q15g_2">پِري اسڪول</string>
+    <string name="baseline_s2q15g_3">ديني تعليم</string>
+    <string name="baseline_s2q15g_4">پرائمري اسڪول (1 - 4 years)</string>
+    <string name="baseline_s2q15g_5">پرائمري اسڪول ختم ڪيو (5 years)</string>
+    <string name="baseline_s2q15g_6">سيڪنڊري اِسڪول(6 - 9 years)</string>
+    <string name="baseline_s2q15g_7">سيڪنڊري اِسڪول ختم ڪيو (10 years)</string>
+    <string name="baseline_s2q15g_8">هاءِ اِسڪول(11 - 12 years)</string>
+    <string name="baseline_s2q15g_9">بيچلر ڊگِري</string>
+    <string name="baseline_s2q15g_10">ماسٽرسِ</string>
+    <string name="baseline_s2q15g_11">پِي.ايڇ.ڊِي</string>
+    <string name="baseline_s2q15g_12">ٽيڪنيڪل ايجيوڪيشن</string>
+    <string name="baseline_s2q15g_13">ٻِي ڪا</string>
+    <string name="baseline_s2q15g_99">لاڳو نه ٿئي ٿو</string>
+    <string name="baseline_s2q15goth">ٻِي ڪا</string>
+    <string name="baseline_s2q15h">ڌنڌو</string>
+    <string name="baseline_s2q15h_1">پروفيشنل (اڪائوٽنٽ ، انجنيئرس ، ڊاڪٽرس)</string>
+    <string name="baseline_s2q15h_2">منيجرل اينڊ ٽيڪنيڪل يا انٽرميڊيئيٽ (مارڪيٽنگ اينڊ سيلس مينيجرس ، ٽيچرس ، جرنلسٽس ، نرسز)</string>
+    <string name="baseline_s2q15h_3"> نان مينيوئل اسڪلس (ڪليرڪس،شاپ اسسٽنٽس،ڪيشرس)</string>
+    <string name="baseline_s2q15h_4">مينيوئل اسڪلڊ (ڪارپينٽرس ، ڊرائيورس ، ڪُڪس)</string>
+    <string name="baseline_s2q15h_5">پارٽلي اسڪلڊ (سڪيورٽي گارڊس ، مشين آپريٽرس ، فارمرس)</string>
+    <string name="baseline_s2q15h_6">ان اسڪلڊ (ليبررس ، ڪلينرس)</string>
+    <string name="baseline_s2q15h_7">شاگرد</string>
+    <string name="baseline_s2q15h_8">ان امپلائڊ</string>
+    <string name="baseline_s2q15h_9">هائوس وائيف</string>
+    <string name="baseline_s2q15h_10">پري اسڪول</string>
+    <string name="baseline_s2q15h_11">ٻي ڪا</string>
+    <string name="baseline_s2q15h_99">لاڳو نه ٿو ٿئي</string>
+    <string name="baseline_s2q15hoth">ٻي ڪا</string>
+    <string name="baseline_s2q15i">جنس</string>
+    <string name="baseline_s2q15i_1">مرد</string>
+    <string name="baseline_s2q15i_2">عورت</string>
+    <string name="baseline_s2q15j">اذدواجي حيثيت</string>
+    <string name="baseline_s2q15j_1">غير شادي شده</string>
+    <string name="baseline_s2q15j_2">شادي شده</string>
+    <string name="baseline_s2q15j_3">طلاق يافته/جدا ويٺل</string>
+    <string name="baseline_s2q15j_4"> بيوه/رنڍوا</string>
+    <string name="baseline_s2q15j_5">ٻي ڪا</string>
+    <string name="baseline_s2q15joth">ٻي ڪا</string>
+    <string name="baseline_s2q15k">حمل جي معلومات</string>
+    <string name="baseline_s2q15k_1">ها</string>
+    <string name="baseline_s2q15k_2">نه</string>
+    <string name="baseline_s2q15k_9">خبر نه آهي</string>
+    <string name="baseline_s2q15lmp">آخري ماهواري جي تاريخ</string>
+    <string name="baseline_s2q15gest">حمل جو عرصو هفتن ۾</string>
+    <string name="baseline_s2q15e1">ڇا ڄمڻ جي تاريخ جي خبر آهي</string>
+    <string name="baseline_s2q15e1_1">ها</string>
+    <string name="baseline_s2q15e1_2">نه</string>
+    <string name="baseline_s2q15l1">ڇا آخري ماهواري جي تاريخ جي خبر آهي</string>
+    <string name="baseline_s2q15l1_1">ها</string>
+    <string name="baseline_s2q15l1_2">نه</string>
+
+    <!--          Section 3          !-->
+
+    <string name="baseline_s3q16">ڇا توهان کي خبر آهي ته توهان جي علائقي ۾ ايل ايڇ ڊبليو موجود آهي</string>
+    <string name="baseline_s3q16_1">ها</string>
+    <string name="baseline_s3q16_2">نه</string>
+    <string name="baseline_s3q16_99">خبر نه آهي</string>
+    <string name="baseline_s3q17">جيڪڏهن ها ته ان جو نالو ڇا آهي</string>
+    <string name="baseline_s3q18a_1">آخري دفعي ( ايل ايڇ ڊبليو ) ڪڏهن توهان جي گھرآئي هئي</string>
+    <string name="baseline_s3q18a">ڪيترا مهينا پهرين / ڪيتراڏينهن پهرين</string>
+    <string name="baseline_s3q18a_99">ڪڏهن به نه آئي</string>
+    <string name="baseline_s3q18d">ڪيتراڏينهن پهرين</string>
+    <string name="baseline_s3q18m">ڪيترا مهينا پهرين</string>
+    <string name="baseline_s3q19">عام طور تي هي ( ايل ايڇ ڊبليو ) ڪيتري ڏينهن کان پوءِ توهان جو گھر وزٽ ڪندي آهي</string>
+    <string name="baseline_s3q19_1">هفتي وار</string>
+    <string name="baseline_s3q19_2">هر پندرهين ڏينهن</string>
+    <string name="baseline_s3q19_3">مهيني تي</string>
+    <string name="baseline_s3q19_4">ڪڏهن ڪڏهن</string>
+    <string name="baseline_s3q19_5">پوليوجي لاءِ</string>
+    <string name="baseline_s3q19_6">ٻيو ڪجھ</string>
+    <string name="baseline_s3q19oth">ٻيو ڪجھ</string>
+    <string name="baseline_s3q20">آخري دفعو ڪهڙي مقصد جي لاءِ هوءَ آئي هئي</string>
+    <string name="baseline_s3q20_1">ماءُ ۽ ٻار جي صحت جي باري ۾ معلومات</string>
+    <string name="baseline_s3q20_2">گوريون ڏنيون آهن</string>
+    <string name="baseline_s3q20_3">اسپتال منتقل ڪرڻ</string>
+    <string name="baseline_s3q20_4">ٽُڪا</string>
+    <string name="baseline_s3q20_5">پوليو جا ڦڙا</string>
+    <string name="baseline_s3q20_6">ماءُ جي علاج جي لاءِ</string>
+    <string name="baseline_s3q20_7">ٻار جي علاج لاءِ</string>
+    <string name="baseline_s3q20_8">ماءُ جي لاءِ اضافي خوراڪ</string>
+    <string name="baseline_s3q20_9">ٻار جي لاءِ اضافي خوراڪ</string>
+    <string name="baseline_s3q20_10">ٻيو ڪجھه ته (وضاحت ڪريو)</string>
+    <string name="baseline_s3q20oth">ٻيو ڪجھ</string>
+    <string name="baseline_s3q21">ڇا توهان ڪڏهن به ايل  ايڇ ڊبليو جي هيلٿ گھر ويا آهيو</string>
+    <string name="baseline_s3q21_1">ها</string>
+    <string name="baseline_s3q21_2">نه</string>
+    <string name="baseline_s3q22d">ڏينهن پهرين</string>
+    <string name="baseline_s3q22m">مهينا پهرين</string>
+    <string name="baseline_s3q23">جيڪڏهن ها ته آخري دفعو توهان ڪهڙي مقصد جي لاءِ ويا هئا</string>
+    <string name="baseline_s3q23_1">ماءُ ۽ ٻار جي صحت جي باري ۾ معلومات</string>
+    <string name="baseline_s3q23_2">گوريون وٺڻ لاءِ</string>
+    <string name="baseline_s3q23_3">اسپتال منتقل ڪرڻ</string>
+    <string name="baseline_s3q23_4">ٽُڪا</string>
+    <string name="baseline_s3q23_5">پوليوجا ڦڙا</string>
+    <string name="baseline_s3q23_6">ماءُ جي علاج لاءِ</string>
+    <string name="baseline_s3q23_7">ٻار جي علاج لاءِ</string>
+    <string name="baseline_s3q23_8">ماءُ جي لاءِ اضافي غذائي خوراڪ وٺڻ لاءِ</string>
+    <string name="baseline_s3q23_9">ٻارن لاءِ طاقت / غذا جون دوائون وٺڻ لاءِ</string>
+    <string name="baseline_s3q23_10">ٻيو ڪجھه ته (وضاحت ڪريو)</string>
+    <string name="baseline_s3q23oth">ٻيو ڪجھه ته (وضاحت ڪريو)</string>
+    <string name="baseline_s3q24">توهان جي ايل ايڇ ڊبليو آخري ميٽنگ يا هيلٿ ايڊيوڪيشن سيشن ڪڏهن ڪرايو هو</string>
+    <string name="baseline_s3q24_1">آخري مهيني ۾</string>
+    <string name="baseline_s3q24_2">آخري قئارٽر ۾</string>
+    <string name="baseline_s3q24_3">آخري ڇهين مهيني</string>
+    <string name="baseline_s3q24_4">ڪڌهن به نه</string>
+    <string name="baseline_s3q25">توهان جي ڳوٺ / علائقي کان اسپتال ڪيترو پري آهي؟ڪلو ميٽرن ۾ مفاصلو لکو</string>
+    <string name="baseline_s3q26">ڇا توهان اڪثر بيماري جو علاج ڪرائڻ ھن اسپتال ويندا آهيو</string>
+    <string name="baseline_s3q26_1">ها</string>
+    <string name="baseline_s3q26_2">نه</string>
+    <string name="baseline_s3q27">جيڪڏهن نه ته ڪهڙا مسئلا آهن جو توهان اسپتال وڃي نه سگھندا آهيو</string>
+    <string name="baseline_s3q27_1">اسپتال پري آهي</string>
+    <string name="baseline_s3q27_2">اسپتال ۾ بنيادي سهولتون موجود ڪون آهن</string>
+    <string name="baseline_s3q27_3">ڪرايو ڀري نٿا سگھون</string>
+    <string name="baseline_s3q27_4">دوائن جي لاءِ پئسا ڪونه آهن</string>
+    <string name="baseline_s3q27_5">مڙس جي اجازت ڪونهي / گھروارن جي اجازت ڪونهي</string>
+    <string name="baseline_s3q27_6">24 ڪلاڪن جي سهولت ڪونهي</string>
+    <string name="baseline_s3q27_7">ٻيو ڪجھه</string>
+    <string name="baseline_s3q27oth">ٻيو ڪجھه ته (وضاحت ڪريو)</string>
+
+    <!--          Section 4          !-->
+
+    <string name="baseline_s4q28a">شرڪت ڪندڙ جو نالو</string>
+    <string name="baseline_s4q28c">ڇا شرڪت ڪندڙ ايندڙ ٻن سالن ۾ ڳوٺ ڇڏڻ جو ارادو ڪيو آهي</string>
+    <string name="baseline_s4q28c_1">ها</string>
+    <string name="baseline_s4q28c_2">نه</string>
+    <string name="baseline_s4q28d">ڇا شرڪت ڪندڙ ڪنهن ٻي غذائي تحقيق ۾شامل  آهي؟اُن جونالو لکو</string>
+    <string name="baseline_s4q28d_1">ها</string>
+    <string name="baseline_s4q28d_2">نه</string>
+    <string name="baseline_s4q28oth">نالو لکو</string>
+    <string name="baseline_s4q28e">ڇا شرڪت ڪندڙ  کي ڪا موروثي بيماري آهي</string>
+    <string name="baseline_s4q28e_1">ها</string>
+    <string name="baseline_s4q28e_2">نه</string>
+    <string name="baseline_s4q28f1">هڪه فرد جي مختلف طبي حالتن مان ڪنهن به هڪه تي غور ڪيو ويندو</string>
+    <string name="baseline_s4q28f_1">ڪابه اهڙي حالت جنهن ۾ شرڪت ڪندڙ  گوري کائي نه سگھي</string>
+    <string name="baseline_s4q28f_2">ڪينسر (سرطان)</string>
+    <string name="baseline_s4q28f_3">دل جي ٻيماري</string>
+    <string name="baseline_s4q28f_4">ڳوڙهن جي موروثي بيماري</string>
+    <string name="baseline_s4q28f_5">هاضمي جي سرشتي جي بيماري (وڏي آنڊي جي بيماري ، ننڍي آنڊي جي بيماري)</string>
+    <string name="baseline_s4q28f_6">جگر (جيري) جي بيماري</string>
+    <string name="baseline_s4q28f_7">دماغي بيماريون (هٿن جو ڏڪڻ ، هلڻ ۾ تڪليف ، نسن جو سور)</string>
+    <string name="baseline_s4q28f_8">دماغ ۽ پُٺي جي ڪنڊي جي بيماري</string>
+    <string name="baseline_s4q28f_9">ڦڦڙن جي بيماري</string>
+    <string name="baseline_s4q28f">شموليت لاء تصديق</string>
+    <string name="baseline_s4q28g">لکت ۾ اجازت نامو</string>
+    <string name="baseline_s4q28g_1">ها</string>
+    <string name="baseline_s4q28g_2">نه</string>
+    <string name="baseline_s4q28g_9">NA</string>
+    <string name="baseline_s4q28h">Use codes</string>
+    <string name="baseline_s4q28h_1">ها</string>
+    <string name="baseline_s4q28h_2">نه</string>
+
+</resources>

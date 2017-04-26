@@ -53,9 +53,9 @@
                 android:id="@+id/s2q15a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:ems="10"
-                android:inputType="textCapWords"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"/>
+                android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/lbl_s2q15i"
@@ -179,6 +179,7 @@
                     android:id="@+id/s2q15both"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
                     android:inputType="text" />
 
@@ -444,8 +445,9 @@
                     android:id="@+id/s2q15goth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 
@@ -548,6 +550,7 @@
                     android:id="@+id/s2q15hoth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
                     android:inputType="textCapWords" />
 
@@ -610,8 +613,9 @@
                     android:id="@+id/s2q15joth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRST"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 
@@ -721,6 +725,7 @@
                         android:id="@+id/s2q15gest"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:digits="0123456789"
                         android:ems="10"
                         android:inputType="number"
                         android:maxLength="2" />

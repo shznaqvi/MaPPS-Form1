@@ -336,7 +336,6 @@ public class Section4Contract implements BaseColumns {
         json.put(Section4Entry.ROW_S4Q28f9, this.ROW_S4Q28f9 == null ? JSONObject.NULL : this.ROW_S4Q28f9);
         json.put(Section4Entry.ROW_S4Q28g, this.ROW_S4Q28g == null ? JSONObject.NULL : this.ROW_S4Q28g);
         json.put(Section4Entry.ROW_S4Q28h, this.ROW_S4Q28h == null ? JSONObject.NULL : this.ROW_S4Q28h);
-        json.put(Section4Entry.ROW_S4Q14, this.ROW_S4Q14 == null ? JSONObject.NULL : this.ROW_S4Q14);
         json.put(Section4Entry.ROW_UUID, this.ROW_UID == null ? JSONObject.NULL : this.ROW_UID);
         json.put(Section4Entry.ROW_GPS_LNG, this.ROW_GPS_LANG == null ? JSONObject.NULL : this.ROW_GPS_LANG);
         json.put(Section4Entry.ROW_GPS_LAT, this.ROW_GPS_LAT == null ? JSONObject.NULL : this.ROW_GPS_LAT);
@@ -373,7 +372,6 @@ public class Section4Contract implements BaseColumns {
         this.ROW_S4Q28f9= jsonObject.getString(Section4Entry.ROW_S4Q28f9);
         this.ROW_S4Q28g= jsonObject.getString(Section4Entry.ROW_S4Q28g);
         this.ROW_S4Q28h= jsonObject.getString(Section4Entry.ROW_S4Q28h);
-        this.ROW_S4Q14= jsonObject.getString(Section4Entry.ROW_S4Q14);
         this.ROW_UID= jsonObject.getString(Section4Entry.ROW_UUID);
         this.ROW_GPS_LANG= jsonObject.getString(Section4Entry.ROW_GPS_LNG);
         this.ROW_GPS_LAT= jsonObject.getString(Section4Entry.ROW_GPS_LAT);
@@ -410,7 +408,6 @@ public class Section4Contract implements BaseColumns {
         this.ROW_S4Q28f9 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f9));
         this.ROW_S4Q28g = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28g));
         this.ROW_S4Q28h = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28h));
-        this.ROW_S4Q14 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q14));
         this.ROW_UID = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_UUID));
         this.ROW_GPS_LANG = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_LNG));
         this.ROW_GPS_LAT = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_LAT));

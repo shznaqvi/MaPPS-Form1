@@ -2198,7 +2198,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 Section4Entry.ROW_S4Q28f9,
                 Section4Entry.ROW_S4Q28g,
                 Section4Entry.ROW_S4Q28h,
-                Section4Entry.ROW_S4Q14,
                 Section4Entry.ROW_UUID,
                 Section4Entry.ROW_GPS_LNG,
                 Section4Entry.ROW_GPS_LAT,

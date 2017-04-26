@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 /**
  * Created by isd on 20/10/2016.
  */
-public final class GetLHWContract implements BaseColumns {
+public class GetLHWContract implements BaseColumns {
     private static final String TAG = "lhwcontract";
     String ROW_LHWID;
     String ROW_LHWNAME;

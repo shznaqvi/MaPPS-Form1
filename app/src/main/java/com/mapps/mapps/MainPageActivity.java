@@ -144,8 +144,8 @@ public class MainPageActivity extends Activity {
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
 
-            SyncForms_Sec4 sf = new SyncForms_Sec4(this);
-            sf.execute();
+            Toast.makeText(getApplicationContext(), "Syncing Section 4", Toast.LENGTH_SHORT).show();
+            new SyncForms_Sec4(this).execute();
 
             //new SyncForms_Section2(this).execute(stringUrl);
         } else {

@@ -32,11 +32,12 @@ public class MAPPSApp extends Application {
 
 
     //public static final String _IP = "192.168.1.10"; // Test NODE server
-    public static final String _IP = "10.198.96.103"; // Test PHP server
-    //public static final String _IP = "43.245.131.159"; // Test PHP server
-    public static final Integer _PORT = 80; // Port - with colon (:)
-    public static final String _HOST_URL = "10.198.96.103:8080";
-    //public static final String _HOST_URL = "43.245.131.159:8080";
+//    public static final String _IP = "10.198.96.103"; // Test PHP server
+    public static final String _IP = "43.245.131.159"; // Test PHP server
+    //    public static final Integer _PORT = 80; // Port - with colon (:)
+    public static final Integer _PORT = 8080; // Port - with colon (:)
+    //    public static final String _HOST_URL = "10.198.96.103:8080";
+    public static final String _HOST_URL = "http://" + MAPPSApp._IP + ":" + MAPPSApp._PORT + "/mappsweb/";
 
 /*
     public static final String _IP = "43.245.131.159"; // Test server
@@ -55,7 +56,6 @@ public class MAPPSApp extends Application {
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
     private static final long DAYS_IN_YEAR = 365;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
-
 
 
     public static String deviceId;

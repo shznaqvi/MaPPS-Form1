@@ -10,7 +10,7 @@ import org.json.JSONObject;
  * Created by isd on 28/10/2016.
  */
 
-public final class Section2Contract implements BaseColumns {
+public class Section2Contract implements BaseColumns {
     private static final String TAG = "SEC2_CONTRACT";
 
     Long _ID;
@@ -58,12 +58,6 @@ public final class Section2Contract implements BaseColumns {
     }
 
     public Section2Contract() {
-
-    }
-
-
-    public Section2Contract(String formid, JSONObject fc) throws JSONException {
-
 
     }
 
@@ -357,43 +351,130 @@ public final class Section2Contract implements BaseColumns {
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
-        json.put(Section2Entry._ID, this._ID);
-        json.put(Section2Entry.ROW_S2CLUSTER, this.ROW_S2CLUSTER);
-        json.put(Section2Entry.ROW_S2LHW, this.ROW_S2LHW);
-        json.put(Section2Entry.ROW_S2HH, this.ROW_S2HH);
-        json.put(Section2Entry.ROW_SNO, this.ROW_SNO);
-        json.put(Section2Entry.ROW_S2Q1, this.ROW_S2Q1);
-        json.put(Section2Entry.ROW_S2Q15a, this.ROW_S2Q15a);
-        json.put(Section2Entry.ROW_S2Q15i, this.ROW_S2Q15i);
-        json.put(Section2Entry.ROW_S2Q15b, this.ROW_S2Q15b);
-        json.put(Section2Entry.ROW_S2Q15both, this.ROW_S2Q15both);
-        json.put(Section2Entry.ROW_S2Q15cf, this.ROW_S2Q15cf);
-        json.put(Section2Entry.ROW_S2Q15cm, this.ROW_S2Q15cm);
-        json.put(Section2Entry.ROW_S2Q15fm, this.ROW_S2Q15fm);
-        json.put(Section2Entry.ROW_S2Q15fy, this.ROW_S2Q15fy);
-        json.put(Section2Entry.ROW_S2Q15d, this.ROW_S2Q15d);
-        json.put(Section2Entry.ROW_S2Q15e1, this.ROW_S2Q15e1);
-        json.put(Section2Entry.ROW_S2Q15e, this.ROW_S2Q15e);
-        json.put(Section2Entry.ROW_S2Q15fy, this.ROW_S2Q15fy);
-        json.put(Section2Entry.ROW_S2Q15fm, this.ROW_S2Q15fm);
-        json.put(Section2Entry.ROW_S2Q15g, this.ROW_S2Q15g);
-        json.put(Section2Entry.ROW_S2Q15goth, this.ROW_S2Q15goth);
-        json.put(Section2Entry.ROW_S2Q15h, this.ROW_S2Q15h);
-        json.put(Section2Entry.ROW_S2Q15hoth, this.ROW_S2Q15hoth);
-        json.put(Section2Entry.ROW_S2Q15j, this.ROW_S2Q15j);
-        json.put(Section2Entry.ROW_S2Q15joth, this.ROW_S2Q15joth);
-        json.put(Section2Entry.ROW_S2Q15k, this.ROW_S2Q15k);
-        json.put(Section2Entry.ROW_S2Q15l1, this.ROW_S2Q15l1);
-        json.put(Section2Entry.ROW_S2Q15lmp, this.ROW_S2Q15lmp);
-        json.put(Section2Entry.ROW_S2Q15gest, this.ROW_S2Q15gest);
-        json.put(Section2Entry.ROW_iselig, this.ROW_iselig);
-        json.put(Section2Entry.ROW_UUID, this.ROW_UID);
-        json.put(Section2Entry.ROW_GPS_LNG, this.ROW_GPS_LANG);
-        json.put(Section2Entry.ROW_GPS_LAT, this.ROW_GPS_LAT);
-        json.put(Section2Entry.ROW_GPS_ACC, this.ROW_GPS_ACC);
-        json.put(Section2Entry.ROW_GPS_DT, this.ROW_GPS_DT);
+        json.put(Section2Entry._ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(Section2Entry.ROW_DEVID, this.ROW_DEVID == null ? JSONObject.NULL : this.ROW_DEVID);
+        json.put(Section2Entry.ROW_S2CLUSTER, this.ROW_S2CLUSTER == null ? JSONObject.NULL : this.ROW_S2CLUSTER);
+        json.put(Section2Entry.ROW_S2LHW, this.ROW_S2LHW == null ? JSONObject.NULL : this.ROW_S2LHW);
+        json.put(Section2Entry.ROW_S2HH, this.ROW_S2HH == null ? JSONObject.NULL : this.ROW_S2HH);
+        json.put(Section2Entry.ROW_SNO, this.ROW_SNO == null ? JSONObject.NULL : this.ROW_SNO);
+        json.put(Section2Entry.ROW_S2Q1, this.ROW_S2Q1 == null ? JSONObject.NULL : this.ROW_S2Q1);
+        json.put(Section2Entry.ROW_S2Q15a, this.ROW_S2Q15a == null ? JSONObject.NULL : this.ROW_S2Q15a);
+        json.put(Section2Entry.ROW_S2Q15i, this.ROW_S2Q15i == null ? JSONObject.NULL : this.ROW_S2Q15i);
+        json.put(Section2Entry.ROW_S2Q15b, this.ROW_S2Q15b == null ? JSONObject.NULL : this.ROW_S2Q15b);
+        json.put(Section2Entry.ROW_S2Q15both, this.ROW_S2Q15both == null ? JSONObject.NULL : this.ROW_S2Q15both);
+        json.put(Section2Entry.ROW_S2Q15cf, this.ROW_S2Q15cf == null ? JSONObject.NULL : this.ROW_S2Q15cf);
+        json.put(Section2Entry.ROW_S2Q15cm, this.ROW_S2Q15cm == null ? JSONObject.NULL : this.ROW_S2Q15cm);
+        json.put(Section2Entry.ROW_S2Q15d, this.ROW_S2Q15d == null ? JSONObject.NULL : this.ROW_S2Q15d);
+        json.put(Section2Entry.ROW_S2Q15e1, this.ROW_S2Q15e1 == null ? JSONObject.NULL : this.ROW_S2Q15e1);
+        json.put(Section2Entry.ROW_S2Q15e, this.ROW_S2Q15e == null ? JSONObject.NULL : this.ROW_S2Q15e);
+        json.put(Section2Entry.ROW_S2Q15fy, this.ROW_S2Q15fy == null ? JSONObject.NULL : this.ROW_S2Q15fy);
+        json.put(Section2Entry.ROW_S2Q15fm, this.ROW_S2Q15fm == null ? JSONObject.NULL : this.ROW_S2Q15fm);
+        json.put(Section2Entry.ROW_fy, this.ROW_fy == null ? JSONObject.NULL : this.ROW_fy);
+        json.put(Section2Entry.ROW_fm, this.ROW_fm == null ? JSONObject.NULL : this.ROW_fm);
+        json.put(Section2Entry.ROW_S2Q15g, this.ROW_S2Q15g == null ? JSONObject.NULL : this.ROW_S2Q15g);
+        json.put(Section2Entry.ROW_S2Q15goth, this.ROW_S2Q15goth == null ? JSONObject.NULL : this.ROW_S2Q15goth);
+        json.put(Section2Entry.ROW_S2Q15h, this.ROW_S2Q15h == null ? JSONObject.NULL : this.ROW_S2Q15h);
+        json.put(Section2Entry.ROW_S2Q15hoth, this.ROW_S2Q15hoth == null ? JSONObject.NULL : this.ROW_S2Q15hoth);
+        json.put(Section2Entry.ROW_S2Q15j, this.ROW_S2Q15j == null ? JSONObject.NULL : this.ROW_S2Q15j);
+        json.put(Section2Entry.ROW_S2Q15joth, this.ROW_S2Q15joth == null ? JSONObject.NULL : this.ROW_S2Q15joth);
+        json.put(Section2Entry.ROW_S2Q15k, this.ROW_S2Q15k == null ? JSONObject.NULL : this.ROW_S2Q15k);
+        json.put(Section2Entry.ROW_S2Q15l1, this.ROW_S2Q15l1 == null ? JSONObject.NULL : this.ROW_S2Q15l1);
+        json.put(Section2Entry.ROW_S2Q15lmp, this.ROW_S2Q15lmp == null ? JSONObject.NULL : this.ROW_S2Q15lmp);
+        json.put(Section2Entry.ROW_S2Q15gest, this.ROW_S2Q15gest == null ? JSONObject.NULL : this.ROW_S2Q15gest);
+        json.put(Section2Entry.ROW_iselig, this.ROW_iselig == null ? JSONObject.NULL : this.ROW_iselig);
+        json.put(Section2Entry.ROW_UUID, this.ROW_UID == null ? JSONObject.NULL : this.ROW_UID);
+        json.put(Section2Entry.ROW_GPS_LNG, this.ROW_GPS_LANG == null ? JSONObject.NULL : this.ROW_GPS_LANG);
+        json.put(Section2Entry.ROW_GPS_LAT, this.ROW_GPS_LAT == null ? JSONObject.NULL : this.ROW_GPS_LAT);
+        json.put(Section2Entry.ROW_GPS_DT, this.ROW_GPS_DT == null ? JSONObject.NULL : this.ROW_GPS_DT);
+        json.put(Section2Entry.ROW_GPS_ACC, this.ROW_GPS_ACC == null ? JSONObject.NULL : this.ROW_GPS_ACC);
 
         return json;
+    }
+
+    public Section2Contract hydrate(Cursor cursor) {
+
+        this._ID = cursor.getLong(cursor.getColumnIndex(Section2Entry._ID));
+        this.ROW_DEVID = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_DEVID));
+        this.ROW_S2CLUSTER = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2CLUSTER));
+        this.ROW_S2LHW = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2LHW));
+        this.ROW_S2HH = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2HH));
+        this.ROW_SNO = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_SNO));
+        this.ROW_S2Q1 = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q1));
+        this.ROW_S2Q15a = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15a));
+        this.ROW_S2Q15i = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15i));
+        this.ROW_S2Q15b = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15b));
+        this.ROW_S2Q15both = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15both));
+        this.ROW_S2Q15cf = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cf));
+        this.ROW_S2Q15cm = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15cm));
+        this.ROW_S2Q15d = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15d));
+        this.ROW_S2Q15e1 = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e1));
+        this.ROW_S2Q15e = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15e));
+        this.ROW_S2Q15fy = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fy));
+        this.ROW_S2Q15fm = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15fm));
+        this.ROW_fy = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fy));
+        this.ROW_fm = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_fm));
+        this.ROW_S2Q15g = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15g));
+        this.ROW_S2Q15goth = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15goth));
+        this.ROW_S2Q15h = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15h));
+        this.ROW_S2Q15hoth = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15hoth));
+        this.ROW_S2Q15j = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15j));
+        this.ROW_S2Q15joth = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15joth));
+        this.ROW_S2Q15k = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15k));
+        this.ROW_S2Q15l1 = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15l1));
+        this.ROW_S2Q15lmp = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15lmp));
+        this.ROW_S2Q15gest = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_S2Q15gest));
+        this.ROW_iselig = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_iselig));
+        this.ROW_UID = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_UUID));
+        this.ROW_GPS_LANG = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_GPS_LNG));
+        this.ROW_GPS_LAT = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_GPS_LAT));
+        this.ROW_GPS_DT = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_GPS_DT));
+        this.ROW_GPS_ACC = cursor.getString(cursor.getColumnIndex(Section2Entry.ROW_GPS_ACC));
+
+
+        return this;
+    }
+
+
+    public Section2Contract sync(JSONObject jsonObject) throws JSONException {
+
+        this._ID= jsonObject.getLong(Section2Entry._ID);
+        this.ROW_DEVID= jsonObject.getString(Section2Entry.ROW_DEVID);
+        this.ROW_S2CLUSTER= jsonObject.getString(Section2Entry.ROW_S2CLUSTER);
+        this.ROW_S2LHW= jsonObject.getString(Section2Entry.ROW_S2LHW);
+        this.ROW_S2HH= jsonObject.getString(Section2Entry.ROW_S2HH);
+        this.ROW_SNO= jsonObject.getString(Section2Entry.ROW_SNO);
+        this.ROW_S2Q1= jsonObject.getString(Section2Entry.ROW_S2Q1);
+        this.ROW_S2Q15a= jsonObject.getString(Section2Entry.ROW_S2Q15a);
+        this.ROW_S2Q15i= jsonObject.getString(Section2Entry.ROW_S2Q15i);
+        this.ROW_S2Q15b= jsonObject.getString(Section2Entry.ROW_S2Q15b);
+        this.ROW_S2Q15both= jsonObject.getString(Section2Entry.ROW_S2Q15both);
+        this.ROW_S2Q15cf= jsonObject.getString(Section2Entry.ROW_S2Q15cf);
+        this.ROW_S2Q15cm= jsonObject.getString(Section2Entry.ROW_S2Q15cm);
+        this.ROW_S2Q15d= jsonObject.getString(Section2Entry.ROW_S2Q15d);
+        this.ROW_S2Q15e1= jsonObject.getString(Section2Entry.ROW_S2Q15e1);
+        this.ROW_S2Q15e= jsonObject.getString(Section2Entry.ROW_S2Q15e);
+        this.ROW_S2Q15fy= jsonObject.getString(Section2Entry.ROW_S2Q15fy);
+        this.ROW_S2Q15fm= jsonObject.getString(Section2Entry.ROW_S2Q15fm);
+        this.ROW_fy= jsonObject.getString(Section2Entry.ROW_fy);
+        this.ROW_fm= jsonObject.getString(Section2Entry.ROW_fm);
+        this.ROW_S2Q15g= jsonObject.getString(Section2Entry.ROW_S2Q15g);
+        this.ROW_S2Q15goth= jsonObject.getString(Section2Entry.ROW_S2Q15goth);
+        this.ROW_S2Q15h= jsonObject.getString(Section2Entry.ROW_S2Q15h);
+        this.ROW_S2Q15hoth= jsonObject.getString(Section2Entry.ROW_S2Q15hoth);
+        this.ROW_S2Q15j= jsonObject.getString(Section2Entry.ROW_S2Q15j);
+        this.ROW_S2Q15joth= jsonObject.getString(Section2Entry.ROW_S2Q15joth);
+        this.ROW_S2Q15k= jsonObject.getString(Section2Entry.ROW_S2Q15k);
+        this.ROW_S2Q15l1= jsonObject.getString(Section2Entry.ROW_S2Q15l1);
+        this.ROW_S2Q15lmp= jsonObject.getString(Section2Entry.ROW_S2Q15lmp);
+        this.ROW_S2Q15gest= jsonObject.getString(Section2Entry.ROW_S2Q15gest);
+        this.ROW_iselig= jsonObject.getString(Section2Entry.ROW_iselig);
+        this.ROW_UID= jsonObject.getString(Section2Entry.ROW_UUID);
+        this.ROW_GPS_LANG= jsonObject.getString(Section2Entry.ROW_GPS_LNG);
+        this.ROW_GPS_LAT= jsonObject.getString(Section2Entry.ROW_GPS_LAT);
+        this.ROW_GPS_DT= jsonObject.getString(Section2Entry.ROW_GPS_DT);
+        this.ROW_GPS_ACC= jsonObject.getString(Section2Entry.ROW_GPS_ACC);
+
+        return this;
     }
 
 
@@ -436,5 +517,7 @@ public final class Section2Contract implements BaseColumns {
         public static final String ROW_GPS_LAT = "GPS_LAT";
         public static final String ROW_GPS_DT = "GPS_DT";
         public static final String ROW_GPS_ACC = "GPS_ACC";
+
+        public static String _URL = "syncdata_sec2.php";
     }
 }

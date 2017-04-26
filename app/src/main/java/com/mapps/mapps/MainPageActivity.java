@@ -162,7 +162,7 @@ public class MainPageActivity extends Activity {
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            new SyncForms_Section2(this).execute(stringUrl);
+//            new SyncForms_Section2(this).execute(stringUrl);
         } else {
             Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
         }

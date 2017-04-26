@@ -10,7 +10,7 @@ import org.json.JSONObject;
  * Created by isd on 28/10/2016.
  */
 
-public final class Section4Contract implements BaseColumns {
+public class Section4Contract implements BaseColumns {
     private static final String TAG = "SEC4_CONTRACT";
 
     Long _ID;
@@ -311,38 +311,113 @@ public final class Section4Contract implements BaseColumns {
 
     public JSONObject toJSONObject() throws JSONException {
         JSONObject json = new JSONObject();
-        json.put(Section4Entry._ID, this._ID);
-        json.put(Section4Entry.ROW_S4Q1, this.ROW_S4Q1);
-        json.put(Section4Entry.ROW_S4CLUSTER, this.ROW_S4CLUSTER);
-        json.put(Section4Entry.ROW_S4LHW, this.ROW_S4LHW);
-        json.put(Section4Entry.ROW_S4HH, this.ROW_S4HH);
-        json.put(Section4Entry.ROW_SNO, this.ROW_SNO);
-        json.put(Section4Entry.ROW_S4Q28a, this.ROW_S4Q28a);
-        json.put(Section4Entry.ROW_S4Q28b, this.ROW_S4Q28b);
-        json.put(Section4Entry.ROW_S4Q28c, this.ROW_S4Q28c);
-        json.put(Section4Entry.ROW_S4Q28d, this.ROW_S4Q28d);
-        json.put(Section4Entry.ROW_S4Q28oth, this.ROW_S4Q28oth);
-        json.put(Section4Entry.ROW_S4Q28e, this.ROW_S4Q28e);
-        json.put(Section4Entry.ROW_S4Q28f, this.ROW_S4Q28f);
-        json.put(Section4Entry.ROW_S4Q28f1, this.ROW_S4Q28f1);
-        json.put(Section4Entry.ROW_S4Q28f2, this.ROW_S4Q28f2);
-        json.put(Section4Entry.ROW_S4Q28f3, this.ROW_S4Q28f3);
-        json.put(Section4Entry.ROW_S4Q28f4, this.ROW_S4Q28f4);
-        json.put(Section4Entry.ROW_S4Q28f5, this.ROW_S4Q28f5);
-        json.put(Section4Entry.ROW_S4Q28f6, this.ROW_S4Q28f6);
-        json.put(Section4Entry.ROW_S4Q28f7, this.ROW_S4Q28f7);
-        json.put(Section4Entry.ROW_S4Q28f8, this.ROW_S4Q28f8);
-        json.put(Section4Entry.ROW_S4Q28f9, this.ROW_S4Q28f9);
-        json.put(Section4Entry.ROW_S4Q28g, this.ROW_S4Q28g);
-        json.put(Section4Entry.ROW_S4Q28h, this.ROW_S4Q28h);
-        json.put(Section4Entry.ROW_S4Q14, this.ROW_S4Q14);
-        json.put(Section4Entry.ROW_UUID, this.ROW_UID);
-        json.put(Section4Entry.ROW_GPS_LNG, this.ROW_GPS_LANG);
-        json.put(Section4Entry.ROW_GPS_LAT, this.ROW_GPS_LAT);
-        json.put(Section4Entry.ROW_GPS_DT, this.ROW_GPS_DT);
-        json.put(Section4Entry.ROW_GPS_ACC, this.ROW_GPS_ACC);
+        json.put(Section4Entry._ID, this._ID == null ? JSONObject.NULL : this._ID);
+        json.put(Section4Entry.ROW_DEVID, this.ROW_DEVID == null ? JSONObject.NULL : this.ROW_DEVID);
+        json.put(Section4Entry.ROW_S4CLUSTER, this.ROW_S4CLUSTER == null ? JSONObject.NULL : this.ROW_S4CLUSTER);
+        json.put(Section4Entry.ROW_S4LHW, this.ROW_S4LHW == null ? JSONObject.NULL : this.ROW_S4LHW);
+        json.put(Section4Entry.ROW_S4HH, this.ROW_S4HH == null ? JSONObject.NULL : this.ROW_S4HH);
+        json.put(Section4Entry.ROW_S4Q1, this.ROW_S4Q1 == null ? JSONObject.NULL : this.ROW_S4Q1);
+        json.put(Section4Entry.ROW_SNO, this.ROW_SNO == null ? JSONObject.NULL : this.ROW_SNO);
+        json.put(Section4Entry.ROW_S4Q28a, this.ROW_S4Q28a == null ? JSONObject.NULL : this.ROW_S4Q28a);
+        json.put(Section4Entry.ROW_S4Q28b, this.ROW_S4Q28b == null ? JSONObject.NULL : this.ROW_S4Q28b);
+        json.put(Section4Entry.ROW_S4Q28c, this.ROW_S4Q28c == null ? JSONObject.NULL : this.ROW_S4Q28c);
+        json.put(Section4Entry.ROW_S4Q28d, this.ROW_S4Q28d == null ? JSONObject.NULL : this.ROW_S4Q28d);
+        json.put(Section4Entry.ROW_S4Q28oth, this.ROW_S4Q28oth == null ? JSONObject.NULL : this.ROW_S4Q28oth);
+        json.put(Section4Entry.ROW_S4Q28e, this.ROW_S4Q28e == null ? JSONObject.NULL : this.ROW_S4Q28e);
+        json.put(Section4Entry.ROW_S4Q28f, this.ROW_S4Q28f == null ? JSONObject.NULL : this.ROW_S4Q28f);
+        json.put(Section4Entry.ROW_S4Q28f1, this.ROW_S4Q28f1 == null ? JSONObject.NULL : this.ROW_S4Q28f1);
+        json.put(Section4Entry.ROW_S4Q28f2, this.ROW_S4Q28f2 == null ? JSONObject.NULL : this.ROW_S4Q28f2);
+        json.put(Section4Entry.ROW_S4Q28f3, this.ROW_S4Q28f3 == null ? JSONObject.NULL : this.ROW_S4Q28f3);
+        json.put(Section4Entry.ROW_S4Q28f4, this.ROW_S4Q28f4 == null ? JSONObject.NULL : this.ROW_S4Q28f4);
+        json.put(Section4Entry.ROW_S4Q28f5, this.ROW_S4Q28f5 == null ? JSONObject.NULL : this.ROW_S4Q28f5);
+        json.put(Section4Entry.ROW_S4Q28f6, this.ROW_S4Q28f6 == null ? JSONObject.NULL : this.ROW_S4Q28f6);
+        json.put(Section4Entry.ROW_S4Q28f7, this.ROW_S4Q28f7 == null ? JSONObject.NULL : this.ROW_S4Q28f7);
+        json.put(Section4Entry.ROW_S4Q28f8, this.ROW_S4Q28f8 == null ? JSONObject.NULL : this.ROW_S4Q28f8);
+        json.put(Section4Entry.ROW_S4Q28f9, this.ROW_S4Q28f9 == null ? JSONObject.NULL : this.ROW_S4Q28f9);
+        json.put(Section4Entry.ROW_S4Q28g, this.ROW_S4Q28g == null ? JSONObject.NULL : this.ROW_S4Q28g);
+        json.put(Section4Entry.ROW_S4Q28h, this.ROW_S4Q28h == null ? JSONObject.NULL : this.ROW_S4Q28h);
+        json.put(Section4Entry.ROW_S4Q14, this.ROW_S4Q14 == null ? JSONObject.NULL : this.ROW_S4Q14);
+        json.put(Section4Entry.ROW_UUID, this.ROW_UID == null ? JSONObject.NULL : this.ROW_UID);
+        json.put(Section4Entry.ROW_GPS_LNG, this.ROW_GPS_LANG == null ? JSONObject.NULL : this.ROW_GPS_LANG);
+        json.put(Section4Entry.ROW_GPS_LAT, this.ROW_GPS_LAT == null ? JSONObject.NULL : this.ROW_GPS_LAT);
+        json.put(Section4Entry.ROW_GPS_DT, this.ROW_GPS_DT == null ? JSONObject.NULL : this.ROW_GPS_DT);
+        json.put(Section4Entry.ROW_GPS_ACC, this.ROW_GPS_ACC == null ? JSONObject.NULL : this.ROW_GPS_ACC);
 
         return json;
+    }
+
+    public Section4Contract sync(JSONObject jsonObject) throws JSONException {
+
+        this._ID= jsonObject.getLong(Section4Entry._ID);
+        this.ROW_DEVID= jsonObject.getString(Section4Entry.ROW_DEVID);
+        this.ROW_S4CLUSTER= jsonObject.getString(Section4Entry.ROW_S4CLUSTER);
+        this.ROW_S4LHW= jsonObject.getString(Section4Entry.ROW_S4LHW);
+        this.ROW_S4HH= jsonObject.getString(Section4Entry.ROW_S4HH);
+        this.ROW_S4Q1= jsonObject.getString(Section4Entry.ROW_S4Q1);
+        this.ROW_SNO= jsonObject.getString(Section4Entry.ROW_SNO);
+        this.ROW_S4Q28a= jsonObject.getString(Section4Entry.ROW_S4Q28a);
+        this.ROW_S4Q28b= jsonObject.getString(Section4Entry.ROW_S4Q28b);
+        this.ROW_S4Q28c= jsonObject.getString(Section4Entry.ROW_S4Q28c);
+        this.ROW_S4Q28d= jsonObject.getString(Section4Entry.ROW_S4Q28d);
+        this.ROW_S4Q28oth= jsonObject.getString(Section4Entry.ROW_S4Q28oth);
+        this.ROW_S4Q28e= jsonObject.getString(Section4Entry.ROW_S4Q28e);
+        this.ROW_S4Q28f= jsonObject.getString(Section4Entry.ROW_S4Q28f);
+        this.ROW_S4Q28f1= jsonObject.getString(Section4Entry.ROW_S4Q28f1);
+        this.ROW_S4Q28f2= jsonObject.getString(Section4Entry.ROW_S4Q28f2);
+        this.ROW_S4Q28f3= jsonObject.getString(Section4Entry.ROW_S4Q28f3);
+        this.ROW_S4Q28f4= jsonObject.getString(Section4Entry.ROW_S4Q28f4);
+        this.ROW_S4Q28f5= jsonObject.getString(Section4Entry.ROW_S4Q28f5);
+        this.ROW_S4Q28f6= jsonObject.getString(Section4Entry.ROW_S4Q28f6);
+        this.ROW_S4Q28f7= jsonObject.getString(Section4Entry.ROW_S4Q28f7);
+        this.ROW_S4Q28f8= jsonObject.getString(Section4Entry.ROW_S4Q28f8);
+        this.ROW_S4Q28f9= jsonObject.getString(Section4Entry.ROW_S4Q28f9);
+        this.ROW_S4Q28g= jsonObject.getString(Section4Entry.ROW_S4Q28g);
+        this.ROW_S4Q28h= jsonObject.getString(Section4Entry.ROW_S4Q28h);
+        this.ROW_S4Q14= jsonObject.getString(Section4Entry.ROW_S4Q14);
+        this.ROW_UID= jsonObject.getString(Section4Entry.ROW_UUID);
+        this.ROW_GPS_LANG= jsonObject.getString(Section4Entry.ROW_GPS_LNG);
+        this.ROW_GPS_LAT= jsonObject.getString(Section4Entry.ROW_GPS_LAT);
+        this.ROW_GPS_DT= jsonObject.getString(Section4Entry.ROW_GPS_DT);
+        this.ROW_GPS_ACC= jsonObject.getString(Section4Entry.ROW_GPS_ACC);
+
+
+        return this;
+    }
+
+    public Section4Contract hydrate(Cursor cursor) {
+        this._ID = cursor.getLong(cursor.getColumnIndex(Section4Entry._ID));
+        this.ROW_DEVID = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_DEVID));
+        this.ROW_S4CLUSTER = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4CLUSTER));
+        this.ROW_S4LHW = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4LHW));
+        this.ROW_S4HH = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4HH));
+        this.ROW_S4Q1 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q1));
+        this.ROW_SNO = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_SNO));
+        this.ROW_S4Q28a = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28a));
+        this.ROW_S4Q28b = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28b));
+        this.ROW_S4Q28c = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28c));
+        this.ROW_S4Q28d = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28d));
+        this.ROW_S4Q28oth = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28oth));
+        this.ROW_S4Q28e = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28e));
+        this.ROW_S4Q28f = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f));
+        this.ROW_S4Q28f1 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f1));
+        this.ROW_S4Q28f2 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f2));
+        this.ROW_S4Q28f3 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f3));
+        this.ROW_S4Q28f4 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f4));
+        this.ROW_S4Q28f5 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f5));
+        this.ROW_S4Q28f6 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f6));
+        this.ROW_S4Q28f7 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f7));
+        this.ROW_S4Q28f8 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f8));
+        this.ROW_S4Q28f9 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28f9));
+        this.ROW_S4Q28g = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28g));
+        this.ROW_S4Q28h = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q28h));
+        this.ROW_S4Q14 = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_S4Q14));
+        this.ROW_UID = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_UUID));
+        this.ROW_GPS_LANG = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_LNG));
+        this.ROW_GPS_LAT = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_LAT));
+        this.ROW_GPS_DT = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_DT));
+        this.ROW_GPS_ACC = cursor.getString(cursor.getColumnIndex(Section4Entry.ROW_GPS_ACC));
+
+        return this;
     }
 
 
@@ -380,5 +455,7 @@ public final class Section4Contract implements BaseColumns {
         public static final String ROW_GPS_LAT = "GPS_LAT";
         public static final String ROW_GPS_DT = "GPS_DT";
         public static final String ROW_GPS_ACC = "GPS_ACC";
+
+        public static String _URL = "syncdata_sec4.php";
     }
 }

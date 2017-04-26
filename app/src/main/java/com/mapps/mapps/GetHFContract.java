@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 /**
  * Created by isd on 20/10/2016.
  */
-public final class GetHFContract implements BaseColumns {
+public class GetHFContract implements BaseColumns {
     private static final String TAG = "hfacility_contract";
     String ROW_HFCODE;
     String ROW_HFNAME;

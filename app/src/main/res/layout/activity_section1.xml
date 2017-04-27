@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="#d6d6d6"
-        android:scrollbars="horizontal">
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,156 +23,195 @@
             <TextView
                 android:id="@+id/app_header"
                 style="@style/myheading"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/section1"
+                android:textSize="35sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
+
 
             <TextView
                 android:id="@+id/lbl_s1q1"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
+                android:gravity="start"
                 android:text="@string/baseline_s1q1" />
 
             <Spinner
                 android:id="@+id/s1q1"
+                style="@style/spinnerItemStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:spinnerMode="dropdown" />
+                android:layout_marginTop="16dp"
+                android:popupBackground="#ffffff" />
 
             <TextView
                 android:id="@+id/lbl_s1q2"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q2" />
 
             <Spinner
                 android:id="@+id/s1q2"
+                style="@style/spinnerItemStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:spinnerMode="dropdown" />
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:id="@+id/lbl_s1q3"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q3" />
 
             <EditText
                 android:id="@+id/s1q3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginBottom="1dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890"
                 android:ems="10"
+                android:hint="@string/baseline_s1q3"
                 android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/lbl_s1q4"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q4" />
 
             <EditText
                 android:id="@+id/s1q4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginBottom="1dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890"
                 android:ems="10"
+                android:hint="@string/baseline_s1q4"
                 android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/lbl_s1q5"
-                style="@style/txtquestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q5" />
 
             <EditText
                 android:id="@+id/s1q5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="1234567890"
                 android:ems="10"
+                android:hint="@string/baseline_s1q5"
                 android:inputType="number"
                 android:maxLength="3" />
 
             <TextView
                 android:id="@+id/lbl_s1q6"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q6" />
 
             <EditText
                 android:id="@+id/s1q6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:ems="10"
+                android:hint="@string/baseline_s1q6"
                 android:inputType="textCapWords"
                 />
 
             <TextView
                 android:id="@+id/lbl_s1q7"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q7" />
 
             <EditText
                 android:id="@+id/s1q7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:ems="10"
+                android:hint="@string/baseline_s1q7"
                 android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/lbl_s1q8"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q8" />
 
             <EditText
                 android:id="@+id/s1q8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/baseline_s1q8"
                 android:inputType="number"
                 android:maxLength="11" />
 
             <TextView
                 android:id="@+id/lbl_s1q9a"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q9a" />
 
             <EditText
                 android:id="@+id/s1q9a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:ems="10"
+                android:hint="@string/baseline_s1q9a"
                 android:inputType="textCapWords" />
 
             <TextView
                 android:id="@+id/lbl_s1q9b"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q9b" />
 
             <EditText
                 android:id="@+id/s1q9b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
                 android:layout_weight="1"
                 android:digits="0123456789"
                 android:ems="10"
+                android:hint="@string/baseline_s1q9b"
                 android:inputType="number"
                 android:maxLength="3" />
 
             <TextView
                 android:id="@+id/lbl_s1q10"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q10" />
 
             <DatePicker
                 android:id="@+id/s1q10"
-                style="@style/txtquestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:calendarViewShown="false"
                 android:datePickerMode="spinner"
@@ -183,35 +221,39 @@
             <TextView
                 android:id="@+id/lbl_s1q11"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q11" />
 
             <TimePicker
                 android:id="@+id/s1q11"
-                style="@style/txtquestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:spinnersShown="true"
-                android:timePickerMode="spinner" />
+                android:spinnersShown="true" />
 
             <TextView
                 android:id="@+id/lbl_s1q12"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s1q12" />
 
             <RadioGroup
                 android:id="@+id/radio_s1q12"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s1q12_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s1q12_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s1q12_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s1q12_2" />
 
             </RadioGroup>
@@ -226,22 +268,25 @@
                 <TextView
                     android:id="@+id/lbl_s1q13"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s1q13" />
 
                 <RadioGroup
                     android:id="@+id/radio_s1q13"
-                    style="@style/txtquestion">
+                    style="@style/radiogroup">
 
                     <RadioButton
                         android:id="@+id/RDO_s1q13_1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q13_1" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q13_2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q13_2" />
 
                 </RadioGroup>
@@ -257,4 +302,4 @@
 
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+</LinearLayout>

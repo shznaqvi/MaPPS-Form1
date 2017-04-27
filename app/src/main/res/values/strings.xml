@@ -46,8 +46,14 @@
 
     0<!--          Section 1          !-->
 
-    <string name="baseline_s1q1">ڪلسٽر جو نالو</string>
-    <string name="baseline_s1q2">ڳوٺ لاء مقرر ٿيل ايل ايچ ڊبليو جو نالو </string>
+    <string name="formHeading">گهراڻي جي آدم شماري جو فارم</string>
+    <string name="section1">سيڪشن 1 ؛ معلومات براء سڃاڻپ</string>
+    <string name="section2">سيڪشن 2 ؛ خاندان جي تمام فردن جي فهرست</string>
+    <string name="section3">سيڪشن 3 ؛ ليڊي هيلٿ ورڪر جي معلومات</string>
+    <string name="section4"> سيڪشن 4 ؛ شرڪت ڪندڙن جي فهرست ۽ معلومات</string>
+
+    <string name="baseline_s1q1"> ڪلسٽر جو نالو</string>
+    <string name="baseline_s1q2">    ڳوٺ لاء مقرر ٿيل ايل ايچ ڊبليو جو نالو </string>
     <string name="baseline_s1q3">ڳوٺ جو نالو</string>
     <string name="baseline_s1q4">مڪمل پتو</string>
     <string name="baseline_s1q5">خاندان نمبر</string>
@@ -75,7 +81,7 @@
 
     <!--          Section 2          !-->
 
-    <string name="baseline_s2q1">Household ID</string>
+    <string name="baseline_s2q1">Household ID : </string>
     <string name="baseline_s2q15a">نالو</string>
     <string name="baseline_s2q15a1">پي جو نالو</string>
     <string name="baseline_s2q15a2">ماء جو نالو</string>
@@ -190,6 +196,9 @@
     <string name="baseline_s3q21_1">ها</string>
     <string name="baseline_s3q21_2">نه</string>
     <string name="baseline_s3q22d">ڏينهن پهرين</string>
+    <string name="daysNum">ڏينهن جو تعداد</string>
+    <string name="monthsNum">ڏينهن جو تعداد</string>
+    <string name="km">ڪلوميٽر</string>
     <string name="baseline_s3q22m">مهينا پهرين</string>
     <string name="baseline_s3q23">جيڪڏهن ها ته آخري دفعو توهان ڪهڙي مقصد جي لاءِ ويا هئا</string>
     <string name="baseline_s3q23_1">ماءُ ۽ ٻار جي صحت جي باري ۾ معلومات</string>

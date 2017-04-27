@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="#d6d6d6"
         android:scrollbars="horizontal">
 
         <LinearLayout
@@ -24,46 +23,66 @@
             <TextView
                 android:id="@+id/app_header"
                 style="@style/myheading"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
+                android:text="@string/section3"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+
+                <TextView
+                android:id="@+id/lbl_s2q1"
+                    style="@style/txtquestion"
+                    android:layout_weight="2"
+                android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/lbl_hhhead"
                 style="@style/txtquestion"
+                android:layout_weight="1"
                 android:text="@string/baseline_s2q1" />
 
-            <TextView
-                android:id="@+id/lbl_s2q1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/lbl_s3q16"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s3q16" />
 
             <RadioGroup
                 android:id="@+id/radio_s3q16"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s3q16_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q16_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q16_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q16_2" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q16_99"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q16_99" />
 
             </RadioGroup>
@@ -78,6 +97,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q17"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q17" />
 
                 <EditText
@@ -87,27 +107,31 @@
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
+                    android:hint="@string/baseline_s3q17"
                     android:inputType="textCapWords" />
 
                 <TextView
                     android:id="@+id/lbl_s3q18a"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q18a_1" />
 
                 <RadioGroup
                     android:id="@+id/radio_s3q18a"
-                    style="@style/txtquestion">
+                    style="@style/radiogroup">
 
                     <RadioButton
                         android:id="@+id/RDO_s3q18a_1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s3q18a" />
 
                     <RadioButton
                         android:id="@+id/RDO_s3q18a_99"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s3q18a_99" />
 
                 </RadioGroup>
@@ -122,6 +146,7 @@
                     <TextView
                         android:id="@+id/lbl_s3q18d"
                         style="@style/txtquestion"
+                        android:layout_marginTop="16dp"
                         android:text="@string/baseline_s3q18d" />
 
                     <EditText
@@ -131,12 +156,14 @@
                         android:layout_weight="1"
                         android:digits="0123456789"
                         android:ems="10"
+                        android:hint="@string/baseline_s3q18d"
                         android:inputType="number"
                         android:maxLength="2" />
 
                     <TextView
                         android:id="@+id/lbl_s3q18m"
                         style="@style/txtquestion"
+                        android:layout_marginTop="16dp"
                         android:text="@string/baseline_s3q18m" />
 
                     <EditText
@@ -146,52 +173,60 @@
                         android:layout_weight="1"
                         android:digits="0123456789"
                         android:ems="10"
+                        android:hint="@string/baseline_s3q18m"
                         android:inputType="number"
                         android:maxLength="2" />
 
                     <TextView
                         android:id="@+id/lbl_s3q19"
                         style="@style/txtquestion"
+                        android:layout_marginTop="16dp"
                         android:text="@string/baseline_s3q19" />
 
                     <RadioGroup
                         android:id="@+id/radio_s3q19"
-                        style="@style/txtquestion">
+                        style="@style/radiogroup">
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_1" />
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_2" />
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_3" />
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_4"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_4" />
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_5"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_5" />
 
                         <RadioButton
                             android:id="@+id/RDO_s3q19_6"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
                             android:text="@string/baseline_s3q19_6" />
 
                     </RadioGroup>
@@ -210,6 +245,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q19oth"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q19oth" />
 
                 <EditText
@@ -219,6 +255,7 @@
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
+                    android:hint="@string/baseline_s3q19oth"
                     android:inputType="textCapWords" />
 
             </LinearLayout>
@@ -233,66 +270,77 @@
                 <TextView
                     android:id="@+id/lbl_s3q20"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q20" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_1" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_2" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_3" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_4" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_5" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_6" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_7" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_8" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_9" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q20_88"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q20_10" />
 
             </LinearLayout>
@@ -307,6 +355,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q20oth"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q20oth" />
 
                 <EditText
@@ -316,6 +365,7 @@
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
+                    android:hint="@string/baseline_s3q20oth"
                     android:inputType="textCapWords" />
 
             </LinearLayout>
@@ -323,22 +373,25 @@
             <TextView
                 android:id="@+id/lbl_s3q21"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s3q21" />
 
             <RadioGroup
                 android:id="@+id/radio_s3q21"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s3q21_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q21_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q21_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q21_2" />
 
             </RadioGroup>
@@ -353,6 +406,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q22d"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q22d" />
 
                 <EditText
@@ -362,12 +416,14 @@
                     android:layout_weight="1"
                     android:digits="0123456789"
                     android:ems="10"
+                    android:hint="@string/daysNum"
                     android:inputType="number"
                     android:maxLength="2" />
 
                 <TextView
                     android:id="@+id/lbl_s3q22m"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q22m" />
 
                 <EditText
@@ -377,72 +433,84 @@
                     android:layout_weight="1"
                     android:digits="0123456789"
                     android:ems="10"
+                    android:hint="@string/monthsNum"
                     android:inputType="number"
                     android:maxLength="2" />
 
                 <TextView
                     android:id="@+id/lbl_s3q23"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q23" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_1" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_2" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_3" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_4" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_5" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_6" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_7" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_8" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_9" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q23_88"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q23_10" />
 
             </LinearLayout>
@@ -457,6 +525,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q23oth"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q23oth" />
 
                 <EditText
@@ -466,6 +535,7 @@
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
+                    android:hint="@string/baseline_s3q23oth"
                     android:inputType="textCapWords" />
 
             </LinearLayout>
@@ -473,34 +543,39 @@
             <TextView
                 android:id="@+id/lbl_s3q24"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s3q24" />
 
             <RadioGroup
                 android:id="@+id/radio_s3q24"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s3q24_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q24_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q24_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q24_2" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q24_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q24_3" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q24_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q24_4" />
 
             </RadioGroup>
@@ -508,6 +583,7 @@
             <TextView
                 android:id="@+id/lbl_s3q25"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s3q25" />
 
             <EditText
@@ -517,28 +593,32 @@
                 android:layout_weight="1"
                 android:digits="0123456789."
                 android:ems="10"
+                android:hint="@string/km"
                 android:inputType="numberDecimal"
                 android:maxLength="4" />
 
             <TextView
                 android:id="@+id/lbl_s3q26"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s3q26" />
 
             <RadioGroup
                 android:id="@+id/radio_s3q26"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s3q26_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q26_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s3q26_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q26_2" />
 
             </RadioGroup>
@@ -553,48 +633,56 @@
                 <TextView
                     android:id="@+id/lbl_s3q27"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q27" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_1" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_2" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_3" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_4" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_5" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_6" />
 
                 <CheckBox
                     android:id="@+id/RDO_s3q27_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s3q27_7" />
 
             </LinearLayout>
@@ -609,6 +697,7 @@
                 <TextView
                     android:id="@+id/lbl_s3q27oth"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s3q27oth" />
 
                 <EditText
@@ -618,6 +707,7 @@
                     android:layout_weight="1"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
+                    android:hint="@string/baseline_s3q27oth"
                     android:inputType="textCapWords" />
 
             </LinearLayout>

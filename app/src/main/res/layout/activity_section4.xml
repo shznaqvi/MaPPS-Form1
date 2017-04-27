@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="#d6d6d6"
         android:scrollbars="horizontal">
 
         <LinearLayout
@@ -24,56 +23,78 @@
             <TextView
                 android:id="@+id/app_header"
                 style="@style/myheading"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center"
+                android:text="@string/section4" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                android:id="@+id/lbl_s4q1"
+                    style="@style/txtquestion"
+                    android:layout_weight="2"
+                android:text=""
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/lbl_hhhead"
                 style="@style/txtquestion"
+                android:layout_weight="1"
                 android:text="@string/baseline_s2q1" />
 
-            <TextView
-                android:id="@+id/lbl_s4q1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/lbl_hhhead_count"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:layoutDirection="ltr"
                 android:text="" />
 
             <TextView
                 android:id="@+id/lbl_s3q"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s4q28a" />
 
             <TextView
                 android:id="@+id/lbl_s4q28a"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="" />
 
             <TextView
                 android:id="@+id/lbl_s4q28c"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s4q28c"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <RadioGroup
                 android:id="@+id/radio_s4q28c"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28c_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28c_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28c_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28c_2" />
 
             </RadioGroup>
@@ -81,22 +102,25 @@
             <TextView
                 android:id="@+id/lbl_s4q28d"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s4q28d" />
 
             <RadioGroup
                 android:id="@+id/radio_s4q28d"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28d_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28d_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28d_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28d_2" />
 
             </RadioGroup>
@@ -111,6 +135,7 @@
                 <TextView
                     android:id="@+id/lbl_s4q28oth"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s4q28oth" />
 
                 <EditText
@@ -118,31 +143,34 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:ems="10"
-                    android:inputType="textCapWords"
-                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"/>
+                    android:inputType="textCapWords" />
 
             </LinearLayout>
 
             <TextView
                 android:id="@+id/lbl_s4q28e"
                 style="@style/txtquestion"
+                android:layout_marginTop="16dp"
                 android:text="@string/baseline_s4q28e" />
 
             <RadioGroup
                 android:id="@+id/radio_s4q28e"
-                style="@style/txtquestion">
+                style="@style/radiogroup">
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28e_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28e_1" />
 
                 <RadioButton
                     android:id="@+id/RDO_s4q28e_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28e_2" />
 
             </RadioGroup>
@@ -157,60 +185,70 @@
                 <TextView
                     android:id="@+id/lbl_s3q28f1"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s4q28f1" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_1" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_2" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_3" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_4" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_5" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_6" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_7"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_7" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_8"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_8" />
 
                 <CheckBox
                     android:id="@+id/chk_s3q28f_9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:text="@string/baseline_s4q28f_9" />
 
             </LinearLayout>
@@ -225,28 +263,32 @@
                 <TextView
                     android:id="@+id/lbl_s4q28g"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s4q28g" />
 
                 <RadioGroup
                     android:id="@+id/radio_s4q28g"
-                    style="@style/txtquestion">
+                    style="@style/radiogroup">
 
                     <RadioButton
                         android:id="@+id/RDO_s4q28g_1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s4q28g_1" />
 
                     <RadioButton
                         android:id="@+id/RDO_s4q28g_2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s4q28g_2" />
 
                     <RadioButton
                         android:id="@+id/RDO_s4q28g_9"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s4q28g_9" />
 
                 </RadioGroup>
@@ -263,45 +305,51 @@
                 <TextView
                     android:id="@+id/lbl_s1q14"
                     style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
                     android:text="@string/baseline_s1q14" />
 
                 <RadioGroup
                     android:id="@+id/radio_s1q14"
-                    style="@style/txtquestion">
+                    style="@style/radiogroup">
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q14_1" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q14_2" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_3"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q14_3" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_4"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q14_4" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_5"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
                         android:text="@string/baseline_s1q14_5" />
 
                     <RadioButton
                         android:id="@+id/RDO_s1q14_6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/baseline_s1q14_6" />
 

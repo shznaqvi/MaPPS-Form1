@@ -1,36 +1,29 @@
 package com.mapps.mapps;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.gesture.GesturePoint;
-import android.graphics.BitmapShader;
 import android.os.Bundle;
-import android.app.Activity;
 import android.provider.Settings;
 import android.text.format.DateFormat;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.GeolocationPermissions;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Member;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -42,7 +35,8 @@ import java.util.regex.Pattern;
 public class Section1Activity extends Activity {
 
     private static final String TAG = "Sec1";
-
+    String var_s1q12 = "";
+    String var_s1q13 = "";
     private ScrollView scrollView01;
     private TextView appHeader;
     private TextView lblS1q1;
@@ -57,7 +51,6 @@ public class Section1Activity extends Activity {
     private TextView lblS1q9b;
     private TextView lblS1q10;
     private TextView lblS1q11;
-
     private Spinner s1q1;
     private Spinner s1q2;
     private EditText s1q3;
@@ -70,28 +63,18 @@ public class Section1Activity extends Activity {
     private EditText s1q9b;
     private DatePicker s1q10;
     private TimePicker s1q11;
-
     private RadioGroup radioS1q12;
     private RadioButton rDOS1q121;
     private RadioButton rDOS1q122;
-
     private RadioGroup radioS1q13;
     private RadioButton rDOS1q131;
     private RadioButton rDOS1q132;
-
-
     private LinearLayout vu_s1q13;
     private AlertDialog.Builder alert;
-
     private String spDateT;
     private String spTime;
-
     private int rdo_s1q12;
     private int rdo_s1q13;
-
-    String var_s1q12 = "";
-    String var_s1q13 = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,7 +126,8 @@ public class Section1Activity extends Activity {
                 Settings.Secure.ANDROID_ID);
 
         appHeader = (TextView) findViewById(R.id.app_header);
-        appHeader.setText("MAPPS - > Section1");
+        //appHeader.setText("MAPPS -> Section1" + " " + getString(R.string.section1));
+
 
 
         ArrayList<String> arr_members = new ArrayList<>();
@@ -159,8 +143,8 @@ public class Section1Activity extends Activity {
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(Section1Activity.this,
-                android.R.layout.simple_spinner_item, arr_members);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                android.R.layout.simple_spinner_dropdown_item, arr_members);
+        //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s1q1.setAdapter(adapter);
 
 
@@ -171,6 +155,7 @@ public class Section1Activity extends Activity {
                 // TODO Auto-generated method stub
 
                 String item = s1q1.getSelectedItem().toString();
+
                 //var.setClusterName(item);
 
                 final Collection<Members> members1 = db.getAllLHW(item);
@@ -183,10 +168,9 @@ public class Section1Activity extends Activity {
 
 
                 ArrayAdapter<String> adapter1 = new ArrayAdapter<>(Section1Activity.this,
-                        android.R.layout.simple_spinner_item, arr_members1);
-                adapter1.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                        android.R.layout.simple_spinner_dropdown_item, arr_members1);
+                //adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 s1q2.setAdapter(adapter1);
-
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {

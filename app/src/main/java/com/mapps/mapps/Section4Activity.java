@@ -1,35 +1,38 @@
 package com.mapps.mapps;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
-import android.widget.EditText;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class Section4Activity extends Activity {
 
     private final String TAG = "Sec4";
-
+    String var_s4q28c = "";
+    String var_s4q28d = "";
+    String var_s4q28e = "";
+    String var_s4q28f = "";
+    String var_s4q28g = "";
+    String var_s1q14 = "";
+    CVars vars = null;
+    Collection<Members> members;
+    ArrayList<String> arr_members;
     private ScrollView scrollView01;
     private TextView appHeader;
     private TextView lblHhhead;
@@ -56,15 +59,11 @@ public class Section4Activity extends Activity {
     private RadioButton rDOS4q28g2;
     private RadioButton rDOS4q28g9;
     private TextView lbl_s4q28a;
-
     private Button btnsavedata;
     private Button btnnext;
-
     private EditText s4q28oth;
-
     private LinearLayout vu_s4q28g;
     private LinearLayout vu_s4q28oth;
-
     private RadioGroup radioS1q14;
     private RadioButton rDOS1q141;
     private RadioButton rDOS1q142;
@@ -72,21 +71,16 @@ public class Section4Activity extends Activity {
     private RadioButton rDOS1q144;
     private RadioButton rDOS1q145;
     private RadioButton rDOS1q146;
-
     private LinearLayout vu_s1q14;
     private LinearLayout vu_s4q28e1;
-
     private TextView lbl_hhhead_count;
     private AlertDialog.Builder builder;
-
     private int rdo_s4q28c;
     private int rdo_s4q28d;
     private int rdo_s4q28e;
     private int rdo_s4q28f;
     private int rdo_s4q28g;
     private int rdo_s1q14;
-
-
     private CheckBox chk_s3q28f_1;
     private CheckBox chk_s3q28f_2;
     private CheckBox chk_s3q28f_3;
@@ -96,20 +90,6 @@ public class Section4Activity extends Activity {
     private CheckBox chk_s3q28f_7;
     private CheckBox chk_s3q28f_8;
     private CheckBox chk_s3q28f_9;
-
-
-    String var_s4q28c = "";
-    String var_s4q28d = "";
-    String var_s4q28e = "";
-    String var_s4q28f = "";
-    String var_s4q28g = "";
-    String var_s1q14 = "";
-
-
-    CVars vars = null;
-    Collection<Members> members;
-    ArrayList<String> arr_members;
-
     private int counter;
 
 
@@ -175,7 +155,7 @@ public class Section4Activity extends Activity {
         btnsavedata = (Button) findViewById(R.id.btnsavedata);
         btnnext = (Button) findViewById(R.id.btnnext);
 
-        appHeader.setText("MAPPS -> SECTION 4");
+        //appHeader.setText("MAPPS -> SECTION 4");
 
         vars = new CVars();
         lblS4q1.setText(vars.Gethhno());
@@ -206,7 +186,7 @@ public class Section4Activity extends Activity {
         }
 
         lbl_hhhead_count.setText("Total Number : " + members.size());
-        lbl_hhhead_count.setTextColor(Color.RED);
+        lbl_hhhead_count.setTextColor(Color.WHITE);
 
         arr_members = new ArrayList<>();
 
@@ -220,7 +200,7 @@ public class Section4Activity extends Activity {
 
         if (members.size() > 0) {
             lbl_s4q28a.setText(arr_members.get(counter));
-            lbl_s4q28a.setTextColor(Color.RED);
+            lbl_s4q28a.setTextColor(Color.WHITE);
 
             radioS4q28c.setEnabled(true);
             radioS4q28d.setEnabled(true);

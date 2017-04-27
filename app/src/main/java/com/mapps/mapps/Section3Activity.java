@@ -1,20 +1,19 @@
 package com.mapps.mapps;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -22,7 +21,15 @@ import org.json.JSONObject;
 public class Section3Activity extends Activity {
 
     private final String TAG = "Sec3";
-
+    String var_s3q16 = "";
+    String var_s3q18a = "";
+    String var_s3q19 = "";
+    String var_s3q20 = "";
+    String var_s3q21 = "";
+    String var_s3q23 = "";
+    String var_s3q24 = "";
+    String var_s3q26 = "";
+    String var_s3q27 = "";
     private ScrollView scrollView01;
     private TextView appHeader;
     private TextView lblHhhead;
@@ -48,7 +55,6 @@ public class Section3Activity extends Activity {
     private RadioButton rDOS3q196;
     private TextView lblS3q19oth;
     private TextView lblS3q20;
-
     private TextView lblS3q20oth;
     private TextView lblS3q21;
     private RadioGroup radioS3q21;
@@ -70,9 +76,7 @@ public class Section3Activity extends Activity {
     private RadioButton rDOS3q261;
     private RadioButton rDOS3q262;
     private TextView lblS3q27;
-
     private TextView lbl_s2q1;
-
     private EditText s3q17;
     private EditText s3q18d;
     private EditText s3q18m;
@@ -83,8 +87,6 @@ public class Section3Activity extends Activity {
     private EditText s3q23oth;
     private EditText s3q25;
     private EditText s3q27oth;
-
-
     private LinearLayout vu_s3q17;
     private LinearLayout vu_s3q18;
     private LinearLayout vu_s3q19oth;
@@ -94,8 +96,6 @@ public class Section3Activity extends Activity {
     private LinearLayout vu_s3q23oth;
     private LinearLayout vu_s3q26;
     private LinearLayout vu_s3q27oth;
-
-
     private CheckBox chk_s3q20_1;
     private CheckBox chk_s3q20_2;
     private CheckBox chk_s3q20_3;
@@ -106,8 +106,6 @@ public class Section3Activity extends Activity {
     private CheckBox chk_s3q20_8;
     private CheckBox chk_s3q20_9;
     private CheckBox chk_s3q20_88;
-
-
     private CheckBox chk_s3q23_1;
     private CheckBox chk_s3q23_2;
     private CheckBox chk_s3q23_3;
@@ -118,7 +116,6 @@ public class Section3Activity extends Activity {
     private CheckBox chk_s3q23_8;
     private CheckBox chk_s3q23_9;
     private CheckBox chk_s3q23_88;
-
     private CheckBox chk_s3q27_1;
     private CheckBox chk_s3q27_2;
     private CheckBox chk_s3q27_3;
@@ -126,7 +123,6 @@ public class Section3Activity extends Activity {
     private CheckBox chk_s3q27_5;
     private CheckBox chk_s3q27_6;
     private CheckBox chk_s3q27_7;
-
     private int var_s3q20_1;
     private int var_s3q20_2;
     private int var_s3q20_3;
@@ -137,8 +133,6 @@ public class Section3Activity extends Activity {
     private int var_s3q20_8;
     private int var_s3q20_9;
     private int var_s3q20_88;
-
-
     private int var_s3q23_1;
     private int var_s3q23_2;
     private int var_s3q23_3;
@@ -149,8 +143,6 @@ public class Section3Activity extends Activity {
     private int var_s3q23_8;
     private int var_s3q23_9;
     private int var_s3q23_88;
-
-
     private int rdo_s3q16;
     private int rdo_s3q18a;
     private int rdo_s3q19;
@@ -160,18 +152,6 @@ public class Section3Activity extends Activity {
     private int rdo_s3q24;
     private int rdo_s3q26;
     private int rdo_s3q27;
-
-
-    String var_s3q16 = "";
-    String var_s3q18a = "";
-    String var_s3q19 = "";
-    String var_s3q20 = "";
-    String var_s3q21 = "";
-    String var_s3q23 = "";
-    String var_s3q24 = "";
-    String var_s3q26 = "";
-    String var_s3q27 = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -279,7 +259,7 @@ public class Section3Activity extends Activity {
         vu_s3q27oth = (LinearLayout) findViewById(R.id.vu_s3q27oth);
 
 
-        appHeader.setText("MAPPS -> SECTION 3");
+        //appHeader.setText("MAPPS -> SECTION 3");
 
         CVars vars = new CVars();
         lbl_s2q1.setText(vars.Gethhno());

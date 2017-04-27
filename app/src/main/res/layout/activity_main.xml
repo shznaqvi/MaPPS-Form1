@@ -11,7 +11,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="#d6d6d6"
         android:scrollbars="horizontal">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,7 +34,7 @@
 
             <LinearLayout
                 android:id="@+id/vu_syncusers"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:visibility="gone">
@@ -51,6 +50,7 @@
                     android:id="@+id/txturl_syncdata"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
                     android:ems="30"
                     android:inputType="text"
                     android:maxLines="1"

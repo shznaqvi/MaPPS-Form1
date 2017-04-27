@@ -1,37 +1,30 @@
 package com.mapps.mapps;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.app.Activity;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Member;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class Section2Activity extends Activity {
 
@@ -39,11 +32,8 @@ public class Section2Activity extends Activity {
 
     String spDateT = "";
     String spDateLMP = "";
-
-    private int counter;
-
     MAPPSHelper db = null;
-
+    private int counter;
     private ScrollView scrollView01;
     private TextView appHeader;
     private TextView lbl_s2q1;
@@ -166,7 +156,7 @@ public class Section2Activity extends Activity {
 
         scrollView01 = (ScrollView) findViewById(R.id.ScrollView01);
         appHeader = (TextView) findViewById(R.id.app_header);
-        appHeader.setText("MAPPS -> SECTION 2");
+        //appHeader.setText("MAPPS -> SECTION 2");
 
         lbl_s2q1 = (TextView) findViewById(R.id.lbl_s2q1);
 
@@ -291,7 +281,7 @@ public class Section2Activity extends Activity {
         Collection<Members> lst_m = db1.getAll_Female_Members();
 
         lbl_hhhead_count.setText("Total Members : " + lst_f.size() + lst_m.size());
-        lbl_hhhead_count.setTextColor(Color.RED);
+        lbl_hhhead_count.setTextColor(Color.WHITE);
         s2q15e.setMaxDate(new Date().getTime());
 
 
@@ -603,6 +593,10 @@ public class Section2Activity extends Activity {
         return (EditText) findViewById(R.id.s2q15a);
     }
 
+    public void setS2q15a(EditText s2q15a) {
+        this.s2q15a = s2q15a;
+    }
+
     private DatePicker getS2q15e() {
         return (DatePicker) findViewById(R.id.s2q15e);
     }
@@ -611,8 +605,16 @@ public class Section2Activity extends Activity {
         return (EditText) findViewById(R.id.s2q15fy);
     }
 
+    public void setS2q15fy(EditText s2q15fy) {
+        this.s2q15fy = s2q15fy;
+    }
+
     private EditText getS2q15fm() {
         return (EditText) findViewById(R.id.s2q15fm);
+    }
+
+    public void setS2q15fm(EditText s2q15fm) {
+        this.s2q15fm = s2q15fm;
     }
 
     private EditText getS2q15gest() {
@@ -1267,25 +1269,12 @@ public class Section2Activity extends Activity {
         this.rDOS2q15l12 = rDOS2q15l12;
     }
 
-    public void setS2q15a(EditText s2q15a) {
-        this.s2q15a = s2q15a;
-    }
-
     public EditText getS2q15both() {
         return s2q15both;
     }
 
     public void setS2q15both(EditText s2q15both) {
         this.s2q15both = s2q15both;
-    }
-
-
-    public void setS2q15fy(EditText s2q15fy) {
-        this.s2q15fy = s2q15fy;
-    }
-
-    public void setS2q15fm(EditText s2q15fm) {
-        this.s2q15fm = s2q15fm;
     }
 
     public EditText getS2q15goth() {
@@ -1507,7 +1496,7 @@ public class Section2Activity extends Activity {
                                     ClearFields();
 
                                     lbl_hhhead_count.setText("Total Members : " + db.getAllMembers_GetHouseHold().size());
-                                    lbl_hhhead_count.setTextColor(Color.RED);
+                                    lbl_hhhead_count.setTextColor(Color.WHITE);
 
                                     s2q15a.requestFocus();
 

@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -19,12 +17,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.Normalizer;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
 
 
 /**
@@ -268,7 +261,7 @@ public class SycForms_Sec2 extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         MAPPSHelper db = new MAPPSHelper(mContext);
-        Collection<Section2Contract> Section2 = db.getAllSection2New();
+        Collection<Section2Contract> Section2 = db.getUnsyncedSection2();
         Log.d(TAG, String.valueOf(Section2.size()));
         if (Section2.size() > 0) {
             try {

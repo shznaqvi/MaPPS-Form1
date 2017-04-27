@@ -49,6 +49,9 @@ public class Section2Contract implements BaseColumns {
     String ROW_GPS_LAT = MAPPSApp.GPS_LAT;
     String ROW_GPS_DT = MAPPSApp.GPS_DT;
     String ROW_GPS_ACC = MAPPSApp.GPS_ACC;
+    String synced;
+    String syncDate;
+
 
     Section2Contract(String devid, String s1q1, String s1q2, String s1q3, String s1q4, String s1q5,
                      String s1q6, String s1q7, String s1q8, String s1q9a, String s1q9b, String s1q10,
@@ -517,6 +520,8 @@ public class Section2Contract implements BaseColumns {
         public static final String ROW_GPS_LAT = "GPS_LAT";
         public static final String ROW_GPS_DT = "GPS_DT";
         public static final String ROW_GPS_ACC = "GPS_ACC";
+        public static final String COLUMN_SYNCED = "synced";
+        public static final String COLUMN_SYNC_DATE = "sync_date";
 
         public static String _URL = "syncdata_sec2.php";
     }

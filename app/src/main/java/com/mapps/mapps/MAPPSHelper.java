@@ -7,29 +7,22 @@ import android.database.MatrixCursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.BitmapShader;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.mapps.mapps.UsersContract.singleUser;
 import com.mapps.mapps.FormContract.Sec1Entry;
-import com.mapps.mapps.Section2Contract.Section2Entry;
 import com.mapps.mapps.GetHFContract.GetHFEntry;
 import com.mapps.mapps.GetLHWContract.GetLHWEntry;
+import com.mapps.mapps.Section2Contract.Section2Entry;
+import com.mapps.mapps.Section4Contract.Section4Entry;
+import com.mapps.mapps.UsersContract.singleUser;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
-import java.lang.reflect.Array;
-import java.lang.reflect.Member;
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-
-import com.mapps.mapps.Section4Contract.Section4Entry;
 
 
 /**
@@ -37,21 +30,12 @@ import com.mapps.mapps.Section4Contract.Section4Entry;
  */
 public class MAPPSHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "Sec1";
-    private static final String DATABASE_NAME = "mapps.db";
-    private static final int DATABASE_VERSION = 3;
-
     public static final String SQL_CREATE_USERS = "CREATE TABLE IF NOT EXISTS " + singleUser.TABLE_NAME + "("
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + singleUser.ROW_USERNAME + " TEXT,"
             + singleUser.ROW_PASSWORD + " TEXT,"
             + singleUser.ROW_USERSTATUS + " TEXT,"
             + singleUser.ROW_ISADMIN + " TEXT );";
-
-    private static final String SQL_DELETE_USERS =
-            "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
-
-
     /*******************************
      * Section 1
      ******************************/
@@ -84,13 +68,10 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + Sec1Entry.ROW_GPS_LNG + " TEXT,"
             + Sec1Entry.ROW_GPS_LAT + " TEXT,"
             + Sec1Entry.ROW_GPS_DT + " TEXT,"
+            + Sec1Entry.ROW_GPS_DT + " TEXT,"
+            + Sec1Entry.COLUMN_SYNCED + " TEXT,"
+            + Sec1Entry.COLUMN_SYNC_DATE + " TEXT,"
             + Sec1Entry.ROW_GPS_ACC + " TEXT);";
-
-
-    private static final String SQL_DELETE_SEC1 =
-            "DROP TABLE IF EXISTS " + Sec1Entry.TABLE_NAME;
-
-
     /*******************************
      * Section 2
      ******************************/
@@ -131,13 +112,9 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + Section2Entry.ROW_GPS_LNG + " TEXT,"
             + Section2Entry.ROW_GPS_LAT + " TEXT,"
             + Section2Entry.ROW_GPS_DT + " TEXT,"
+            + Section2Entry.COLUMN_SYNCED + " TEXT,"
+            + Section2Entry.COLUMN_SYNC_DATE + " TEXT,"
             + Section2Entry.ROW_GPS_ACC + " TEXT);";
-
-
-    private static final String SQL_DELETE_SEC2 =
-            "DROP TABLE IF EXISTS " + Section2Entry.TABLE_NAME;
-
-
     /*******************************
      * Section 4
      ******************************/
@@ -172,13 +149,9 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + Section4Entry.ROW_GPS_LNG + " TEXT,"
             + Section4Entry.ROW_GPS_LAT + " TEXT,"
             + Section4Entry.ROW_GPS_DT + " TEXT,"
+            + Section4Entry.COLUMN_SYNCED + " TEXT,"
+            + Section4Entry.COLUMN_SYNC_DATE + " TEXT,"
             + Section4Entry.ROW_GPS_ACC + " TEXT);";
-
-
-    private static final String SQL_DELETE_SEC4 =
-            "DROP TABLE IF EXISTS " + Section4Entry.TABLE_NAME;
-
-
     /*******************************
      * Get Health Facility / Cluster
      ******************************/
@@ -187,8 +160,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
     public static final String SQL_CREATE_HF = "CREATE TABLE IF NOT EXISTS " + GetHFEntry.TABLE_NAME + "("
             + GetHFEntry.ROW_HFCODE + " INTEGER,"
             + GetHFEntry.ROW_HFNAME + " TEXT);";
-
-
     /*******************************
      * Get LHW
      ******************************/
@@ -199,6 +170,17 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + GetLHWEntry.ROW_LHWNAME + " TEXT,"
             + GetLHWEntry.ROW_CLUSTER + " TEXT,"
             + GetLHWEntry.ROW_HCODE + " INTEGER);";
+    private static final String TAG = "Sec1";
+    private static final String DATABASE_NAME = "mapps.db";
+    private static final int DATABASE_VERSION = 3;
+    private static final String SQL_DELETE_USERS =
+            "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
+    private static final String SQL_DELETE_SEC1 =
+            "DROP TABLE IF EXISTS " + Sec1Entry.TABLE_NAME;
+    private static final String SQL_DELETE_SEC2 =
+            "DROP TABLE IF EXISTS " + Section2Entry.TABLE_NAME;
+    private static final String SQL_DELETE_SEC4 =
+            "DROP TABLE IF EXISTS " + Section4Entry.TABLE_NAME;
 
 
     MAPPSHelper(Context context) {
@@ -1116,11 +1098,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 var.set_isadmin(isadmin);
 
 
-                if (status.equals("1")) {
-                    isexists = true;
-                } else {
-                    isexists = false;
-                }
+                isexists = status.equals("1");
             }
         }
 
@@ -1572,59 +1550,128 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         return allFC;
     }
 
-    public void updateForms(String id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//// New value for one column
-//        ContentValues values = new ContentValues();
-//        values.put(Sec1Entry.COLUMN_SYNCED, true);
-//        values.put(Sec1Entry.COLUMN_SYNCED_DATE, new Date().toString());
-//
-//// Which row to update, based on the title
-//        String where = Sec1Entry._ID + " LIKE ?";
-//        String[] whereArgs = {id};
-//
-//        int count = db.update(
-//                Sec1Entry.TABLE_NAME,
-//                values,
-//                where,
-//                whereArgs);
+    public Collection<FormContract> getUnsyncedForms() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Sec1Entry._ID,
+                Sec1Entry.ROW_DEVID,
+                Sec1Entry.ROW_FORM_ID,
+                Sec1Entry.ROW_S1Q1,
+                Sec1Entry.ROW_S1Q2,
+                Sec1Entry.ROW_S1Q3,
+                Sec1Entry.ROW_S1Q4,
+                Sec1Entry.ROW_S1Q5,
+                Sec1Entry.ROW_S1Q6,
+                Sec1Entry.ROW_S1Q7,
+                Sec1Entry.ROW_S1Q8,
+                Sec1Entry.ROW_S1Q9a,
+                Sec1Entry.ROW_S1Q9b,
+                Sec1Entry.ROW_S1Q10,
+                Sec1Entry.ROW_S1Q11,
+                Sec1Entry.ROW_S1Q12,
+                Sec1Entry.ROW_S1Q13,
+                Sec1Entry.ROW_S1Q14,
+                Sec1Entry.ROW_USERID,
+                Sec1Entry.ROW_ENTRYDATE,
+                Sec1Entry.ROW_S3,
+                Sec1Entry.ROW_S4,
+                Sec1Entry.ROW_S5,
+                Sec1Entry.ROW_UUID,
+                Sec1Entry.ROW_GPS_LNG,
+                Sec1Entry.ROW_GPS_LAT,
+                Sec1Entry.ROW_GPS_DT,
+                Sec1Entry.ROW_GPS_ACC
+
+        };
+        String whereClause = Sec1Entry.COLUMN_SYNCED + " is null OR " + Sec1Entry.COLUMN_SYNCED + " = ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                Sec1Entry._ID + " ASC";
+
+        Collection<FormContract> allFC = new ArrayList<>();
+        try {
+            c = db.query(
+                    Sec1Entry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                FormContract fc = new FormContract();
+                allFC.add(fc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allFC;
     }
+
+    public void updateForms(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Sec1Entry.COLUMN_SYNCED, true);
+        values.put(Sec1Entry.COLUMN_SYNC_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Sec1Entry._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Sec1Entry.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
+    }
+
     public void updateSection4(String id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//// New value for one column
-//        ContentValues values = new ContentValues();
-//        values.put(Sec1Entry.COLUMN_SYNCED, true);
-//        values.put(Sec1Entry.COLUMN_SYNCED_DATE, new Date().toString());
-//
-//// Which row to update, based on the title
-//        String where = Sec1Entry._ID + " LIKE ?";
-//        String[] whereArgs = {id};
-//
-//        int count = db.update(
-//                Sec1Entry.TABLE_NAME,
-//                values,
-//                where,
-//                whereArgs);
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Section4Entry.COLUMN_SYNCED, true);
+        values.put(Section4Entry.COLUMN_SYNC_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Section4Entry._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Section4Entry.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
     }
     public void updateSection2(String id) {
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//// New value for one column
-//        ContentValues values = new ContentValues();
-//        values.put(Sec1Entry.COLUMN_SYNCED, true);
-//        values.put(Sec1Entry.COLUMN_SYNCED_DATE, new Date().toString());
-//
-//// Which row to update, based on the title
-//        String where = Sec1Entry._ID + " LIKE ?";
-//        String[] whereArgs = {id};
-//
-//        int count = db.update(
-//                Sec1Entry.TABLE_NAME,
-//                values,
-//                where,
-//                whereArgs);
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Section2Entry.COLUMN_SYNCED, true);
+        values.put(Section2Entry.COLUMN_SYNC_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = Section2Entry._ID + " LIKE ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                Section2Entry.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
     }
 
 
@@ -1946,6 +1993,82 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         return allSC2;
     }
 
+    public Collection<Section2Contract> getUnsyncedSection2() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Section2Entry._ID,
+                Section2Entry.ROW_DEVID,
+                Section2Entry.ROW_S2CLUSTER,
+                Section2Entry.ROW_S2LHW,
+                Section2Entry.ROW_S2HH,
+                Section2Entry.ROW_SNO,
+                Section2Entry.ROW_S2Q1,
+                Section2Entry.ROW_S2Q15a,
+                Section2Entry.ROW_S2Q15i,
+                Section2Entry.ROW_S2Q15b,
+                Section2Entry.ROW_S2Q15both,
+                Section2Entry.ROW_S2Q15cf,
+                Section2Entry.ROW_S2Q15cm,
+                Section2Entry.ROW_S2Q15d,
+                Section2Entry.ROW_S2Q15e1,
+                Section2Entry.ROW_S2Q15e,
+                Section2Entry.ROW_S2Q15fy,
+                Section2Entry.ROW_S2Q15fm,
+                Section2Entry.ROW_fy,
+                Section2Entry.ROW_fm,
+                Section2Entry.ROW_S2Q15g,
+                Section2Entry.ROW_S2Q15goth,
+                Section2Entry.ROW_S2Q15h,
+                Section2Entry.ROW_S2Q15hoth,
+                Section2Entry.ROW_S2Q15j,
+                Section2Entry.ROW_S2Q15joth,
+                Section2Entry.ROW_S2Q15k,
+                Section2Entry.ROW_S2Q15l1,
+                Section2Entry.ROW_S2Q15lmp,
+                Section2Entry.ROW_S2Q15gest,
+                Section2Entry.ROW_iselig,
+                Section2Entry.ROW_UUID,
+                Section2Entry.ROW_GPS_LNG,
+                Section2Entry.ROW_GPS_LAT,
+                Section2Entry.ROW_GPS_DT,
+                Section2Entry.ROW_GPS_ACC,
+
+        };
+        String whereClause = Section2Entry.COLUMN_SYNCED + " is null OR " + Section2Entry.COLUMN_SYNCED + " = ''";
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                Section2Entry._ID + " ASC";
+
+        Collection<Section2Contract> allSC2 = new ArrayList<Section2Contract>();
+        try {
+            c = db.query(
+                    Section2Entry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Section2Contract sc2 = new Section2Contract();
+                allSC2.add(sc2.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allSC2;
+    }
+
 
     public List<Section4Contract> getAllForms_Sec4() {
 
@@ -2207,6 +2330,77 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
         };
         String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy =
+                Section4Entry._ID + " ASC";
+
+        Collection<Section4Contract> allSec4 = new ArrayList<Section4Contract>();
+        try {
+            c = db.query(
+                    Section4Entry.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                Section4Contract fc = new Section4Contract();
+                allSec4.add(fc.hydrate(c));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allSec4;
+    }
+
+    public Collection<Section4Contract> getUnsyncedSection4() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                Section4Entry._ID,
+                Section4Entry.ROW_DEVID,
+                Section4Entry.ROW_S4CLUSTER,
+                Section4Entry.ROW_S4LHW,
+                Section4Entry.ROW_S4HH,
+                Section4Entry.ROW_S4Q1,
+                Section4Entry.ROW_SNO,
+                Section4Entry.ROW_S4Q28a,
+                Section4Entry.ROW_S4Q28b,
+                Section4Entry.ROW_S4Q28c,
+                Section4Entry.ROW_S4Q28d,
+                Section4Entry.ROW_S4Q28oth,
+                Section4Entry.ROW_S4Q28e,
+                Section4Entry.ROW_S4Q28f,
+                Section4Entry.ROW_S4Q28f1,
+                Section4Entry.ROW_S4Q28f2,
+                Section4Entry.ROW_S4Q28f3,
+                Section4Entry.ROW_S4Q28f4,
+                Section4Entry.ROW_S4Q28f5,
+                Section4Entry.ROW_S4Q28f6,
+                Section4Entry.ROW_S4Q28f7,
+                Section4Entry.ROW_S4Q28f8,
+                Section4Entry.ROW_S4Q28f9,
+                Section4Entry.ROW_S4Q28g,
+                Section4Entry.ROW_S4Q28h,
+                Section4Entry.ROW_UUID,
+                Section4Entry.ROW_GPS_LNG,
+                Section4Entry.ROW_GPS_LAT,
+                Section4Entry.ROW_GPS_DT,
+                Section4Entry.ROW_GPS_ACC
+
+
+        };
+        String whereClause = Section4Entry.COLUMN_SYNCED + " is null OR " + Section4Entry.COLUMN_SYNCED + " = ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;

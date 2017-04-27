@@ -4,9 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import com.mapps.mapps.Section4Contract.Section4Entry;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,14 +19,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.Normalizer;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
-
-import com.mapps.mapps.Section4Contract.*;
 
 /**
  * Created by isd on 05/11/2016.
@@ -266,7 +259,7 @@ public class SyncForms_Sec4 extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         MAPPSHelper db = new MAPPSHelper(mContext);
-        Collection<Section4Contract> Section4 = db.getAllSection4New();
+        Collection<Section4Contract> Section4 = db.getUnsyncedSection4();
         Log.d(TAG, String.valueOf(Section4.size()));
         if (Section4.size() > 0) {
             try {

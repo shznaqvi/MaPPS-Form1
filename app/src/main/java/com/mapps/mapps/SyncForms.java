@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.mapps.mapps.FormContract.Sec1Entry;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,8 +20,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
-
-import com.mapps.mapps.FormContract.*;
 
 /**
  * Created by isd on 05/11/2016.
@@ -261,7 +261,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         // web page content.
         //int len = 500;
         MAPPSHelper db = new MAPPSHelper(mContext);
-        Collection<FormContract> forms = db.getAllFormsNew();
+        Collection<FormContract> forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {

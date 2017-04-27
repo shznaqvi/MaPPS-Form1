@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_grad"
-    tools:context="com.mapps.mapps.MainActivity">
+    tools:context="com.mapps.mapps.activities.MainActivity">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ScrollView01"
@@ -24,7 +24,7 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            tools:context="com.mapps.mapps.MainActivity">
+            tools:context="com.mapps.mapps.activities.MainActivity">
 
             <Button
                 style="@style/btn"

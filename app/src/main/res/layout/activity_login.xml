@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_grad"
-    tools:context="com.mapps.mapps.LoginActivity">
+    tools:context="com.mapps.mapps.activities.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -76,17 +76,17 @@
                 android:id="@+id/vu_syncusers"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/lblurl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:text="@string/urlusers" />
+                    android:text="SYNC DATA" />
 
                 <EditText
+                    android:visibility="gone"
                     android:id="@+id/txturl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,11 +99,12 @@
                     android:singleLine="true" />
 
                 <Button
+                    android:visibility="visible"
                     android:id="@+id/btnSynchUsers"
                     style="@style/btn"
                     android:layout_marginTop="20dp"
                     android:onClick="SyncUsers"
-                    android:text="Sync Users" />
+                    android:text="Sync" />
 
             </LinearLayout>
         </LinearLayout>

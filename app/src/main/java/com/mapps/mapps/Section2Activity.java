@@ -31,7 +31,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Section2Activity extends Activity {
 
@@ -41,6 +43,9 @@ public class Section2Activity extends Activity {
     String spDateLMP = "";
 
     private int counter;
+
+    Map<String,String> maleMem;
+    Map<String,String> femMem;
 
     MAPPSHelper db = null;
 
@@ -551,20 +556,23 @@ public class Section2Activity extends Activity {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
                 // TODO Auto-generated method stub
 
-                String item = ddlmembers_cf.getSelectedItem().toString();
+//                String item = ddlmembers_cf.getSelectedItem().toString();
+//
+//                Collection<Members> member = db.getAllMembers_GetID(item);
+//
+//                ArrayList<String> arr_members = new ArrayList<>();
+//
+//                CVars var = new CVars();
+//
+//                for (Members m : member) {
+//                    arr_members.add(
+//                            m.getID());
+//
+//                    var.StoreQ15fid(m.getID());
+//                }
 
-                Collection<Members> member = db.getAllMembers_GetID(item);
+                var.StoreQ15fid(maleMem.get(ddlmembers_cf.getSelectedItem().toString()));
 
-                ArrayList<String> arr_members = new ArrayList<>();
-
-                CVars var = new CVars();
-
-                for (Members m : member) {
-                    arr_members.add(
-                            m.getID());
-
-                    var.StoreQ15fid(m.getID());
-                }
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -577,19 +585,21 @@ public class Section2Activity extends Activity {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
                 // TODO Auto-generated method stub
 
-                String item = ddlmembers_cm.getSelectedItem().toString();
-                Collection<Members> member = db.getAllMembers_GetID(item);
+//                String item = ddlmembers_cm.getSelectedItem().toString();
+//                Collection<Members> member = db.getAllMembers_GetID(item);
+//
+//                ArrayList<String> arr_members = new ArrayList<>();
+//
+//                CVars var = new CVars();
+//
+//                for (Members m : member) {
+//                    arr_members.add(
+//                            m.getID());
+//
+//                    var.StoreQ15mid(m.getID());
+//                }
 
-                ArrayList<String> arr_members = new ArrayList<>();
-
-                CVars var = new CVars();
-
-                for (Members m : member) {
-                    arr_members.add(
-                            m.getID());
-
-                    var.StoreQ15mid(m.getID());
-                }
+                var.StoreQ15mid(femMem.get(ddlmembers_cm.getSelectedItem().toString()));
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -1452,12 +1462,17 @@ public class Section2Activity extends Activity {
 
                                     Collection<Members> members = db.getAll_Male_Members();
 
+                                    maleMem = new HashMap<>();
+
                                     if (members.size() > 0) {
                                         vu_s2q15cf.setVisibility(View.VISIBLE);
 
                                         ArrayList<String> arr_members = new ArrayList<>();
 
                                         for (Members m : members) {
+
+                                            maleMem.put(m.getNME(),m.getID());
+
                                             arr_members.add(
                                                     m.getNME());
                                         }
@@ -1479,9 +1494,14 @@ public class Section2Activity extends Activity {
                                     if (members.size() > 0) {
                                         vu_s2q15cm.setVisibility(View.VISIBLE);
 
+                                        femMem = new HashMap<>();
+
                                         ArrayList<String> arr_members = new ArrayList<>();
 
                                         for (Members m : members) {
+
+                                            femMem.put(m.getNME(),m.getID());
+
                                             arr_members.add(
                                                     m.getNME());
                                         }

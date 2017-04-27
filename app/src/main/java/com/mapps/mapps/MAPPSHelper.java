@@ -68,7 +68,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + Sec1Entry.ROW_GPS_LNG + " TEXT,"
             + Sec1Entry.ROW_GPS_LAT + " TEXT,"
             + Sec1Entry.ROW_GPS_DT + " TEXT,"
-            + Sec1Entry.ROW_GPS_DT + " TEXT,"
             + Sec1Entry.COLUMN_SYNCED + " TEXT,"
             + Sec1Entry.COLUMN_SYNC_DATE + " TEXT,"
             + Sec1Entry.ROW_GPS_ACC + " TEXT);";

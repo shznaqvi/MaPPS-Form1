@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.mapps.mapps.core.AndroidDatabaseManager;
 import com.mapps.mapps.R;
+import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.syncClasses.SycForms_Sec2;
 import com.mapps.mapps.syncClasses.SyncForms;
 import com.mapps.mapps.syncClasses.SyncForms_Sec4;
@@ -30,10 +31,17 @@ public class MainActivity extends Activity {
 
     public void syncData(View v) {
 
-        Toast.makeText(getApplicationContext(), "http://10.198.97.9/mappsweb/syncdata.php", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), MAPPSApp._HOST_URL + "syncdata.php", Toast.LENGTH_LONG).show();
+        SyncForms sec1 = new SyncForms(this);
+        sec1.execute();
 
-        SyncForms ff = new SyncForms(this);
-        ff.execute();
+        Toast.makeText(getApplicationContext(), MAPPSApp._HOST_URL + "syncdata_sec2.php", Toast.LENGTH_LONG).show();
+        SycForms_Sec2 sec2 = new SycForms_Sec2(this);
+        sec2.execute();
+
+        Toast.makeText(getApplicationContext(), MAPPSApp._HOST_URL + "syncdata_sec4.php", Toast.LENGTH_LONG).show();
+        SyncForms_Sec4 sec4 = new SyncForms_Sec4(this);
+        sec4.execute();
 
         //Intent dbmanager = new Intent(getApplicationContext(), SyncStatus.class);
         //startActivity(dbmanager);

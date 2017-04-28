@@ -30,7 +30,7 @@
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="OpenDB"
-                android:text="OpenDatabaseManager" />
+                android:text="Open Database Manager" />
 
             <LinearLayout
                 android:id="@+id/vu_syncusers"
@@ -62,19 +62,21 @@
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="syncData"
-                android:text="Sync Data - Section 1 and 3" />
+                android:text="Sync Data" />
 
             <Button
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="syncData_Sec2"
-                android:text="Sync Data Section - 2" />
+                android:text="Sync Data Section - 2"
+                android:visibility="gone" />
 
             <Button
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="syncData_Sec4"
-                android:text="Sync Data Section - 4" />
+                android:text="Sync Data Section - 4"
+                android:visibility="gone" />
 
         </LinearLayout>
 

@@ -208,10 +208,10 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        pd = new ProgressDialog(mContext);
-        pd.setTitle("Please wait... Processing Forms");
-        pd.show();
 
+        pd = new ProgressDialog(mContext);
+        pd.setTitle("Please wait... Processing Section 1");
+        pd.show();
     }
 
 

@@ -453,7 +453,10 @@ public class Section1Activity extends Activity {
         CVars var = new CVars();
         var.set_myid(MAPPSApp.fc.get_ID());
 
-        MAPPSApp.fc.setROW_UID(MAPPSApp.DEVID + MAPPSApp.fc.get_ID());
+//        MAPPSApp.fc.setROW_UID(MAPPSApp.DEVID + MAPPSApp.fc.get_ID());
+
+        db.updateFormID();
+
         return true;
     }
 
@@ -531,7 +534,7 @@ public class Section1Activity extends Activity {
 
         MAPPSApp.fc.setROW_S1Q13(var_s1q13);
 
-        //MAPPSApp.fc.setROW_UID(MAPPSApp.DEVID + s1q1.getText().toString());
+//        MAPPSApp.fc.setROW_UID(MAPPSApp.DEVID + s1q1.getText().toString());
 
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Date dt = new Date();
@@ -539,8 +542,9 @@ public class Section1Activity extends Activity {
 
         MAPPSApp.fc.setROW_ENTRYDATE(dt1);
 
-        CVars var1 = new CVars();
-        MAPPSApp.fc.setROW_USERID(var1.GetUser());
+//        CVars var1 = new CVars();
+//        MAPPSApp.fc.setROW_USERID(var1.GetUser());
+        MAPPSApp.fc.setROW_USERID(MAPPSApp.user[1]);
 
         setGPS();
 

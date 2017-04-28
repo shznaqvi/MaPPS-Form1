@@ -1177,6 +1177,25 @@ public class MAPPSHelper extends SQLiteOpenHelper {
     }
 
 
+    public int updateFormID() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(Sec1Entry.ROW_UUID, MAPPSApp.fc.getROW_UID());
+
+// Which row to update, based on the ID
+        String selection = Sec1Entry._ID + " LIKE ?";
+        String[] selectionArgs = {String.valueOf(MAPPSApp.fc.get_ID())};
+
+        int count = db.update(Sec1Entry.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+
     /*****************************
      * Section 2
      ***************************/

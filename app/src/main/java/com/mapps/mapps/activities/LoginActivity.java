@@ -1,11 +1,10 @@
 package com.mapps.mapps.activities;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -17,16 +16,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mapps.mapps.core.CVars;
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 import com.mapps.mapps.R;
 import com.mapps.mapps.contracts.UsersContract;
+import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
 import com.mapps.mapps.getClasses.GetHF;
 import com.mapps.mapps.getClasses.GetLHW;
 import com.mapps.mapps.getClasses.GetUsers;
-
-import java.util.ArrayList;
 
 
 public class LoginActivity extends Activity {
@@ -70,11 +70,7 @@ public class LoginActivity extends Activity {
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    //attemptLogin();
-                    return true;
-                }
-                return false;
+                return id == R.id.login || id == EditorInfo.IME_NULL;
             }
         });
 
@@ -105,6 +101,19 @@ public class LoginActivity extends Activity {
                         dialog.cancel();
                     }
                 });
+
+
+        Target viewTarget = new ViewTarget(R.id.btnSynchUsers, this);
+
+        new ShowcaseView.Builder(this)
+                .setTarget(viewTarget)
+                .setContentTitle("Sync please!")
+                .setContentText("Please sync Users and Data first!")
+                .singleShot(42)
+                .build();
+
+
+
     }
 
 

@@ -2008,11 +2008,16 @@ public class Section2Activity extends Activity {
         MAPPSApp.sc.setROW_S2Q15gest(getS2q15gest().getText().toString());
 
 
-        if (Integer.parseInt(vars.GetAgeYY()) < 14 || Integer.parseInt(vars.GetAgeYY()) > 22) {
-            MAPPSApp.sc.setROW_iselig("2");
+        if (var_s2q15i == "2") {
+            if (Integer.parseInt(vars.GetAgeYY()) < 14 || Integer.parseInt(vars.GetAgeYY()) > 22) {
+                MAPPSApp.sc.setROW_iselig("2");
+            } else {
+                MAPPSApp.sc.setROW_iselig("1");
+            }
         } else {
-            MAPPSApp.sc.setROW_iselig("1");
+            MAPPSApp.sc.setROW_iselig("2");
         }
+
 
         return true;
     }
@@ -2127,7 +2132,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15e1.equals("2")  && getS2q15fm().getText().toString().isEmpty()) {
+        if (var_s2q15e1.equals("2") && getS2q15fm().getText().toString().isEmpty()) {
             s2q15fm.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter age in months \r\n", Toast.LENGTH_LONG).show();
             s2q15fm.requestFocus();
@@ -2156,7 +2161,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15g.equals("13")  && getS2q15goth().getText().toString().isEmpty()) {
+        if (var_s2q15g.equals("13") && getS2q15goth().getText().toString().isEmpty()) {
             s2q15goth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other educational level \r\n", Toast.LENGTH_LONG).show();
             s2q15goth.requestFocus();
@@ -2185,7 +2190,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15h.equals("11")  && getS2q15hoth().getText().toString().isEmpty()) {
+        if (var_s2q15h.equals("11") && getS2q15hoth().getText().toString().isEmpty()) {
             s2q15hoth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other occupation \r\n", Toast.LENGTH_LONG).show();
             s2q15hoth.requestFocus();
@@ -2227,7 +2232,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15j.equals("5")  && getS2q15joth().getText().toString().isEmpty()) {
+        if (var_s2q15j.equals("5") && getS2q15joth().getText().toString().isEmpty()) {
             s2q15joth.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please specify other marital status \r\n", Toast.LENGTH_LONG).show();
             s2q15joth.requestFocus();
@@ -2251,7 +2256,7 @@ public class Section2Activity extends Activity {
                 break;
         }
 
-        if (var_s2q15j.equals("2")  || var_s2q15j.equals("3") || var_s2q15j.equals("4") ) {
+        if (var_s2q15j.equals("2") || var_s2q15j.equals("3") || var_s2q15j.equals("4")) {
 
             if (var_s2q15i.equals("2") && rdo_s2q15k == -1) {
                 rDOS2q15k1.setError(getString(R.string.rdoterr));
@@ -2278,7 +2283,7 @@ public class Section2Activity extends Activity {
         }
 
 
-        if (var_s2q15j.equals("2")  || var_s2q15j.equals("3") || var_s2q15j.equals("4")) {
+        if (var_s2q15j.equals("2") || var_s2q15j.equals("3") || var_s2q15j.equals("4")) {
 
             if (var_s2q15b.equals("1")) {
 

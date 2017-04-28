@@ -835,7 +835,7 @@ public class Section3Activity extends Activity {
             }
 
             js.put("s3q24", var_s3q24);
-            js.put("s3q25", s3q25.getText().toString());
+            js.put("s3q25", String.valueOf(Double.parseDouble(s3q25.getText().toString())));
 
 
             switch (radioS3q26.getCheckedRadioButtonId()) {
@@ -1177,9 +1177,11 @@ public class Section3Activity extends Activity {
                 Double.parseDouble(s3q25.getText().toString()) > 36) && Double.parseDouble(s3q25.getText().toString()) != 99) {
             Toast.makeText(getApplicationContext(), "Distance in KM must be between 00.0 - 36.0 or 99.9 dont know (Format of value 00.0) ", Toast.LENGTH_LONG).show();
             s3q25.requestFocus();
+            s3q25.setError("Range 0-36 or 99");
             return false;
+        } else {
+            s3q25.setError(null);
         }
-
 
         rdo_s3q26 = radioS3q26.getCheckedRadioButtonId();
 

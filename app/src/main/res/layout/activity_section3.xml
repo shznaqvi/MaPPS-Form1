@@ -587,6 +587,7 @@
                 android:text="@string/baseline_s3q25" />
 
             <EditText
+                android:layoutDirection="ltr"
                 android:id="@+id/s3q25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

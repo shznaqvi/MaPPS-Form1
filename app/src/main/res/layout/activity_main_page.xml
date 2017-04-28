@@ -72,7 +72,8 @@
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="OpenGetHF"
-                android:text="@string/btnGetHF" />
+                android:text="@string/btnGetHF"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/vu_opendb"

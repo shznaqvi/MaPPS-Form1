@@ -83,10 +83,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:text="SYNC DATA" />
+                    android:text="SYNC USERS / HF / LHW" />
 
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/txturl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,15 +95,16 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="text"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:visibility="gone" />
 
                 <Button
-                    android:visibility="visible"
                     android:id="@+id/btnSynchUsers"
                     style="@style/btn"
                     android:layout_marginTop="20dp"
                     android:onClick="SyncUsers"
-                    android:text="Sync" />
+                    android:text="Sync"
+                    android:visibility="visible" />
 
             </LinearLayout>
         </LinearLayout>

@@ -32,7 +32,7 @@ public class MAPPSApp extends Application {
 
     //public static final String _IP = "192.168.1.10"; // Test NODE server
 //    public static final String _IP = "10.198.96.103"; // Test PHP server
-    public static final String _IP = "10.1.42.121"; // Test PHP server
+    public static final String _IP = "10.1.42.65"; // Test PHP server
     //    public static final Integer _PORT = 80; // Port - with colon (:)
     public static final Integer _PORT = 8080; // Port - with colon (:)
     //    public static final String _HOST_URL = "10.198.96.103:8080";

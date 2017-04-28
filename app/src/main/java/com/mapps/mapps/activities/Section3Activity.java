@@ -1173,6 +1173,13 @@ public class Section3Activity extends Activity {
             s3q25.setError(null);
         }
 
+        if ((Double.parseDouble(s3q25.getText().toString()) < 0 ||
+                Double.parseDouble(s3q25.getText().toString()) > 36) && Double.parseDouble(s3q25.getText().toString()) != 99) {
+            Toast.makeText(getApplicationContext(), "Distance in KM must be between 00.0 - 36.0 or 99.9 dont know (Format of value 00.0) ", Toast.LENGTH_LONG).show();
+            s3q25.requestFocus();
+            return false;
+        }
+
 
         rdo_s3q26 = radioS3q26.getCheckedRadioButtonId();
 
@@ -1284,26 +1291,26 @@ public class Section3Activity extends Activity {
         }
 
 
-        if (s3q25.getText().toString().isEmpty()) {
-
-        } else {
-
-            if (s3q25.length() != 4) {
-                Toast.makeText(getApplicationContext(), "Distance must be in format 99.9 ", Toast.LENGTH_LONG).show();
-                s3q25.requestFocus();
-                return false;
-            } else {
-                if (Double.parseDouble(s3q25.getText().toString()) == 99.9) {
-                } else {
-                    if (Double.parseDouble(s3q25.getText().toString()) < 00.0 ||
-                            Double.parseDouble(s3q25.getText().toString()) > 36.0) {
-                        Toast.makeText(getApplicationContext(), "Distance in KM must be between 00.0 - 36.0 or 99.9 dont know (Format of value 00.0) ", Toast.LENGTH_LONG).show();
-                        s3q25.requestFocus();
-                        return false;
-                    }
-                }
-            }
-        }
+//        if (s3q25.getText().toString().isEmpty()) {
+//
+//        } else {
+//
+//            if (s3q25.length() != 4) {
+//                Toast.makeText(getApplicationContext(), "Distance must be in format 99.9 ", Toast.LENGTH_LONG).show();
+//                s3q25.requestFocus();
+//                return false;
+//            } else {
+//                if (Double.parseDouble(s3q25.getText().toString()) == 99.9) {
+//                } else {
+//                    if (Double.parseDouble(s3q25.getText().toString()) < 00.0 ||
+//                            Double.parseDouble(s3q25.getText().toString()) > 36.0) {
+//                        Toast.makeText(getApplicationContext(), "Distance in KM must be between 00.0 - 36.0 or 99.9 dont know (Format of value 00.0) ", Toast.LENGTH_LONG).show();
+//                        s3q25.requestFocus();
+//                        return false;
+//                    }
+//                }
+//            }
+//        }
 
 
         return true;

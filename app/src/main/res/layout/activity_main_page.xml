@@ -8,17 +8,16 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/ScrollView01"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:background="#d6d6d6"
         android:scrollbars="horizontal">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/activity_main_page"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/background_grad"
             android:orientation="vertical"
             android:paddingBottom="@dimen/activity_vertical_margin"
@@ -32,12 +31,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />
 
-            <Button
+            <!--<Button
                 android:id="@+id/btnOpenForm"
                 style="@style/btn"
                 android:layout_marginTop="20dp"
                 android:onClick="OpenForm"
-                android:text="@string/btnOpenForm" />
+                android:text="@string/btnOpenForm" />-->
+
+            <Button
+                android:id="@+id/btnOpenForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btnshape"
+                android:gravity="center"
+                android:onClick="OpenForm"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="Form Open"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,19 +95,41 @@
             <LinearLayout
                 android:id="@+id/vu_opendb"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:visibility="gone">
 
-                <Button
+                <!--<Button
                     android:id="@+id/btnDBAccess"
                     style="@style/btn"
                     android:layout_marginTop="20dp"
                     android:onClick="OpenDBAccess"
+                    android:text="@string/btnDBAccess" />-->
                     android:text="@string/btnDBAccess" />
 
 
             </LinearLayout>
 
+                <Button
+                    android:id="@+id/btnDBAccess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btnshape"
+                    android:gravity="center"
+                    android:onClick="OpenDBAccess"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:text="@string/btnDBAccess"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
+
+            <!--<Button
             <Button
                 android:id="@+id/testGPS"
                 style="@style/btn"
@@ -103,6 +142,24 @@
                 android:layout_marginTop="20dp"
                 android:onClick="Logout"
                 android:text="@string/btnLogout" />
+-->
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/btnshape"
+                android:gravity="center"
+                android:onClick="Logout"
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="@string/btnLogout"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
 
         </LinearLayout>
     </ScrollView>

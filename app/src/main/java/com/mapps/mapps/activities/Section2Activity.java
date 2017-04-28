@@ -3,7 +3,6 @@ package com.mapps.mapps.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -1503,7 +1502,7 @@ public class Section2Activity extends Activity {
                                     ClearFields();
 
                                     lbl_hhhead_count.setText("Total Members : " + db.getAllMembers_GetHouseHold().size());
-                                    lbl_hhhead_count.setTextColor(Color.WHITE);
+                                    lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                                     s2q15a.requestFocus();
 

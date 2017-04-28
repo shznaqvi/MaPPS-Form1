@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -475,12 +474,16 @@ public class Section4Activity extends Activity {
                     }
 
                     lbl_hhhead_count.setText("Total Members : " + members.size());
-                    lbl_hhhead_count.setTextColor(Color.RED);
+                    lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
+                    fldGrpParticipant.setVisibility(View.VISIBLE);
 
                     if (arr_members.size() > counter) {
+                        //fldGrpParticipant.setVisibility(View.GONE);
                         lbl_s4q28a.setText(arr_members.get(counter));
-                        lbl_s4q28a.setTextColor(Color.RED);
+                        lbl_s4q28a.setTextColor(getResources().getColor(R.color.colorPrimary));
                     } else {
+                        fldGrpParticipant.setVisibility(View.GONE);
+                        btnnext.setVisibility(View.GONE);
                         btnnext.setEnabled(false);
 
                         radioS1q14.setEnabled(true);

@@ -196,7 +196,7 @@ public class Section4Activity extends Activity {
         }
 
         lbl_hhhead_count.setText("Total Number : " + members.size());
-        lbl_hhhead_count.setTextColor(Color.WHITE);
+        lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
 
         arr_members = new ArrayList<>();
 
@@ -211,7 +211,7 @@ public class Section4Activity extends Activity {
         if (members.size() > 0) {
             fldGrpParticipant.setVisibility(View.VISIBLE);
             lbl_s4q28a.setText(arr_members.get(counter));
-            lbl_s4q28a.setTextColor(Color.WHITE);
+            lbl_s4q28a.setTextColor(getResources().getColor(R.color.colorPrimary));
 
             radioS4q28c.setEnabled(true);
             radioS4q28d.setEnabled(true);

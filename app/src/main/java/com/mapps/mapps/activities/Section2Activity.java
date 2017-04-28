@@ -20,12 +20,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mapps.mapps.core.CVars;
-import com.mapps.mapps.otherClasses.Members;
 import com.mapps.mapps.R;
 import com.mapps.mapps.contracts.Section2Contract;
+import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
+import com.mapps.mapps.otherClasses.Members;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -288,7 +288,7 @@ public class Section2Activity extends Activity {
         Collection<Members> lst_m = db1.getAll_Female_Members();
 
         lbl_hhhead_count.setText("Total Members : " + lst_f.size() + lst_m.size());
-        lbl_hhhead_count.setTextColor(Color.WHITE);
+        lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
         s2q15e.setMaxDate(new Date().getTime());
 
 

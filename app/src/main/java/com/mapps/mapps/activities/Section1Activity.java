@@ -262,13 +262,13 @@ public class Section1Activity extends Activity {
         return (EditText) findViewById(R.id.s1q8);
     }
 
-    private EditText getS1q9a() {
-        return (EditText) findViewById(R.id.s1q9a);
-    }
+//    private EditText getS1q9a() {
+//        return (EditText) findViewById(R.id.s1q9a);
+//    }
 
-    private EditText getS1q9b() {
-        return (EditText) findViewById(R.id.s1q9b);
-    }
+//    private EditText getS1q9b() {
+//        return (EditText) findViewById(R.id.s1q9b);
+//    }
 
 
     public TextView getLblS1q1() {

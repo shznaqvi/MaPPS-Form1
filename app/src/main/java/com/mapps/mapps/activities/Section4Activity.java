@@ -18,12 +18,12 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mapps.mapps.core.CVars;
-import com.mapps.mapps.otherClasses.Members;
 import com.mapps.mapps.R;
 import com.mapps.mapps.contracts.Section4Contract;
+import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
+import com.mapps.mapps.otherClasses.Members;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -98,6 +98,7 @@ public class Section4Activity extends Activity {
     private CheckBox chk_s3q28f_8;
     private CheckBox chk_s3q28f_9;
     private int counter;
+    private LinearLayout fldGrpParticipant;
 
 
     @Override
@@ -106,6 +107,7 @@ public class Section4Activity extends Activity {
         setContentView(R.layout.activity_section4);
 
         scrollView01 = (ScrollView) findViewById(R.id.ScrollView01);
+        fldGrpParticipant = (LinearLayout) findViewById(R.id.fldGrpParticipant);
         appHeader = (TextView) findViewById(R.id.app_header);
         lblHhhead = (TextView) findViewById(R.id.lbl_hhhead);
         lblS4q1 = (TextView) findViewById(R.id.lbl_s4q1);
@@ -173,6 +175,7 @@ public class Section4Activity extends Activity {
         members = db.getAll_Female_Members14_24();
 
         if (members.size() == 0) {
+            fldGrpParticipant.setVisibility(View.GONE);
             rDOS4q28c1.setEnabled(false);
             rDOS4q28c2.setEnabled(false);
 
@@ -206,6 +209,7 @@ public class Section4Activity extends Activity {
         counter = 0;
 
         if (members.size() > 0) {
+            fldGrpParticipant.setVisibility(View.VISIBLE);
             lbl_s4q28a.setText(arr_members.get(counter));
             lbl_s4q28a.setTextColor(Color.WHITE);
 

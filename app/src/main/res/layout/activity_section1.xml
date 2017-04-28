@@ -167,70 +167,70 @@
                 android:inputType="number"
                 android:maxLength="11" />
 
-            <TextView
-                android:id="@+id/lbl_s1q9a"
-                style="@style/txtquestion"
-                android:layout_marginTop="16dp"
-                android:text="@string/baseline_s1q9a" />
+            <!--<TextView-->
+                <!--android:id="@+id/lbl_s1q9a"-->
+                <!--style="@style/txtquestion"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="@string/baseline_s1q9a" />-->
 
-            <EditText
-                android:id="@+id/s1q9a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
-                android:ems="10"
-                android:hint="@string/baseline_s1q9a"
-                android:inputType="textCapWords" />
+            <!--<EditText-->
+                <!--android:id="@+id/s1q9a"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"-->
+                <!--android:ems="10"-->
+                <!--android:hint="@string/baseline_s1q9a"-->
+                <!--android:inputType="textCapWords" />-->
 
-            <TextView
-                android:id="@+id/lbl_s1q9b"
-                style="@style/txtquestion"
-                android:layout_marginTop="16dp"
-                android:text="@string/baseline_s1q9b" />
+            <!--<TextView-->
+                <!--android:id="@+id/lbl_s1q9b"-->
+                <!--style="@style/txtquestion"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="@string/baseline_s1q9b" />-->
 
-            <EditText
-                android:id="@+id/s1q9b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_weight="1"
-                android:digits="0123456789"
-                android:ems="10"
-                android:hint="@string/baseline_s1q9b"
-                android:inputType="number"
-                android:maxLength="3" />
+            <!--<EditText-->
+                <!--android:id="@+id/s1q9b"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="1dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:digits="0123456789"-->
+                <!--android:ems="10"-->
+                <!--android:hint="@string/baseline_s1q9b"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="3" />-->
 
-            <TextView
-                android:id="@+id/lbl_s1q10"
-                style="@style/txtquestion"
-                android:layout_marginTop="16dp"
-                android:text="@string/baseline_s1q10" />
+            <!--<TextView-->
+                <!--android:id="@+id/lbl_s1q10"-->
+                <!--style="@style/txtquestion"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="@string/baseline_s1q10" />-->
 
-            <DatePicker
-                android:id="@+id/s1q10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner"
-                android:ems="10"
-                android:spinnersShown="true" />
+            <!--<DatePicker-->
+                <!--android:id="@+id/s1q10"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:calendarViewShown="false"-->
+                <!--android:datePickerMode="spinner"-->
+                <!--android:ems="10"-->
+                <!--android:spinnersShown="true" />-->
 
-            <TextView
-                android:id="@+id/lbl_s1q11"
-                style="@style/txtquestion"
-                android:layout_marginTop="16dp"
-                android:text="@string/baseline_s1q11" />
+            <!--<TextView-->
+                <!--android:id="@+id/lbl_s1q11"-->
+                <!--style="@style/txtquestion"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="@string/baseline_s1q11" />-->
 
-            <TimePicker
-                android:id="@+id/s1q11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:spinnersShown="true" />
+            <!--<TimePicker-->
+                <!--android:id="@+id/s1q11"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:ems="10"-->
+                <!--android:spinnersShown="true" />-->
 
             <TextView
                 android:id="@+id/lbl_s1q12"

@@ -67,6 +67,8 @@ public class MAPPSApp extends Application {
     public static int chTotal = 0;
     protected static LocationManager locationManager;
 
+    public static String[] user;
+
 
     @Override
     public void onCreate() {

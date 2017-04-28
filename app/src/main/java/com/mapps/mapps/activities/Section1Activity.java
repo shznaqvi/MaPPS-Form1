@@ -54,10 +54,10 @@ public class Section1Activity extends Activity {
     private TextView lblS1q6;
     private TextView lblS1q7;
     private TextView lblS1q8;
-    private TextView lblS1q9a;
-    private TextView lblS1q9b;
-    private TextView lblS1q10;
-    private TextView lblS1q11;
+    //    private TextView lblS1q9a;
+//    private TextView lblS1q9b;
+//    private TextView lblS1q10;
+//    private TextView lblS1q11;
     private Spinner s1q1;
     private Spinner s1q2;
     private EditText s1q3;
@@ -66,10 +66,10 @@ public class Section1Activity extends Activity {
     private EditText s1q6;
     private EditText s1q7;
     private EditText s1q8;
-    private EditText s1q9a;
-    private EditText s1q9b;
-    private DatePicker s1q10;
-    private TimePicker s1q11;
+    //    private EditText s1q9a;
+//    private EditText s1q9b;
+//    private DatePicker s1q10;
+//    private TimePicker s1q11;
     private RadioGroup radioS1q12;
     private RadioButton rDOS1q121;
     private RadioButton rDOS1q122;
@@ -98,12 +98,12 @@ public class Section1Activity extends Activity {
         lblS1q6 = (TextView) findViewById(R.id.lbl_s1q6);
         lblS1q7 = (TextView) findViewById(R.id.lbl_s1q7);
         lblS1q8 = (TextView) findViewById(R.id.lbl_s1q8);
-        lblS1q9a = (TextView) findViewById(R.id.lbl_s1q9a);
-        lblS1q9b = (TextView) findViewById(R.id.lbl_s1q9b);
-        lblS1q10 = (TextView) findViewById(R.id.lbl_s1q10);
-        lblS1q11 = (TextView) findViewById(R.id.lbl_s1q11);
-        s1q10 = (DatePicker) findViewById(R.id.s1q10);
-        s1q11 = (TimePicker) findViewById(R.id.s1q11);
+//        lblS1q9a = (TextView) findViewById(R.id.lbl_s1q9a);
+//        lblS1q9b = (TextView) findViewById(R.id.lbl_s1q9b);
+//        lblS1q10 = (TextView) findViewById(R.id.lbl_s1q10);
+//        lblS1q11 = (TextView) findViewById(R.id.lbl_s1q11);
+//        s1q10 = (DatePicker) findViewById(R.id.s1q10);
+//        s1q11 = (TimePicker) findViewById(R.id.s1q11);
 
         s1q1 = (Spinner) findViewById(R.id.s1q1);
         s1q2 = (Spinner) findViewById(R.id.s1q2);
@@ -113,8 +113,8 @@ public class Section1Activity extends Activity {
         s1q6 = (EditText) findViewById(R.id.s1q6);
         s1q7 = (EditText) findViewById(R.id.s1q7);
         s1q8 = (EditText) findViewById(R.id.s1q8);
-        s1q9a = (EditText) findViewById(R.id.s1q9a);
-        s1q9b = (EditText) findViewById(R.id.s1q9b);
+//        s1q9a = (EditText) findViewById(R.id.s1q9a);
+//        s1q9b = (EditText) findViewById(R.id.s1q9b);
 
         radioS1q12 = (RadioGroup) findViewById(R.id.radio_s1q12);
         rDOS1q121 = (RadioButton) findViewById(R.id.RDO_s1q12_1);
@@ -134,7 +134,6 @@ public class Section1Activity extends Activity {
 
         appHeader = (TextView) findViewById(R.id.app_header);
         //appHeader.setText("MAPPS -> Section1" + " " + getString(R.string.section1));
-
 
 
         ArrayList<String> arr_members = new ArrayList<>();
@@ -221,12 +220,12 @@ public class Section1Activity extends Activity {
         });
 
 
-        s1q10 = (DatePicker) findViewById(R.id.s1q10);
-        //s1q110.updateDate(s1q110.getDayOfMonth(), s1q110.getMonth(), s1q110.getYear());
-        s1q10.setMaxDate(new Date().getTime());
-
-        s1q11.setIs24HourView(true);
-        s1q11.setCurrentHour(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
+//        s1q10 = (DatePicker) findViewById(R.id.s1q10);
+//        //s1q110.updateDate(s1q110.getDayOfMonth(), s1q110.getMonth(), s1q110.getYear());
+//        s1q10.setMaxDate(new Date().getTime());
+//
+//        s1q11.setIs24HourView(true);
+//        s1q11.setCurrentHour(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
 
     }
 
@@ -336,37 +335,37 @@ public class Section1Activity extends Activity {
         this.lblS1q8 = lblS1q8;
     }
 
-    public TextView getLblS1q9a() {
-        return lblS1q9a;
-    }
-
-    public void setLblS1q9a(TextView lblS1q9a) {
-        this.lblS1q9a = lblS1q9a;
-    }
-
-    public TextView getLblS1q9b() {
-        return lblS1q9b;
-    }
-
-    public void setLblS1q9b(TextView lblS1q9b) {
-        this.lblS1q9b = lblS1q9b;
-    }
-
-    public TextView getLblS1q10() {
-        return lblS1q10;
-    }
-
-    public void setLblS1q10(TextView lblS1q10) {
-        this.lblS1q10 = lblS1q10;
-    }
-
-    public TextView getLblS1q11() {
-        return lblS1q11;
-    }
-
-    public void setLblS1q11(TextView lblS1q11) {
-        this.lblS1q11 = lblS1q11;
-    }
+//    public TextView getLblS1q9a() {
+//        return lblS1q9a;
+//    }
+//
+//    public void setLblS1q9a(TextView lblS1q9a) {
+//        this.lblS1q9a = lblS1q9a;
+//    }
+//
+//    public TextView getLblS1q9b() {
+//        return lblS1q9b;
+//    }
+//
+//    public void setLblS1q9b(TextView lblS1q9b) {
+//        this.lblS1q9b = lblS1q9b;
+//    }
+//
+//    public TextView getLblS1q10() {
+//        return lblS1q10;
+//    }
+//
+//    public void setLblS1q10(TextView lblS1q10) {
+//        this.lblS1q10 = lblS1q10;
+//    }
+//
+//    public TextView getLblS1q11() {
+//        return lblS1q11;
+//    }
+//
+//    public void setLblS1q11(TextView lblS1q11) {
+//        this.lblS1q11 = lblS1q11;
+//    }
 
 
     public void gotoSection2(View view) {
@@ -383,55 +382,55 @@ public class Section1Activity extends Activity {
 
         if (ValidateForm()) {
 
-            spDateT = new SimpleDateFormat("dd-MM-yyyy").format(s1q10.getCalendarView().getDate());
-            spTime = s1q11.getCurrentHour() + ":" + s1q11.getCurrentMinute();
+//            spDateT = new SimpleDateFormat("dd-MM-yyyy").format(s1q10.getCalendarView().getDate());
+//            spTime = s1q11.getCurrentHour() + ":" + s1q11.getCurrentMinute();
+//
+//            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+//            Date dt = new Date();
+//            String dt1 = sdf.format(dt);
+//
+//
+//            if (spDateT.equals(dt1)) {
 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            Date dt = new Date();
-            String dt1 = sdf.format(dt);
+            if (!IsHouseHoldExists_InCluster()) {
 
+                //if (CheckInvalidChars()) {
 
-            if (spDateT.equals(dt1)) {
+                if (SaveDraft()) {
 
-                if (!IsHouseHoldExists_InCluster()) {
+                    if (UpdateDB()) {
 
-                    //if (CheckInvalidChars()) {
+                        if (var_s1q12.equals("1")) {
 
-                        if (SaveDraft()) {
+                            Intent sec2_intent = new Intent(this, Section2Activity.class);
+                            startActivity(sec2_intent);
 
-                            if (UpdateDB()) {
+                        } else {
 
-                                if (var_s1q12.equals("1")) {
-
-                                    Intent sec2_intent = new Intent(this, Section2Activity.class);
-                                    startActivity(sec2_intent);
-
-                                } else {
-
-                                    Intent sec2_intent = new Intent(this, MainPageActivity.class);
-                                    startActivity(sec2_intent);
-                                }
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
-                            }
+                            Intent sec2_intent = new Intent(this, MainPageActivity.class);
+                            startActivity(sec2_intent);
                         }
-                    //}
 
-                } else {
-                    Toast.makeText(getApplicationContext(), "Household number already exists in this cluster ", Toast.LENGTH_SHORT).show();
-
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s1q5.getWindowToken(), 0);
-
-                    s1q5.requestFocus();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
+                    }
                 }
+                //}
 
             } else {
-                Toast.makeText(getApplicationContext(), "Visit date and current date must be same ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Household number already exists in this cluster ", Toast.LENGTH_SHORT).show();
+
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(s1q5.getWindowToken(), 0);
+
+                s1q5.requestFocus();
             }
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Visit date and current date must be same ", Toast.LENGTH_SHORT).show();
         }
     }
+//    }
 
 
     private boolean IsHouseHoldExists_InCluster() {
@@ -497,11 +496,13 @@ public class Section1Activity extends Activity {
         MAPPSApp.fc.setROW_S1Q6(s1q6.getText().toString());
         MAPPSApp.fc.setROW_S1Q7(s1q7.getText().toString());
         MAPPSApp.fc.setROW_S1Q8(s1q8.getText().toString());
-        MAPPSApp.fc.setROW_S1Q9a(s1q9a.getText().toString());
-        MAPPSApp.fc.setROW_S1Q9b(s1q9b.getText().toString());
 
-        spDateT = new SimpleDateFormat("dd-MM-yyyy").format(s1q10.getCalendarView().getDate());
-        spTime = s1q11.getCurrentHour() + ":" + s1q11.getCurrentMinute();
+
+        MAPPSApp.fc.setROW_S1Q9a(MAPPSApp.user[0]);
+        MAPPSApp.fc.setROW_S1Q9b(MAPPSApp.user[1]);
+
+        spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        spTime = new SimpleDateFormat("hh:mm:ss").format(new Date());
 
         MAPPSApp.fc.setROW_S1Q10(spDateT);
         MAPPSApp.fc.setROW_S1Q11(spTime);
@@ -570,7 +571,7 @@ public class Section1Activity extends Activity {
         }*/
 
 
-        if (getS1q3().getText().toString().isEmpty() ) {
+        if (getS1q3().getText().toString().isEmpty()) {
             s1q3.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter village name \r\n", Toast.LENGTH_LONG).show();
             s1q3.requestFocus();
@@ -618,7 +619,7 @@ public class Section1Activity extends Activity {
             s1q7.setError(null);
         }
 
-        if (getS1q8().getText().toString().isEmpty() ) {
+        if (getS1q8().getText().toString().isEmpty()) {
             s1q8.setError(getString(R.string.txterr));
             Toast.makeText(getApplicationContext(), "Please enter contact number \r\n", Toast.LENGTH_LONG).show();
             s1q8.requestFocus();
@@ -627,24 +628,24 @@ public class Section1Activity extends Activity {
             s1q8.setError(null);
         }
 
-
-        if (getS1q9a().getText().toString().isEmpty() ) {
-            s1q9a.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "Please enter study personnel name \r\n", Toast.LENGTH_LONG).show();
-            s1q9a.requestFocus();
-            return false;
-        } else {
-            s1q9a.setError(null);
-        }
-
-        if (getS1q9b().getText().toString().isEmpty()) {
-            s1q9b.setError(getString(R.string.txterr));
-            Toast.makeText(getApplicationContext(), "Please enter study personnel id  \r\n", Toast.LENGTH_LONG).show();
-            s1q9b.requestFocus();
-            return false;
-        } else {
-            s1q9b.setError(null);
-        }
+//
+//        if (getS1q9a().getText().toString().isEmpty() ) {
+//            s1q9a.setError(getString(R.string.txterr));
+//            Toast.makeText(getApplicationContext(), "Please enter study personnel name \r\n", Toast.LENGTH_LONG).show();
+//            s1q9a.requestFocus();
+//            return false;
+//        } else {
+//            s1q9a.setError(null);
+//        }
+//
+//        if (getS1q9b().getText().toString().isEmpty()) {
+//            s1q9b.setError(getString(R.string.txterr));
+//            Toast.makeText(getApplicationContext(), "Please enter study personnel id  \r\n", Toast.LENGTH_LONG).show();
+//            s1q9b.requestFocus();
+//            return false;
+//        } else {
+//            s1q9b.setError(null);
+//        }
 
 
         rdo_s1q12 = radioS1q12.getCheckedRadioButtonId();
@@ -667,7 +668,7 @@ public class Section1Activity extends Activity {
 
         rdo_s1q13 = radioS1q13.getCheckedRadioButtonId();
 
-        if (var_s1q12.equals("1")  && rdo_s1q13 == -1) {
+        if (var_s1q12.equals("1") && rdo_s1q13 == -1) {
             rDOS1q131.setError(getString(R.string.rdoterr));
             Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
             rDOS1q131.requestFocus();
@@ -689,12 +690,12 @@ public class Section1Activity extends Activity {
             return false;
         }
 
-        if (Integer.parseInt(s1q9b.getText().toString()) <= 0 ||
-                Integer.parseInt(s1q9b.getText().toString()) > 200) {
-            Toast.makeText(getApplicationContext(), "Study personnel id must be between 1 - 200", Toast.LENGTH_LONG).show();
-            s1q9b.requestFocus();
-            return false;
-        }
+//        if (Integer.parseInt(s1q9b.getText().toString()) <= 0 ||
+//                Integer.parseInt(s1q9b.getText().toString()) > 200) {
+//            Toast.makeText(getApplicationContext(), "Study personnel id must be between 1 - 200", Toast.LENGTH_LONG).show();
+//            s1q9b.requestFocus();
+//            return false;
+//        }
 
 
         return true;
@@ -708,8 +709,8 @@ public class Section1Activity extends Activity {
         s1q6.setText(null);
         s1q7.setText(null);
         s1q8.setText(null);
-        s1q9a.setText(null);
-        s1q9b.setText(null);
+//        s1q9a.setText(null);
+//        s1q9b.setText(null);
         radioS1q12.clearCheck();
         radioS1q13.clearCheck();
     }
@@ -756,7 +757,7 @@ public class Section1Activity extends Activity {
         String val_q4 = s1q4.getText().toString();
         String val_q6 = s1q6.getText().toString();
         String val_q7 = s1q7.getText().toString();
-        String val_q9a = s1q9a.getText().toString();
+//        String val_q9a = s1q9a.getText().toString();
 
         //Pattern allow_char = Pattern.compile("[\\d]*");
         Pattern allow_char = Pattern.compile("[\\s\\w+]*");
@@ -765,7 +766,7 @@ public class Section1Activity extends Activity {
         Matcher match_q4 = allow_char.matcher(val_q4);
         Matcher match_q6 = allow_char.matcher(val_q6);
         Matcher match_q7 = allow_char.matcher(val_q7);
-        Matcher match_q9a = allow_char.matcher(val_q9a);
+//        Matcher match_q9a = allow_char.matcher(val_q9a);
 
 
         if (!match_q3.matches()) {
@@ -812,15 +813,15 @@ public class Section1Activity extends Activity {
         }
 
 
-        if (!match_q9a.matches()) {
-            Toast.makeText(this, "Field contains invalid characters", Toast.LENGTH_SHORT).show();
-            s1q9a.requestFocus();
-
-            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(s1q9a.getWindowToken(), 0);
-
-            return false;
-        }
+//        if (!match_q9a.matches()) {
+//            Toast.makeText(this, "Field contains invalid characters", Toast.LENGTH_SHORT).show();
+//            s1q9a.requestFocus();
+//
+//            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//            imm.hideSoftInputFromWindow(s1q9a.getWindowToken(), 0);
+//
+//            return false;
+//        }
 
 
         return true;

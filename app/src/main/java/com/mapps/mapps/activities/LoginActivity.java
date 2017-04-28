@@ -174,6 +174,7 @@ public class LoginActivity extends Activity {
                 MAPPSHelper db = new MAPPSHelper(LoginActivity.this);
 
                 if (db.Login(username, password)) {
+
                     Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_LONG).show();
 
                     CVars var = new CVars();

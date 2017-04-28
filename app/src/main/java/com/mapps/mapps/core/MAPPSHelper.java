@@ -1086,6 +1086,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 
         CVars var = new CVars();
 
+        MAPPSApp.user = new String[2];
 
         Cursor mCursor = db.rawQuery("SELECT * FROM " + UsersContract.singleUser.TABLE_NAME + " WHERE " +
                 UsersContract.singleUser.ROW_USERNAME + "=? AND " +
@@ -1098,6 +1099,9 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         } else {
 
             if (mCursor.moveToFirst()) {
+
+                MAPPSApp.user[0] = mCursor.getString(0);
+                MAPPSApp.user[1] = mCursor.getString(1);
 
                 status = mCursor.getString(3);
                 isadmin = mCursor.getString(4);

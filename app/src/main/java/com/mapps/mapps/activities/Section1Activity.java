@@ -747,7 +747,8 @@ public class Section1Activity extends Activity {
             MAPPSApp.fc.setROW_GPS_LAT(GPSPref.getString("Latitude", "0"));
             MAPPSApp.fc.setROW_GPS_LANG(GPSPref.getString("Longitude", "0"));
             MAPPSApp.fc.setROW_GPS_ACC(GPSPref.getString("Accuracy", "0"));
-            MAPPSApp.fc.setROW_GPS_DT(GPSPref.getString(date, "0"));
+//            MAPPSApp.fc.setROW_GPS_DT(GPSPref.getString(date, "0"));
+            MAPPSApp.fc.setROW_GPS_DT(date);
 
 
         } catch (Exception e) {

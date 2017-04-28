@@ -45,12 +45,12 @@ public class MainPageActivity extends Activity {
 
         vu_opendb = (LinearLayout) findViewById(R.id.vu_opendb);
 
-        CVars var = new CVars();
-
-        if (CVars.myuser != null) {
+//        CVars var = new CVars();
+//
+//        if (CVars.myuser != null) {
             username = (TextView) findViewById(R.id.username);
-            username.setText("Welcome : " + CVars.myuser);
-        }
+            username.setText("Welcome : " + MAPPSApp.user[1].toUpperCase());
+//        }
 
 
         if (CVars.isadmin.equals("1")) {

@@ -88,8 +88,15 @@
                     android:onClick="OpenDBAccess"
                     android:text="@string/btnDBAccess" />
 
+
             </LinearLayout>
 
+            <Button
+                android:id="@+id/testGPS"
+                style="@style/btn"
+                android:layout_marginTop="20dp"
+                android:onClick="testGPS"
+                android:text="Test GPS" />
             <Button
                 android:id="@+id/btnLogout"
                 style="@style/btn"

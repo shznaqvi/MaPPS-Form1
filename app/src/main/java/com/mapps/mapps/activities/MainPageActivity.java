@@ -2,18 +2,19 @@ package com.mapps.mapps.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.R;
+import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.getClasses.GetHFList;
 import com.mapps.mapps.getClasses.GetUsers;
@@ -26,6 +27,7 @@ import java.net.Socket;
 import java.net.SocketAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class MainPageActivity extends Activity {
 
@@ -51,7 +53,7 @@ public class MainPageActivity extends Activity {
         }
 
 
-        if (var.isadmin.equals("1")) {
+        if (CVars.isadmin.equals("1")) {
             vu_opendb.setVisibility(View.VISIBLE);
         } else {
             vu_opendb.setVisibility(View.GONE);
@@ -73,6 +75,17 @@ public class MainPageActivity extends Activity {
     public void OpenDBAccess(View v) {
         Intent sec2_intent = new Intent(this, MainActivity.class);
         startActivity(sec2_intent);
+    }
+
+    public void testGPS(View v) {
+
+        SharedPreferences sharedPref = getSharedPreferences("GPSCoordinates", Context.MODE_PRIVATE);
+        Log.d("MAP", "testGPS: " + sharedPref.getAll().toString());
+        Map<String, ?> allEntries = sharedPref.getAll();
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            Log.d("Map", entry.getKey() + ": " + entry.getValue().toString());
+        }
+
     }
 
     public void syncData(View v) {

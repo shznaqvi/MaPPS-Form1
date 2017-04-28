@@ -20,7 +20,14 @@
             android:layoutDirection="rtl"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/fldGrpParticipant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
                 android:id="@+id/app_header"
                 style="@style/myheading"
                 android:layout_gravity="center"
@@ -73,7 +80,8 @@
                 android:layout_marginTop="16dp"
                 android:text="" />
 
-            <TextView
+
+                <TextView
                 android:id="@+id/lbl_s4q28c"
                 style="@style/txtquestion"
                 android:layout_marginTop="16dp"
@@ -293,6 +301,8 @@
                         android:text="@string/baseline_s4q28g_9" />
 
                 </RadioGroup>
+
+            </LinearLayout>
 
             </LinearLayout>
 

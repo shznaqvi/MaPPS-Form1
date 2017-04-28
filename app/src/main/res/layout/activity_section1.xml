@@ -293,12 +293,30 @@
 
             </LinearLayout>
 
+            <!-- <Button
+                 android:id="@+id/btnnext"
+                 style="@style/btn"
+                 android:layout_marginTop="20dp"
+                 android:onClick="gotoSection2"
+                 android:text="@string/sec2" />-->
+
             <Button
                 android:id="@+id/btnnext"
-                style="@style/btn"
-                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btnshape"
+                android:gravity="center"
                 android:onClick="gotoSection2"
-                android:text="@string/sec2" />
+                android:shadowColor="#A8A8A8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:text="Section 2"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
 
         </LinearLayout>
     </ScrollView>

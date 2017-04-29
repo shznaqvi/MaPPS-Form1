@@ -177,7 +177,8 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + GetLHWEntry.ROW_CLUSTER + " TEXT,"
             + GetLHWEntry.ROW_HCODE + " INTEGER);";
     private static final String TAG = "Sec1";
-    private static final String DATABASE_NAME = "mapps.db";
+    public static final String DATABASE_NAME = "mapps.db";
+    public static final String DB_NAME = "mapps_copy.db";
     private static final int DATABASE_VERSION = 3;
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;

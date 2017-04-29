@@ -2,14 +2,24 @@ package com.mapps.mapps.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -28,6 +38,18 @@ import com.mapps.mapps.getClasses.GetHF;
 import com.mapps.mapps.getClasses.GetLHW;
 import com.mapps.mapps.getClasses.GetUsers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+
 
 public class LoginActivity extends Activity {
 
@@ -43,6 +65,11 @@ public class LoginActivity extends Activity {
     private EditText txturl;
 
     private AlertDialog.Builder alert;
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
+
+    String DirectoryName;
 
 
     @Override
@@ -113,25 +140,99 @@ public class LoginActivity extends Activity {
                 .build();
 
 
+        sharedPref = getSharedPreferences("mapps01", MODE_PRIVATE);
+
+        if (sharedPref.getBoolean("flag", false)) {
+            dbBackup();
+        } else {
+            editor = sharedPref.edit();
+
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+                editor.commit();
+            }
+        }
+    }
+
+    public void dbBackup() {
+
+        File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "MappsSecretCam");
+        boolean success = true;
+        if (!folder.exists()) {
+            success = folder.mkdirs();
+        }
+        if (success) {
+
+            DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+            folder = new File(DirectoryName);
+            if (!folder.exists()) {
+                success = folder.mkdirs();
+            }
+            if (success) {
+
+                try {
+                    File dbFile = new File(this.getDatabasePath(MAPPSHelper.DATABASE_NAME).getPath());
+                    FileInputStream fis = new FileInputStream(dbFile);
+
+                    String outFileName = DirectoryName + File.separator +
+                            MAPPSHelper.DB_NAME;
+
+                    // Open the empty db as the output stream
+                    OutputStream output = new FileOutputStream(outFileName);
+
+                    // Transfer bytes from the inputfile to the outputfile
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = fis.read(buffer)) > 0) {
+                        output.write(buffer, 0, length);
+                    }
+                    // Close the streams
+                    output.flush();
+                    output.close();
+                    fis.close();
+                } catch (IOException e) {
+                    Log.e("dbBackup:", e.getMessage());
+                }
+
+            }
+
+        } else {
+            Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
+        }
 
     }
 
 
     public void SyncUsers(View v) {
-        CVars var = new CVars();
-        var.setUrl_sync_users(MAPPSApp._HOST_URL + UsersContract.singleUser.GETURL);
 
-        Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-        GetUsers user = new GetUsers(this);
-        user.execute();
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
 
-        Toast.makeText(LoginActivity.this, "Sync HF", Toast.LENGTH_LONG).show();
-        GetHF gf1 = new GetHF(this);
-        gf1.execute();
+            CVars var = new CVars();
+            var.setUrl_sync_users(MAPPSApp._HOST_URL + UsersContract.singleUser.GETURL);
 
-        Toast.makeText(LoginActivity.this, "Sync LHW", Toast.LENGTH_LONG).show();
-        GetLHW gL1 = new GetLHW(this);
-        gL1.execute();
+//            Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
+//            GetUsers user = new GetUsers(this);
+//            user.execute();
+//
+//            Toast.makeText(LoginActivity.this, "Sync HF", Toast.LENGTH_LONG).show();
+//            GetHF gf1 = new GetHF(this);
+//            gf1.execute();
+//
+//            Toast.makeText(LoginActivity.this, "Sync LHW", Toast.LENGTH_LONG).show();
+//            GetLHW gL1 = new GetLHW(this);
+//            gL1.execute();
+
+            new syncData(this).execute();
+
+        } else {
+            Toast.makeText(this, "No network connection available.", Toast.LENGTH_SHORT).show();
+        }
 
 //        MAPPSHelper db = new MAPPSHelper(this);
 //        ArrayList<UsersContract> lstUsers = db.getAllUsers();
@@ -206,4 +307,55 @@ public class LoginActivity extends Activity {
     public void onBackPressed() {
         Toast.makeText(LoginActivity.this, "Back button is disabled", Toast.LENGTH_LONG).show();
     }
+
+
+    public class syncData extends AsyncTask<String, String, String> {
+
+        private Context mContext;
+
+        public syncData(Context mContext) {
+            this.mContext = mContext;
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
+                    GetUsers user = new GetUsers(mContext);
+                    user.execute();
+
+                    Toast.makeText(LoginActivity.this, "Sync HF", Toast.LENGTH_LONG).show();
+                    GetHF gf1 = new GetHF(mContext);
+                    gf1.execute();
+
+                    Toast.makeText(LoginActivity.this, "Sync LHW", Toast.LENGTH_LONG).show();
+                    GetLHW gL1 = new GetLHW(mContext);
+                    gL1.execute();
+                }
+            });
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    editor.putBoolean("flag", true);
+                    editor.commit();
+
+                    dbBackup();
+
+                }
+            }, 1200);
+        }
+    }
+
 }

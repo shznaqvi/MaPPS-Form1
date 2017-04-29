@@ -26,6 +26,11 @@
                 android:layout_gravity="center"
                 android:text="@string/section2" />
 
+            <TextView
+                android:id="@+id/lbl_head"
+                style="@style/myheading"
+                android:layout_gravity="center" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -59,6 +64,7 @@
 
             <TextView
                 android:id="@+id/lbl_hhhead_count"
+                android:visibility="gone"
                 style="@style/txtquestion"
                 android:background="#6d6d6d"
                 android:layoutDirection="ltr"

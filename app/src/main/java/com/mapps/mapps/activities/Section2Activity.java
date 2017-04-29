@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -152,7 +153,9 @@ public class Section2Activity extends Activity {
     private Spinner ddlmembers_cf;
     private Spinner ddlmembers_cm;
 
-    private TextView lbl_hhhead_count;
+    private TextView lbl_hhhead_count,lbl_head;
+
+    public Button btnadd, btnnext;
 
 
     @Override
@@ -279,6 +282,20 @@ public class Section2Activity extends Activity {
         ddlmembers_cm = (Spinner) findViewById(R.id.ddlmembers_cm);
 
         lbl_hhhead_count = (TextView) findViewById(R.id.lbl_hhhead_count);
+
+        btnadd = (Button) findViewById(R.id.btnadd);
+        btnnext = (Button) findViewById(R.id.btnnext);
+        lbl_head = (TextView) findViewById(R.id.lbl_head);
+
+        lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of "+MAPPSApp.totalNumMember);
+
+        if (MAPPSApp.totalNumMember != MAPPSApp.countNumMember) {
+            btnadd.setVisibility(View.VISIBLE);
+            btnnext.setVisibility(View.GONE);
+        } else {
+            btnadd.setVisibility(View.GONE);
+            btnnext.setVisibility(View.VISIBLE);
+        }
 
 
         MAPPSHelper db1 = new MAPPSHelper(this);
@@ -1309,15 +1326,61 @@ public class Section2Activity extends Activity {
 
     public void gotoSection3(View view) {
 
-        MAPPSHelper db = new MAPPSHelper(this);
-        Collection<Members> member = db.getAllMembers_GetHouseHold();
+//        MAPPSHelper db = new MAPPSHelper(this);
+//        Collection<Members> member = db.getAllMembers_GetHouseHold();
+//
+//        if (member.size() > 0) {
+//            Intent sec2_intent = new Intent(this, Section3Activity.class);
+//            startActivity(sec2_intent);
+//        } else {
+//            Toast.makeText(this, "You cannot jump to section 3 without entering the members information ", Toast.LENGTH_SHORT).show();
+//        }
 
-        if (member.size() > 0) {
-            Intent sec2_intent = new Intent(this, Section3Activity.class);
-            startActivity(sec2_intent);
-        } else {
-            Toast.makeText(this, "You cannot jump to section 3 without entering the members information ", Toast.LENGTH_SHORT).show();
+        spDateT = new SimpleDateFormat("dd-MM-yyyy").format(s2q15e.getCalendarView().getDate());
+        spDateLMP = new SimpleDateFormat("dd-MM-yyyy").format(s2q15lmp.getCalendarView().getDate());
+
+        CalcDOB();
+        CalcLMP_Months();
+
+        if (ValidateForm()) {
+
+            if (!IsDOB_Greater()) {
+
+                if (!IsLMP_Greater()) {
+
+                    if (!IsMemberExists_Household()) {
+
+                        if (IsValidValues()) {
+
+                            if (SaveDraft()) {
+
+                                Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
+
+                                if (UpdateDB()) {
+
+
+                                    MAPPSApp.countNumMember++;
+
+                                    Intent sec2_intent = new Intent(this, Section3Activity.class);
+                                    startActivity(sec2_intent);
+
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Member already entered in this household ", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "Date of LMP is greater than current date ", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(getApplicationContext(), "Date of birth is greater than current date ", Toast.LENGTH_SHORT).show();
+            }
         }
+
+
     }
 
     /*public void SaveData(View view) {
@@ -1442,6 +1505,20 @@ public class Section2Activity extends Activity {
                                 Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
 
                                 if (UpdateDB()) {
+
+
+                                    MAPPSApp.countNumMember++;
+
+                                    lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of "+MAPPSApp.totalNumMember);
+
+                                    if (MAPPSApp.totalNumMember != MAPPSApp.countNumMember) {
+                                        btnadd.setVisibility(View.VISIBLE);
+                                        btnnext.setVisibility(View.GONE);
+                                    } else {
+                                        btnadd.setVisibility(View.GONE);
+                                        btnnext.setVisibility(View.VISIBLE);
+                                    }
+
 
                                     MAPPSHelper db = new MAPPSHelper(this);
 

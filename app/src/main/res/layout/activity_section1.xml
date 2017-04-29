@@ -265,6 +265,22 @@
                 android:visibility="gone">
 
                 <TextView
+                    style="@style/txtquestion"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/baseline_noMem" />
+
+                <EditText
+                    android:id="@+id/totalMem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:ems="10"
+                    android:hint="@string/baseline_noMem"
+                    android:inputType="number"
+                    android:maxLength="2" />
+
+                <TextView
                     android:id="@+id/lbl_s1q13"
                     style="@style/txtquestion"
                     android:layout_marginTop="16dp"

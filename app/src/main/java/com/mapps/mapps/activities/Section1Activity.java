@@ -66,7 +66,7 @@ public class Section1Activity extends Activity {
     private EditText s1q6;
     private EditText s1q7;
     private EditText s1q8;
-
+    private EditText totalMem;
     //    private EditText s1q9a;
 //    private EditText s1q9b;
 //    private DatePicker s1q10;
@@ -115,6 +115,7 @@ public class Section1Activity extends Activity {
         s1q7 = (EditText) findViewById(R.id.s1q7);
         s1q8 = (EditText) findViewById(R.id.s1q8);
 
+        totalMem = (EditText) findViewById(R.id.totalMem);
 //        s1q9a = (EditText) findViewById(R.id.s1q9a);
 //        s1q9b = (EditText) findViewById(R.id.s1q9b);
 
@@ -128,6 +129,10 @@ public class Section1Activity extends Activity {
         rDOS1q132 = (RadioButton) findViewById(R.id.RDO_s1q13_2);
 
         vu_s1q13 = (LinearLayout) findViewById(R.id.vu_s1q13);
+
+
+        MAPPSApp.totalNumMember = 0;
+        MAPPSApp.countNumMember = 0;
 
         setGPS();
 
@@ -404,6 +409,9 @@ public class Section1Activity extends Activity {
 
                         if (var_s1q12.equals("1")) {
 
+
+                            MAPPSApp.countNumMember++;
+
                             Intent sec2_intent = new Intent(this, Section2Activity.class);
                             startActivity(sec2_intent);
 
@@ -548,6 +556,13 @@ public class Section1Activity extends Activity {
 //        MAPPSApp.fc.setROW_USERID(var1.GetUser());
         MAPPSApp.fc.setROW_USERID(MAPPSApp.user[1]);
 
+//        Total No of Members.
+        if (!totalMem.getText().toString().isEmpty()) {
+            MAPPSApp.totalNumMember = Integer.parseInt(totalMem.getText().toString());
+
+            MAPPSApp.fc.setROW_member_count(String.valueOf(MAPPSApp.totalNumMember));
+        }
+
         setGPS();
 
         return true;
@@ -671,6 +686,24 @@ public class Section1Activity extends Activity {
                 break;
         }
 
+        if (rDOS1q121.isChecked()){
+            if (totalMem.getText().toString().isEmpty()) {
+                totalMem.setError("Please enter Number of Member");
+                Toast.makeText(getApplicationContext(), "Please enter Number of Member \r\n", Toast.LENGTH_LONG).show();
+                totalMem.requestFocus();
+                return false;
+            } else {
+                totalMem.setError(null);
+            }
+            if (Integer.parseInt(totalMem.getText().toString()) < 1) {
+                totalMem.setError("Member greater than 1");
+                Toast.makeText(getApplicationContext(), "Member greater than 1 \r\n", Toast.LENGTH_LONG).show();
+                totalMem.requestFocus();
+                return false;
+            } else {
+                totalMem.setError(null);
+            }
+        }
 
         rdo_s1q13 = radioS1q13.getCheckedRadioButtonId();
 

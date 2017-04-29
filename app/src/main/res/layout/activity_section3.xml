@@ -37,20 +37,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp">
 
-
                 <TextView
-                android:id="@+id/lbl_s2q1"
+                    android:id="@+id/lbl_s2q1"
                     style="@style/txtquestion"
                     android:layout_weight="2"
-                android:text=""
+                    android:text=""
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/lbl_hhhead"
-                style="@style/txtquestion"
-                android:layout_weight="1"
-                android:text="@string/baseline_s2q1" />
-
+                <TextView
+                    android:id="@+id/lbl_hhhead"
+                    style="@style/txtquestion"
+                    android:layout_weight="1"
+                    android:text="@string/baseline_s2q1" />
 
             </LinearLayout>
 
@@ -587,7 +585,6 @@
                 android:text="@string/baseline_s3q25" />
 
             <EditText
-                android:layoutDirection="ltr"
                 android:id="@+id/s3q25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -596,6 +593,7 @@
                 android:ems="10"
                 android:hint="@string/km"
                 android:inputType="numberDecimal"
+                android:layoutDirection="ltr"
                 android:maxLength="4" />
 
             <TextView

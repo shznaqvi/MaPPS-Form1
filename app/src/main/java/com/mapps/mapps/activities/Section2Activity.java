@@ -2014,8 +2014,6 @@ public class Section2Activity extends Activity {
             } else {
                 MAPPSApp.sc.setROW_iselig("1");
             }
-
-
         } else {
             MAPPSApp.sc.setROW_iselig("2");
         }

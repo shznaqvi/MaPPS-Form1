@@ -66,6 +66,7 @@ public class Section1Activity extends Activity {
     private EditText s1q6;
     private EditText s1q7;
     private EditText s1q8;
+
     //    private EditText s1q9a;
 //    private EditText s1q9b;
 //    private DatePicker s1q10;
@@ -113,6 +114,7 @@ public class Section1Activity extends Activity {
         s1q6 = (EditText) findViewById(R.id.s1q6);
         s1q7 = (EditText) findViewById(R.id.s1q7);
         s1q8 = (EditText) findViewById(R.id.s1q8);
+
 //        s1q9a = (EditText) findViewById(R.id.s1q9a);
 //        s1q9b = (EditText) findViewById(R.id.s1q9b);
 
@@ -680,6 +682,7 @@ public class Section1Activity extends Activity {
         } else {
             rDOS1q131.setError(null);
         }
+
 
 
         /*if (Integer.parseInt(s1q1.getText().toString()) <= 0 || Integer.parseInt(s1q1.getText().toString()) > 26) {

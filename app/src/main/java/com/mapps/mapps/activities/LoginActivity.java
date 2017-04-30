@@ -140,79 +140,70 @@ public class LoginActivity extends Activity {
                 .build();
 
 
-        sharedPref = getSharedPreferences("mapps01", MODE_PRIVATE);
+        //DB Backup
 
-        if (sharedPref.getBoolean("flag", false)) {
-            editor = sharedPref.edit();
+        dbBackup();
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
-
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
-
-                editor.commit();
-            }
-
-            dbBackup();
-        } else {
-            editor = sharedPref.edit();
-
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
-
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
-
-                editor.commit();
-            }
-        }
     }
 
     public void dbBackup() {
 
-        File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "MappsSecretCam");
-        boolean success = true;
-        if (!folder.exists()) {
-            success = folder.mkdirs();
-        }
-        if (success) {
+        sharedPref = getSharedPreferences("mapps01", MODE_PRIVATE);
+        editor = sharedPref.edit();
+        if (sharedPref.getBoolean("flag", false)) {
 
-            DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
-            folder = new File(DirectoryName);
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+                editor.commit();
+            }
+
+            File folder = new File(Environment.getExternalStorageDirectory() + File.separator + "DMU-MAPPS");
+            boolean success = true;
             if (!folder.exists()) {
                 success = folder.mkdirs();
             }
             if (success) {
 
-                try {
-                    File dbFile = new File(this.getDatabasePath(MAPPSHelper.DATABASE_NAME).getPath());
-                    FileInputStream fis = new FileInputStream(dbFile);
+                DirectoryName = folder.getPath() + File.separator + sharedPref.getString("dt", "");
+                folder = new File(DirectoryName);
+                if (!folder.exists()) {
+                    success = folder.mkdirs();
+                }
+                if (success) {
 
-                    String outFileName = DirectoryName + File.separator +
-                            MAPPSHelper.DB_NAME;
+                    try {
+                        File dbFile = new File(this.getDatabasePath(MAPPSHelper.DATABASE_NAME).getPath());
+                        FileInputStream fis = new FileInputStream(dbFile);
 
-                    // Open the empty db as the output stream
-                    OutputStream output = new FileOutputStream(outFileName);
+                        String outFileName = DirectoryName + File.separator +
+                                MAPPSHelper.DB_NAME;
 
-                    // Transfer bytes from the inputfile to the outputfile
-                    byte[] buffer = new byte[1024];
-                    int length;
-                    while ((length = fis.read(buffer)) > 0) {
-                        output.write(buffer, 0, length);
+                        // Open the empty db as the output stream
+                        OutputStream output = new FileOutputStream(outFileName);
+
+                        // Transfer bytes from the inputfile to the outputfile
+                        byte[] buffer = new byte[1024];
+                        int length;
+                        while ((length = fis.read(buffer)) > 0) {
+                            output.write(buffer, 0, length);
+                        }
+                        // Close the streams
+                        output.flush();
+                        output.close();
+                        fis.close();
+                    } catch (IOException e) {
+                        Log.e("dbBackup:", e.getMessage());
                     }
-                    // Close the streams
-                    output.flush();
-                    output.close();
-                    fis.close();
-                } catch (IOException e) {
-                    Log.e("dbBackup:", e.getMessage());
+
                 }
 
+            } else {
+                Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
             }
-
-        } else {
-            Toast.makeText(this, "Not create folder", Toast.LENGTH_SHORT).show();
         }
-
     }
 
 

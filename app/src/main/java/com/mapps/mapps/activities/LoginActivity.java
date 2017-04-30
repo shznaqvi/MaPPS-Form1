@@ -143,6 +143,16 @@ public class LoginActivity extends Activity {
         sharedPref = getSharedPreferences("mapps01", MODE_PRIVATE);
 
         if (sharedPref.getBoolean("flag", false)) {
+            editor = sharedPref.edit();
+
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+
+                editor.commit();
+            }
+
             dbBackup();
         } else {
             editor = sharedPref.edit();

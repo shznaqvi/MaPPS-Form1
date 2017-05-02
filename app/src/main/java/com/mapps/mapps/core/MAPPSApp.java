@@ -32,11 +32,11 @@ public class MAPPSApp extends Application {
 
     //public static final String _IP = "192.168.1.10"; // Test NODE server
 //    public static final String _IP = "10.198.96.103"; // Test PHP server
-    public static final String _IP = "10.1.42.37"; // Test PHP server
+    public static final String _IP = "10.1.79.42"; // Test PHP server
     //    public static final Integer _PORT = 80; // Port - with colon (:)
     public static final Integer _PORT = 8080; // Port - with colon (:)
     //    public static final String _HOST_URL = "10.198.96.103:8080";
-    public static final String _HOST_URL = "http://" + MAPPSApp._IP + ":" + MAPPSApp._PORT + "/mappsweb/";
+    public static final String _HOST_URL = "http://" + MAPPSApp._IP + ":" + MAPPSApp._PORT + "/mapps/";
 
 /*
     public static final String _IP = "43.245.131.159"; // Test server

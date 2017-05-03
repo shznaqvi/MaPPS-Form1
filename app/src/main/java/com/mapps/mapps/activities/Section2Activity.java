@@ -2318,6 +2318,15 @@ public class Section2Activity extends Activity {
                 rDOS2q15k1.setError(null);
             }
 
+            if (radioS2q15l1.getCheckedRadioButtonId() == -1) {
+                rDOS2q15l11.setError(getString(R.string.rdoterr));
+                Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
+                rDOS2q15l11.requestFocus();
+                return false;
+            } else {
+                rDOS2q15l11.setError(null);
+            }
+
         }
 
 

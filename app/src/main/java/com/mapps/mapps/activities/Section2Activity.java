@@ -36,7 +36,7 @@ import java.util.Date;
 public class Section2Activity extends Activity {
 
     private static final String TAG = "Sec2";
-
+    public Button btnadd, btnnext;
     String spDateT = "";
     String spDateLMP = "";
     MAPPSHelper db = null;
@@ -124,10 +124,8 @@ public class Section2Activity extends Activity {
     private RadioGroup radioS2q15l1;
     private RadioButton rDOS2q15l11;
     private RadioButton rDOS2q15l12;
-
     private DatePicker s2q15e;
     private DatePicker s2q15lmp;
-
     private EditText s2q15a;
     private EditText s2q15both;
     private EditText s2q15fy;
@@ -136,7 +134,6 @@ public class Section2Activity extends Activity {
     private EditText s2q15hoth;
     private EditText s2q15joth;
     private EditText s2q15gest;
-
     private LinearLayout vu_s2q15k2;
     private LinearLayout vu_s2q15e1;
     private LinearLayout vu_s2q15age;
@@ -149,14 +146,9 @@ public class Section2Activity extends Activity {
     private LinearLayout vu_s2q15k;
     private LinearLayout vu_s2q15cf;
     private LinearLayout vu_s2q15cm;
-
     private Spinner ddlmembers_cf;
     private Spinner ddlmembers_cm;
-
     private TextView lbl_hhhead_count,lbl_head;
-
-    public Button btnadd, btnnext;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -306,6 +298,7 @@ public class Section2Activity extends Activity {
         lbl_hhhead_count.setText("Total Members : " + lst_f.size() + lst_m.size());
         lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
         s2q15e.setMaxDate(new Date().getTime());
+        s2q15lmp.setMaxDate(new Date().getTime() - ((MAPPSApp.MILLISECONDS_IN_MONTH)));
 
 
         radioS2q15i.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -326,8 +319,6 @@ public class Section2Activity extends Activity {
 
                     s2q15gest.setText(null);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
 
                     s2q15gest.setText(null);
 
@@ -352,8 +343,6 @@ public class Section2Activity extends Activity {
                     s2q15fm.setText(null);
                     s2q15gest.setText(null);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15fm.getWindowToken(), 0);
                 }
             }
         });
@@ -367,8 +356,6 @@ public class Section2Activity extends Activity {
                     vu_s2q15e1.setVisibility(View.VISIBLE);
                     vu_s2q15age.setVisibility(View.GONE);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
 
                 } else if (checkedId == rDOS2q15e12.getId()) {
 
@@ -378,8 +365,7 @@ public class Section2Activity extends Activity {
                     s2q15fy.setText(null);
                     s2q15fm.setText(null);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15fm.getWindowToken(), 0);
+
                 }
             }
         });
@@ -404,8 +390,6 @@ public class Section2Activity extends Activity {
                     radioS2q15k.clearCheck();
                     radioS2q15l1.clearCheck();
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15joth.getWindowToken(), 0);
 
                 } else if (checkedId == rDOS2q15j1.getId()) {
                     vu_s2q15joth.setVisibility(View.GONE);
@@ -422,8 +406,6 @@ public class Section2Activity extends Activity {
                     radioS2q15k.clearCheck();
                     radioS2q15l1.clearCheck();
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(radioS2q15j.getWindowToken(), 0);
 
                 } else if (checkedId == rDOS2q15j2.getId() || checkedId == rDOS2q15j3.getId() || checkedId == rDOS2q15j4.getId()) {
 
@@ -449,8 +431,7 @@ public class Section2Activity extends Activity {
                         s2q15joth.setText(null);
                         radioS2q15k.clearCheck();
 
-                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.hideSoftInputFromWindow(radioS2q15j.getWindowToken(), 0);
+
                     }
 
                 }
@@ -470,8 +451,6 @@ public class Section2Activity extends Activity {
                     s2q15gest.setText(null);
                     radioS2q15l1.clearCheck();
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
 
                 } else {
 
@@ -506,8 +485,7 @@ public class Section2Activity extends Activity {
 
                     s2q15gest.setText(null);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15gest.getWindowToken(), 0);
+
                 }
             }
         });
@@ -518,8 +496,6 @@ public class Section2Activity extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == rDOS2q15b11.getId()) {
                     vu_s2q15both.setVisibility(View.VISIBLE);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(radioS2q15b.getWindowToken(), 0);
                 } else {
                     s2q15both.setText(null);
                     vu_s2q15both.setVisibility(View.GONE);
@@ -533,8 +509,7 @@ public class Section2Activity extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == rDOS2q15g13.getId()) {
                     vu_s2q15goth.setVisibility(View.VISIBLE);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(radioS2q15g.getWindowToken(), 0);
+
                 } else {
                     s2q15goth.setText(null);
                     vu_s2q15goth.setVisibility(View.GONE);
@@ -548,8 +523,7 @@ public class Section2Activity extends Activity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (checkedId == rDOS2q15h11.getId()) {
                     vu_s2q15hoth.setVisibility(View.VISIBLE);
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(radioS2q15h.getWindowToken(), 0);
+
                 } else {
                     s2q15hoth.setText("");
                     vu_s2q15hoth.setVisibility(View.GONE);

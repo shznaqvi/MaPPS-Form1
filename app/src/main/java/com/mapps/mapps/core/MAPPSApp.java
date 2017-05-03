@@ -20,6 +20,30 @@ import com.mapps.mapps.contracts.Section4Contract;
 
 public class MAPPSApp extends Application {
 
+    //public static final String _IP = "192.168.1.10"; // Test NODE server
+//    public static final String _IP = "10.198.96.103"; // Test PHP server
+    public static final String _IP = "10.1.79.42"; // Test PHP server
+    //    public static final Integer _PORT = 80; // Port - with colon (:)
+    public static final Integer _PORT = 8080; // Port - with colon (:)
+    //    public static final String _HOST_URL = "10.198.96.103:8080";
+    public static final String _HOST_URL = "http://" + MAPPSApp._IP + ":" + MAPPSApp._PORT + "/mapps/";
+    private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
+    private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
+    private static final int TWENTY_MINUTES = 1000 * 60 * 20;
+    private static final int TWO_MINUTES = 1000 * 60 * 2;
+    private static final long MILLIS_IN_SECOND = 1000;
+    private static final long SECONDS_IN_MINUTE = 60;
+    private static final long MINUTES_IN_HOUR = 60;
+    private static final long HOURS_IN_DAY = 24;
+
+    /*
+        public static final String _IP = "43.245.131.159"; // Test server
+    */
+    public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
+    private static final long DAYS_IN_YEAR = 365;
+    public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
+    private static final long DAYS_IN_MONTH = 30;
+    public static final long MILLISECONDS_IN_MONTH = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_MONTH;
     public static String DEVID;
     public static String GPS_LAT;
     public static String GPS_LNG;
@@ -28,35 +52,6 @@ public class MAPPSApp extends Application {
     public static FormContract fc;
     public static Section2Contract sc;
     public static Section4Contract sc4;
-
-
-    //public static final String _IP = "192.168.1.10"; // Test NODE server
-//    public static final String _IP = "10.198.96.103"; // Test PHP server
-    public static final String _IP = "10.1.79.42"; // Test PHP server
-    //    public static final Integer _PORT = 80; // Port - with colon (:)
-    public static final Integer _PORT = 8080; // Port - with colon (:)
-    //    public static final String _HOST_URL = "10.198.96.103:8080";
-    public static final String _HOST_URL = "http://" + MAPPSApp._IP + ":" + MAPPSApp._PORT + "/mapps/";
-
-/*
-    public static final String _IP = "43.245.131.159"; // Test server
-*/
-
-
-    private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
-    private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
-    private static final int TWENTY_MINUTES = 1000 * 60 * 20;
-    private static final int TWO_MINUTES = 1000 * 60 * 2;
-
-    private static final long MILLIS_IN_SECOND = 1000;
-    private static final long SECONDS_IN_MINUTE = 60;
-    private static final long MINUTES_IN_HOUR = 60;
-    private static final long HOURS_IN_DAY = 24;
-    public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
-    private static final long DAYS_IN_YEAR = 365;
-    public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
-
-
     public static String deviceId;
     public static String uid;
 
@@ -65,13 +60,10 @@ public class MAPPSApp extends Application {
     public static String mnb1 = "TEST";
     public static int chCount = 0;
     public static int chTotal = 0;
-    protected static LocationManager locationManager;
-
     public static String[] user;
     public static int totalNumMember = 0 ;
     public static int countNumMember = 0 ;
-
-
+    protected static LocationManager locationManager;
 
     @Override
     public void onCreate() {

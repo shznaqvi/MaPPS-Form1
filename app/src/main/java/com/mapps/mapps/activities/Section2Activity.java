@@ -1,12 +1,10 @@
 package com.mapps.mapps.activities;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -373,6 +371,22 @@ public class Section2Activity extends Activity {
 
         final CVars var = new CVars();
 
+        /*radioS2q15j.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if(rDOS2q15j2.isChecked() || rDOS2q15j3.isChecked() || rDOS2q15j4.isChecked())
+                {
+                    vu_s2q15k2.setVisibility(View.VISIBLE);
+                }else if(rDOS2q15j1.isChecked()){
+
+                    vu_s2q15k2.setVisibility(View.GONE);
+                    radioS2q15k.clearCheck();
+
+
+                }
+            }
+        });*/
+
         radioS2q15j.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -475,8 +489,7 @@ public class Section2Activity extends Activity {
 
                     s2q15gest.setText(null);
 
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(s2q15e.getWindowToken(), 0);
+
 
                 } else if (checkedId == rDOS2q15l12.getId()) {
 
@@ -2318,6 +2331,14 @@ public class Section2Activity extends Activity {
                 rDOS2q15k1.setError(null);
             }
 
+            if (radioS2q15l1.getCheckedRadioButtonId() == -1) {
+                rDOS2q15l11.setError(getString(R.string.rdoterr));
+                Toast.makeText(getApplicationContext(), getString(R.string.rdoterr), Toast.LENGTH_LONG).show();
+                rDOS2q15l11.requestFocus();
+                return false;
+            } else {
+                rDOS2q15l11.setError(null);
+            }
         }
 
 

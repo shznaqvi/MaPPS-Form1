@@ -52,7 +52,10 @@
             android:name=".activities.Section2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden" />/>
+            android:windowSoftInputMode="adjustResize|stateHidden">
+
+        </activity>
+        />/>
         <activity
             android:name=".activities.Section3Activity"
             android:screenOrientation="portrait"

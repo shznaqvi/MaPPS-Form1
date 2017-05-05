@@ -219,6 +219,7 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
     protected String doInBackground(Void... params) {
 
         String line = "No Response";
+
         try {
             String url = MAPPSApp._HOST_URL + Sec1Entry._URL;
             Log.d(TAG, "doInBackground: URL " + url);
@@ -263,13 +264,15 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
         // Only display the first 500 characters of the retrieved
         // web page content.
         //int len = 500;
+
+        HttpURLConnection conn = null;
         MAPPSHelper db = new MAPPSHelper(mContext);
         Collection<FormContract> forms = db.getUnsyncedForms();
         Log.d(TAG, String.valueOf(forms.size()));
         if (forms.size() > 0) {
             try {
                 URL url = new URL(myurl);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(20000 /* milliseconds */);
                 conn.setConnectTimeout(30000 /* milliseconds */);
                 conn.setRequestMethod("POST");

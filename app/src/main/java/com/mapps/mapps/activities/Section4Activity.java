@@ -427,6 +427,9 @@ public class Section4Activity extends Activity {
         if (ValidateForm1()) {
 
             if (members.size() == 0) {
+
+                MAPPSApp.fc.setROW_screened_count(String.valueOf(members.size()));
+
                 SaveDraft1();
                 UpdateDB1();
 

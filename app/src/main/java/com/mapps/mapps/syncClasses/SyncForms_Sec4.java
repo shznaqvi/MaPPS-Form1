@@ -242,9 +242,9 @@ public class SyncForms_Sec4 extends AsyncTask<Void, Void, String> {
                     sSynced++;
                 }
             }
-            Toast.makeText(mContext, sSynced + " Section4 synced." + String.valueOf(json.length() - sSynced) + " Errors.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext,"Section4\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced), Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Section4 synced." + String.valueOf(json.length() - sSynced) + " Errors.");
+            pd.setMessage("Section4\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced));
             pd.setTitle("Done uploading Section4 data");
             pd.show();
         } catch (JSONException e) {

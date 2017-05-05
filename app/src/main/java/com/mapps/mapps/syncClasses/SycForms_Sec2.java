@@ -245,9 +245,9 @@ public class SycForms_Sec2 extends AsyncTask<Void, Void, String> {
                     sSynced++;
                 }
             }
-            Toast.makeText(mContext, sSynced + " Section2 synced." + String.valueOf(json.length() - sSynced) + " Errors.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Section2\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced), Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Section2 synced." + String.valueOf(json.length() - sSynced) + " Errors.");
+            pd.setMessage("Section2\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced));
             pd.setTitle("Done uploading Section2 data");
             pd.show();
         } catch (JSONException e) {

@@ -244,9 +244,9 @@ public class SyncForms extends AsyncTask<Void, Void, String> {
                     sSynced++;
                 }
             }
-            Toast.makeText(mContext, sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, "Forms\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced), Toast.LENGTH_SHORT).show();
 
-            pd.setMessage(sSynced + " Forms synced." + String.valueOf(json.length() - sSynced) + " Errors.");
+            pd.setMessage("Forms\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced));
             pd.setTitle("Done uploading Forms data");
             pd.show();
         } catch (JSONException e) {

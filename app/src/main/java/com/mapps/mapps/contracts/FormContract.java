@@ -34,6 +34,7 @@ public class FormContract implements BaseColumns {
     String ROW_S1Q13;
     String ROW_S1Q14;
     String ROW_member_count;
+    String ROW_screened_count = "";
     String ROW_USERID;
     String ROW_ENTRYDATE;
     String ROW_S3;
@@ -103,6 +104,7 @@ public class FormContract implements BaseColumns {
         this.ROW_S1Q13 = jsonObject.getString(Sec1Entry.ROW_S1Q13);
         this.ROW_S1Q14 = jsonObject.getString(Sec1Entry.ROW_S1Q14);
         this.ROW_member_count = jsonObject.getString(Sec1Entry.ROW_member_count);
+        this.ROW_screened_count = jsonObject.getString(Sec1Entry.ROW_screened_count);
         this.ROW_USERID = jsonObject.getString(Sec1Entry.ROW_USERID);
         this.ROW_ENTRYDATE = jsonObject.getString(Sec1Entry.ROW_ENTRYDATE);
         this.ROW_S3 = jsonObject.getString(Sec1Entry.ROW_S3);
@@ -139,6 +141,7 @@ public class FormContract implements BaseColumns {
         this.ROW_S1Q13 = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q13));
         this.ROW_S1Q14 = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S1Q14));
         this.ROW_member_count = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_member_count));
+        this.ROW_screened_count = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_screened_count));
         this.ROW_USERID = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_USERID));
         this.ROW_ENTRYDATE = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_ENTRYDATE));
         this.ROW_S3 = cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S3));
@@ -175,6 +178,7 @@ public class FormContract implements BaseColumns {
         json.put(Sec1Entry.ROW_S1Q13, this.ROW_S1Q13 == null ? JSONObject.NULL : this.ROW_S1Q13);
         json.put(Sec1Entry.ROW_S1Q14, this.ROW_S1Q14 == null ? JSONObject.NULL : this.ROW_S1Q14);
         json.put(Sec1Entry.ROW_member_count, this.ROW_member_count == null ? JSONObject.NULL : this.ROW_member_count);
+        json.put(Sec1Entry.ROW_screened_count, this.ROW_screened_count == null ? JSONObject.NULL : this.ROW_screened_count);
         json.put(Sec1Entry.ROW_USERID, this.ROW_USERID == null ? JSONObject.NULL : this.ROW_USERID);
         json.put(Sec1Entry.ROW_ENTRYDATE, this.ROW_ENTRYDATE == null ? JSONObject.NULL : this.ROW_ENTRYDATE);
         json.put(Sec1Entry.ROW_S3, this.ROW_S3 == null ? JSONObject.NULL : this.ROW_S3);
@@ -422,6 +426,14 @@ public class FormContract implements BaseColumns {
         this.ROW_ENTRYDATE = ROW_ENTRYDATE;
     }
 
+    public String getROW_screened_count() {
+        return ROW_screened_count;
+    }
+
+    public void setROW_screened_count(String ROW_screened_count) {
+        this.ROW_screened_count = ROW_screened_count;
+    }
+
     public static abstract class Sec1Entry implements BaseColumns {
         public static final String TABLE_NAME = "sec1";
         public static final String _ID = "_ID";
@@ -444,6 +456,7 @@ public class FormContract implements BaseColumns {
         public static final String ROW_S1Q13 = "s1q13";
         public static final String ROW_S1Q14 = "s1q14";
         public static final String ROW_member_count = "member_count";
+        public static final String ROW_screened_count = "screened_women_count";
 
         public static final String ROW_USERID = "userid";
         public static final String ROW_ENTRYDATE = "entrydate";

@@ -509,9 +509,8 @@ public class Section4Activity extends Activity {
     private boolean UpdateDB() {
         MAPPSHelper db = new MAPPSHelper(this);
         db.InsertRecord_Sec4(MAPPSApp.sc4);
-
-        //MAPPSApp.sc4.set_ID(db.InsertRecord_Sec4(MAPPSApp.sc4));
-        //db.InsertRecord_Sec4(MAPPSApp.sc4);
+        MAPPSApp.sc4.set_ID(db.InsertRecord_Sec4(MAPPSApp.sc4));
+        db.InsertRecord_Sec4(MAPPSApp.sc4);
         db.updateSA();
 
         return true;

@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -21,19 +20,17 @@ import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.mapps.mapps.core.CVars;
-import com.mapps.mapps.otherClasses.Members;
 import com.mapps.mapps.R;
 import com.mapps.mapps.contracts.FormContract;
+import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
+import com.mapps.mapps.otherClasses.Members;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.regex.Matcher;
@@ -474,7 +471,7 @@ public class Section1Activity extends Activity {
     private boolean SaveDraft() {
         MAPPSApp.fc = new FormContract();
 
-        MAPPSApp.fc.setROW_DEVID(MAPPSApp.DEVID);
+        MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
 
         MAPPSHelper db = new MAPPSHelper(this);
 

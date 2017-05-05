@@ -1777,7 +1777,7 @@ public class Section2Activity extends Activity {
         //SRCApp.fc.setROW_S2(js.toString());
 
         MAPPSApp.sc.setROW_DEVID(MAPPSApp.DEVID);
-        MAPPSApp.sc.setROW_UID(MAPPSApp.uid);
+        MAPPSApp.sc.setROW_UID("N" + MAPPSApp.uid);
 
         CVars vars = new CVars();
 

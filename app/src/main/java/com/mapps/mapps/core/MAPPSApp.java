@@ -29,7 +29,7 @@ public class MAPPSApp extends Application {
     //    public static final String _HOST_URL = "10.198.96.103:8080";
     public static final String _PROJECT_FOLDER = "mapps/form1/api/";
 
-    public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + _PROJECT_FOLDER;
+    public static final String _HOST_URL = "http://" + _IP + ":" + _PORT + "/" + _PROJECT_FOLDER;
     private static final long MINIMUM_DISTANCE_CHANGE_FOR_UPDATES = 1; // in Meters
     private static final long MINIMUM_TIME_BETWEEN_UPDATES = 1000; // in Milliseconds
     private static final int TWENTY_MINUTES = 1000 * 60 * 20;

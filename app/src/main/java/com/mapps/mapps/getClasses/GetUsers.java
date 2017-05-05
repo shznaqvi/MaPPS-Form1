@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.mapps.mapps.core.CVars;
 import com.mapps.mapps.contracts.UsersContract;
 import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
@@ -116,6 +115,9 @@ public class GetUsers extends AsyncTask<String, String, String> {
 
         try {
             URL url = new URL(MAPPSApp._HOST_URL + UsersContract.singleUser.GETURL);
+
+            Log.d(TAG, "url: " + url.toString());
+
             urlConnection = (HttpURLConnection) url.openConnection();
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());

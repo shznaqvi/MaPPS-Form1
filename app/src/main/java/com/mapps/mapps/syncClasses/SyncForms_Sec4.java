@@ -238,6 +238,7 @@ public class SyncForms_Sec4 extends AsyncTask<Void, Void, String> {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
                 if (jsonObject.getString("status").equals("1")) {
                     db.updateSection4(jsonObject.getString("id"));
+                    Log.d(TAG, "ID: " + jsonObject.getString("id"));
                     sSynced++;
                 }
             }

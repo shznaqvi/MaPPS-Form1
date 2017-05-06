@@ -27,6 +27,8 @@ import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
 import com.mapps.mapps.otherClasses.Members;
 
+import org.json.JSONException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -1327,7 +1329,12 @@ public class Section2Activity extends Activity {
 
                         if (IsValidValues()) {
 
-                            if (SaveDraft()) {
+                            //if (SaveDraft()) {
+                            try {
+                                SaveDraft();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
 
                                 Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
 
@@ -1342,7 +1349,7 @@ public class Section2Activity extends Activity {
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
                                 }
-                            }
+
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Member already entered in this household ", Toast.LENGTH_SHORT).show();
@@ -1475,7 +1482,12 @@ public class Section2Activity extends Activity {
 
                         if (IsValidValues()) {
 
-                            if (SaveDraft()) {
+                            //if (SaveDraft()) {
+                            try {
+                                SaveDraft();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
 
                                 Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
 
@@ -1561,7 +1573,7 @@ public class Section2Activity extends Activity {
                                 } else {
                                     Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
                                 }
-                            }
+
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Member already entered in this household ", Toast.LENGTH_SHORT).show();
@@ -1763,13 +1775,95 @@ public class Section2Activity extends Activity {
 
 
     private boolean UpdateDB() {
+        //MAPPSHelper db = new MAPPSHelper(this);
+        //MAPPSApp.sc.set_ID(db.InsertRecord_Sec2(MAPPSApp.sc));
+        //return true;
+
         MAPPSHelper db = new MAPPSHelper(this);
-        MAPPSApp.sc.set_ID(db.InsertRecord_Sec2(MAPPSApp.sc));
-        return true;
+        Long updcount = db.InsertRecord_Sec2(MAPPSApp.sc);
+        MAPPSApp.sc.set_ID(updcount);
+
+        if (updcount != null) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            MAPPSApp.sc.setROW_UID(MAPPSApp.sc.getROW_DEVID() + MAPPSApp.sc.get_ID());
+            db.updateSection2("id");
+            return true;
+
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
+    private boolean SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+        MAPPSApp.sc = new Section2Contract();
+        MAPPSApp.sc.setROW_DEVID(MAPPSApp.DEVID);
+        MAPPSApp.sc.setROW_UID("N" + MAPPSApp.uid);
+        CVars vars = new CVars();
 
-    private boolean SaveDraft() {
+        MAPPSApp.sc.setROW_S2CLUSTER(vars.get_mycluster());
+        MAPPSApp.sc.setROW_S2LHW(vars.get_mylhw());
+        MAPPSApp.sc.setROW_S2HH(vars.get_myhh());
+        MAPPSApp.sc.setROW_S2Q1(vars.Gethhno());
+
+        MAPPSHelper db = new MAPPSHelper(this);
+        counter = db.getSNO();
+
+        if (counter == 0) {
+            MAPPSApp.sc.setROW_SNO("1");
+        } else {
+            MAPPSApp.sc.setROW_SNO(String.valueOf(counter + 1));
+        }
+
+        MAPPSApp.sc.setROW_S2Q15a(s2q15a.getText().toString());
+        MAPPSApp.sc.setROW_S2Q15i(rDOS2q15i1.isChecked() ? "1" : rDOS2q15i2.isChecked() ? "2" : "0");
+        MAPPSApp.sc.setROW_S2Q15b(rDOS2q15b1.isChecked() ? "1" : rDOS2q15b2.isChecked() ? "2" : rDOS2q15b3.isChecked() ? "3"
+                : rDOS2q15b4.isChecked() ? "4" : rDOS2q15b5.isChecked() ? "5" : rDOS2q15b6.isChecked() ? "6" : rDOS2q15b7.isChecked() ? "7"
+                : rDOS2q15b8.isChecked() ? "8" : rDOS2q15b9.isChecked() ? "9" : rDOS2q15b10.isChecked() ? "10"
+                : rDOS2q15b11.isChecked() ? "11" : rDOS2q15b12.isChecked() ? "12" : "0");
+        MAPPSApp.sc.setROW_S2Q15both(s2q15both.getText().toString());
+        MAPPSApp.sc.setROW_fy(ddlmembers_cf.getSelectedItem().toString());
+        MAPPSApp.sc.setROW_fm(ddlmembers_cm.getSelectedItem().toString());
+        MAPPSApp.sc.setROW_S2Q15d(rDOS2q15d1.isChecked() ? "1" : rDOS2q15d2.isChecked() ? "2" : "0");
+        MAPPSApp.sc.setROW_S2Q15e1(rDOS2q15e11.isChecked() ? "1" : rDOS2q15e12.isChecked() ? "2" : "0");
+        MAPPSApp.sc.setROW_S2Q15e(new SimpleDateFormat("dd-MM-yyyy").format(spDateT));
+        MAPPSApp.sc.setROW_S2Q15fy(s2q15fy.getText().toString());
+        MAPPSApp.sc.setROW_S2Q15fm(s2q15fm.getText().toString());
+        MAPPSApp.sc.setROW_S2Q15g(rDOS2q15g1.isChecked() ? "1" : rDOS2q15g2.isChecked() ? "2" : rDOS2q15g3.isChecked() ? "3"
+                : rDOS2q15g4.isChecked() ? "4" : rDOS2q15g5.isChecked() ? "5" : rDOS2q15g6.isChecked() ? "6"
+                : rDOS2q15g7.isChecked() ? "7" : rDOS2q15g8.isChecked() ? "8" : rDOS2q15g9.isChecked() ? "9"
+                : rDOS2q15g10.isChecked() ? "10" : rDOS2q15g11.isChecked() ? "11" : rDOS2q15g12.isChecked() ? "12"
+                : rDOS2q15g13.isChecked() ? "13" : rDOS2q15g99.isChecked() ? "99" : "0");
+        MAPPSApp.sc.setROW_S2Q15goth(s2q15goth.getText().toString());
+
+        MAPPSApp.sc.setROW_S2Q15h(rDOS2q15h1.isChecked() ? "1" : rDOS2q15h2.isChecked() ? "2" : rDOS2q15h3.isChecked() ? "3"
+                : rDOS2q15h4.isChecked() ? "4" : rDOS2q15h5.isChecked() ? "5" : rDOS2q15h6.isChecked() ? "6"
+                : rDOS2q15h7.isChecked() ? "7" : rDOS2q15h8.isChecked() ? "8" : rDOS2q15h9.isChecked() ? "9"
+                : rDOS2q15h10.isChecked() ? "10" : rDOS2q15h11.isChecked() ? "11" : rDOS2q15h99.isChecked() ? "99" : "0");
+        MAPPSApp.sc.setROW_S2Q15hoth(s2q15hoth.getText().toString());
+        MAPPSApp.sc.setROW_S2Q15j(rDOS2q15j1.isChecked() ? "1" : rDOS2q15j2.isChecked() ? "2" : rDOS2q15j3.isChecked() ? "3"
+                : rDOS2q15j4.isChecked() ? "4" : rDOS2q15j5.isChecked() ? "5" : "0");
+        MAPPSApp.sc.setROW_S2Q15joth(s2q15joth.getText().toString());
+        MAPPSApp.sc.setROW_S2Q15k(rDOS2q15k1.isChecked() ? "1" : rDOS2q15k2.isChecked() ? "2" : rDOS2q15k9.isChecked() ? "9" : "0");
+        MAPPSApp.sc.setROW_S2Q15l1(rDOS2q15l11.isChecked() ? "1" : rDOS2q15l12.isChecked() ? "2" : "0");
+        MAPPSApp.sc.setROW_S2Q15lmp(new SimpleDateFormat("dd-MM-yyyy").format(spDateLMP));
+        MAPPSApp.sc.setROW_S2Q15gest(s2q15gest.getText().toString());
+        if (rDOS2q15i2.isChecked()) {
+            if (Integer.parseInt(vars.GetAgeYY()) < 14 || Integer.parseInt(vars.GetAgeYY()) > 22) {
+                MAPPSApp.sc.setROW_iselig("2");
+            } else {
+                MAPPSApp.sc.setROW_iselig("1");
+            }
+        } else {
+            MAPPSApp.sc.setROW_iselig("2");
+        }
+        return true;
+
+
+    }
+
+    /*private boolean SaveDraft() {
         MAPPSApp.sc = new Section2Contract();
 
         //JSONObject js = new JSONObject();
@@ -2072,7 +2166,7 @@ public class Section2Activity extends Activity {
 
 
         return true;
-    }
+    }*/
 
 
     private boolean ValidateForm() {

@@ -29,6 +29,8 @@ import com.mapps.mapps.core.MAPPSApp;
 import com.mapps.mapps.core.MAPPSHelper;
 import com.mapps.mapps.otherClasses.Members;
 
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -386,21 +388,13 @@ public class Section1Activity extends Activity {
 
         if (ValidateForm()) {
 
-//            spDateT = new SimpleDateFormat("dd-MM-yyyy").format(s1q10.getCalendarView().getDate());
-//            spTime = s1q11.getCurrentHour() + ":" + s1q11.getCurrentMinute();
-//
-//            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-//            Date dt = new Date();
-//            String dt1 = sdf.format(dt);
-//
-//
-//            if (spDateT.equals(dt1)) {
-
             if (!IsHouseHoldExists_InCluster()) {
 
-                //if (CheckInvalidChars()) {
-
-                if (SaveDraft()) {
+                try {
+                    SaveDraft();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
                     if (UpdateDB()) {
 
@@ -421,7 +415,6 @@ public class Section1Activity extends Activity {
                     } else {
                         Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
                     }
-                }
                 //}
 
             } else {
@@ -454,21 +447,65 @@ public class Section1Activity extends Activity {
 
     private boolean UpdateDB() {
         MAPPSHelper db = new MAPPSHelper(this);
-        MAPPSApp.fc.set_ID(db.InsertRecord(MAPPSApp.fc));
-        MAPPSApp.fc.setROW_UID(MAPPSApp.fc.getROW_DEVID() + MAPPSApp.fc.get_ID());
+        Long updcount = db.InsertRecord(MAPPSApp.fc);
+        MAPPSApp.fc.set_ID(updcount);
 
-        CVars var = new CVars();
-        var.set_myid(MAPPSApp.fc.get_ID());
+        if (updcount != null) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            MAPPSApp.fc.setROW_UID(MAPPSApp.fc.getROW_DEVID() + MAPPSApp.fc.get_ID());
+            CVars var = new CVars();
+            var.set_myid(MAPPSApp.fc.get_ID());
+            db.updateFormID();
+            return true;
 
-//        MAPPSApp.fc.setROW_UID(MAPPSApp.DEVID + MAPPSApp.fc.get_ID());
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
 
-        db.updateFormID();
+    }
+
+    private boolean SaveDraft() throws JSONException {
+        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
+        MAPPSApp.fc = new FormContract();
+
+        MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
+        MAPPSHelper db = new MAPPSHelper(this);
+        spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+        spTime = new SimpleDateFormat("hh:mm:ss").format(new Date());
+
+        String cluster = db.getHFCode(s1q1.getSelectedItem().toString());
+        String lhwcode = db.getLHWCode(s1q2.getSelectedItem().toString(), s1q1.getSelectedItem().toString());
+        MAPPSApp.fc.setROW_S1Q1(cluster);
+        MAPPSApp.fc.setROW_S1Q2(lhwcode);
+        MAPPSApp.fc.setROW_S1Q3(s1q3.getText().toString());
+        MAPPSApp.fc.setROW_S1Q4(s1q4.getText().toString());
+        MAPPSApp.fc.setROW_S1Q5(s1q5.getText().toString());
+        MAPPSApp.fc.setROW_S1Q6(s1q6.getText().toString());
+        MAPPSApp.fc.setROW_S1Q7(s1q7.getText().toString());
+        MAPPSApp.fc.setROW_S1Q8(s1q8.getText().toString());
+        MAPPSApp.fc.setROW_S1Q10(spDateT);
+        MAPPSApp.fc.setROW_S1Q11(spTime);
+        MAPPSApp.fc.setROW_S1Q12(rDOS1q121.isChecked() ? "1" : rDOS1q122.isChecked() ? "2" : "0");
+        MAPPSApp.fc.setROW_S1Q13(rDOS1q131.isChecked() ? "1" : rDOS1q132.isChecked() ? "2" : "0");
+        MAPPSApp.fc.setROW_ENTRYDATE(new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
+        MAPPSApp.fc.setROW_USERID(MAPPSApp.user[1]);
+
+        if (!totalMem.getText().toString().isEmpty()) {
+            MAPPSApp.totalNumMember = Integer.parseInt(totalMem.getText().toString());
+
+            MAPPSApp.fc.setROW_member_count(String.valueOf(MAPPSApp.totalNumMember));
+        }
+
+        setGPS();
 
         return true;
+
+
     }
 
 
-    private boolean SaveDraft() {
+    /*private boolean SaveDraft() {
         MAPPSApp.fc = new FormContract();
 
         MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
@@ -511,8 +548,7 @@ public class Section1Activity extends Activity {
         MAPPSApp.fc.setROW_S1Q9a(MAPPSApp.user[0]);
         MAPPSApp.fc.setROW_S1Q9b(MAPPSApp.user[1]);
 
-        spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
-        spTime = new SimpleDateFormat("hh:mm:ss").format(new Date());
+
 
         MAPPSApp.fc.setROW_S1Q10(spDateT);
         MAPPSApp.fc.setROW_S1Q11(spTime);
@@ -564,7 +600,7 @@ public class Section1Activity extends Activity {
 
         return true;
     }
-
+*/
 
     private boolean ValidateForm() {
         //Toast.makeText(getApplicationContext(), "Validating Form", Toast.LENGTH_SHORT).show();

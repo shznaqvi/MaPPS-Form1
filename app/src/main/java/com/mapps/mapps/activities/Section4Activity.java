@@ -440,6 +440,9 @@ public class Section4Activity extends Activity {
             } else {
 
                 if (arr_members.size() < counter) {
+
+                    MAPPSApp.fc.setROW_screened_count(String.valueOf(members.size()));
+
                     SaveDraft1();
                     UpdateDB1();
 

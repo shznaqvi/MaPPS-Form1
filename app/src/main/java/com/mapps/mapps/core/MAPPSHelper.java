@@ -66,8 +66,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + Sec1Entry.ROW_S1Q12 + " INTEGER,"
             + Sec1Entry.ROW_S1Q13 + " INTEGER,"
             + Sec1Entry.ROW_S1Q14 + " INTEGER,"
-            + Sec1Entry.ROW_member_count + " INTEGER,"
-            + Sec1Entry.ROW_screened_count + " TEXT,"
             + Sec1Entry.ROW_USERID + " TEXT,"
             + Sec1Entry.ROW_ENTRYDATE + " DATETIME,"
             + Sec1Entry.ROW_S3 + " TEXT,"
@@ -1161,8 +1159,8 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             values.put(Sec1Entry.ROW_S1Q12, fc.getROW_S1Q12());
             values.put(Sec1Entry.ROW_S1Q13, fc.getROW_S1Q13());
             values.put(Sec1Entry.ROW_S1Q14, fc.getROW_S1Q14());
-            values.put(Sec1Entry.ROW_member_count, fc.getROW_member_count());
-            values.put(Sec1Entry.ROW_screened_count, fc.getROW_screened_count());
+            values.put(Sec1Entry.ROW_S4, fc.getROW_member_count());
+            values.put(Sec1Entry.ROW_S5, fc.getROW_screened_count());
             values.put(Sec1Entry.ROW_USERID, fc.getROW_USERID());
             values.put(Sec1Entry.ROW_ENTRYDATE, fc.getROW_ENTRYDATE());
             values.put(Sec1Entry.ROW_UUID, fc.getROW_UID());
@@ -1325,7 +1323,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
 // New value for one column
         ContentValues values = new ContentValues();
         values.put(Sec1Entry.ROW_S1Q14, MAPPSApp.fc.getROW_S1Q14());
-        values.put(Sec1Entry.ROW_screened_count, MAPPSApp.fc.getROW_screened_count());
+        values.put(Sec1Entry.ROW_S5, MAPPSApp.fc.getROW_screened_count());
 
 // Which row to update, based on the ID
         String selection = " _ID = " + MAPPSApp.fc.get_ID();
@@ -1419,18 +1417,18 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 }
 
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_member_count)).equals("") ||
-                        cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_member_count)) == null) {
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S4)).equals("") ||
+                        cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S4)) == null) {
                     fc.setROW_member_count("");
                 } else {
-                    fc.setROW_member_count(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_member_count)));
+                    fc.setROW_member_count(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S4)));
                 }
 
-                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_screened_count)).equals("") ||
-                        cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_screened_count)) == null) {
+                if (cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S5)).equals("") ||
+                        cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S5)) == null) {
                     fc.setROW_screened_count("");
                 } else {
-                    fc.setROW_screened_count(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_screened_count)));
+                    fc.setROW_screened_count(cursor.getString(cursor.getColumnIndex(Sec1Entry.ROW_S5)));
                 }
 
 
@@ -1554,8 +1552,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 Sec1Entry.ROW_S1Q12,
                 Sec1Entry.ROW_S1Q13,
                 Sec1Entry.ROW_S1Q14,
-                Sec1Entry.ROW_member_count,
-                Sec1Entry.ROW_screened_count,
                 Sec1Entry.ROW_USERID,
                 Sec1Entry.ROW_ENTRYDATE,
                 Sec1Entry.ROW_S3,
@@ -1624,8 +1620,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 Sec1Entry.ROW_S1Q12,
                 Sec1Entry.ROW_S1Q13,
                 Sec1Entry.ROW_S1Q14,
-                Sec1Entry.ROW_member_count,
-                Sec1Entry.ROW_screened_count,
                 Sec1Entry.ROW_USERID,
                 Sec1Entry.ROW_ENTRYDATE,
                 Sec1Entry.ROW_S3,
@@ -2510,8 +2504,6 @@ public class MAPPSHelper extends SQLiteOpenHelper {
                 Sec1Entry.ROW_S1Q12,
                 Sec1Entry.ROW_S1Q13,
                 Sec1Entry.ROW_S1Q14,
-                Sec1Entry.ROW_member_count,
-                Sec1Entry.ROW_screened_count,
                 Sec1Entry.ROW_S3,
                 Sec1Entry.ROW_S4,
                 Sec1Entry.ROW_S5,

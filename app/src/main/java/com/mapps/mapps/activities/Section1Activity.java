@@ -470,12 +470,31 @@ public class Section1Activity extends Activity {
         MAPPSApp.fc = new FormContract();
 
         MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
+
+
         MAPPSHelper db = new MAPPSHelper(this);
+        CVars var = new CVars();
+
+
         spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
         spTime = new SimpleDateFormat("hh:mm:ss").format(new Date());
 
         String cluster = db.getHFCode(s1q1.getSelectedItem().toString());
         String lhwcode = db.getLHWCode(s1q2.getSelectedItem().toString(), s1q1.getSelectedItem().toString());
+
+        int mycluster = Integer.parseInt(cluster) * 100;
+        int mylhw = Integer.parseInt(lhwcode);
+        int myhh = Integer.parseInt(s1q5.getText().toString());
+
+        int val1 = (mycluster + mylhw) * 1000;
+        int val2 = val1 + myhh;
+
+        var.set_mycluster(cluster);
+        var.set_mylhw(lhwcode);
+        var.set_myhh(s1q5.getText().toString());
+
+        var.Storehhno(String.valueOf(val2));
+
         MAPPSApp.fc.setROW_S1Q1(cluster);
         MAPPSApp.fc.setROW_S1Q2(lhwcode);
         MAPPSApp.fc.setROW_S1Q3(s1q3.getText().toString());

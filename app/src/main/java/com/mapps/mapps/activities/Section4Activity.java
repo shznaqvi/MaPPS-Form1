@@ -324,7 +324,7 @@ public class Section4Activity extends Activity {
 
                 if (checkedId == rDOS4q28d2.getId()) {
 
-                    if (var_s4q28c.equals("2")  && var_s4q28d.equals("2")  && var_s4q28e.equals("2")) {
+                    if (var_s4q28c.equals("2") && var_s4q28d.equals("2") && var_s4q28e.equals("2")) {
                         vu_s4q28g.setVisibility(View.VISIBLE);
                     }
 
@@ -514,10 +514,10 @@ public class Section4Activity extends Activity {
 
     private boolean UpdateDB() {
         MAPPSHelper db = new MAPPSHelper(this);
-        db.InsertRecord_Sec4(MAPPSApp.sc4);
+        //db.InsertRecord_Sec4(MAPPSApp.sc4);
         MAPPSApp.sc4.set_ID(db.InsertRecord_Sec4(MAPPSApp.sc4));
-        db.InsertRecord_Sec4(MAPPSApp.sc4);
-        db.updateSA();
+        //db.InsertRecord_Sec4(MAPPSApp.sc4);
+        //db.updateSA();
 
         return true;
     }
@@ -827,7 +827,7 @@ public class Section4Activity extends Activity {
         }
 
 
-        if (var_s4q28c.equals("2") && var_s4q28d.equals("2")&& var_s4q28e.equals("2")) {
+        if (var_s4q28c.equals("2") && var_s4q28d.equals("2") && var_s4q28e.equals("2")) {
             rdo_s4q28g = radioS4q28g.getCheckedRadioButtonId();
 
             if (rdo_s4q28g == -1) {

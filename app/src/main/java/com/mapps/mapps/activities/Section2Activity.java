@@ -150,7 +150,7 @@ public class Section2Activity extends Activity {
     private LinearLayout vu_s2q15cm;
     private Spinner ddlmembers_cf;
     private Spinner ddlmembers_cm;
-    private TextView lbl_hhhead_count,lbl_head;
+    private TextView lbl_hhhead_count, lbl_head;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -281,7 +281,7 @@ public class Section2Activity extends Activity {
         btnnext = (Button) findViewById(R.id.btnnext);
         lbl_head = (TextView) findViewById(R.id.lbl_head);
 
-        lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of "+MAPPSApp.totalNumMember);
+        lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of " + MAPPSApp.totalNumMember);
 
         if (MAPPSApp.totalNumMember != MAPPSApp.countNumMember) {
             btnadd.setVisibility(View.VISIBLE);
@@ -1336,19 +1336,19 @@ public class Section2Activity extends Activity {
                                 e.printStackTrace();
                             }
 
-                                Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
 
-                                if (UpdateDB()) {
+                            if (UpdateDB()) {
 
 
-                                    MAPPSApp.countNumMember++;
+                                MAPPSApp.countNumMember++;
 
-                                    Intent sec2_intent = new Intent(this, Section3Activity.class);
-                                    startActivity(sec2_intent);
+                                Intent sec2_intent = new Intent(this, Section3Activity.class);
+                                startActivity(sec2_intent);
 
-                                } else {
-                                    Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
-                                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
                     } else {
@@ -1489,90 +1489,90 @@ public class Section2Activity extends Activity {
                                 e.printStackTrace();
                             }
 
-                                Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Storing Values", Toast.LENGTH_SHORT).show();
 
-                                if (UpdateDB()) {
-
-
-                                    MAPPSApp.countNumMember++;
-
-                                    lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of "+MAPPSApp.totalNumMember);
-
-                                    if (MAPPSApp.totalNumMember != MAPPSApp.countNumMember) {
-                                        btnadd.setVisibility(View.VISIBLE);
-                                        btnnext.setVisibility(View.GONE);
-                                    } else {
-                                        btnadd.setVisibility(View.GONE);
-                                        btnnext.setVisibility(View.VISIBLE);
-                                    }
+                            if (UpdateDB()) {
 
 
-                                    MAPPSHelper db = new MAPPSHelper(this);
+                                MAPPSApp.countNumMember++;
 
-                                    Collection<Members> members = db.getAll_Male_Members();
+                                lbl_head.setText("Member: " + MAPPSApp.countNumMember + " out of " + MAPPSApp.totalNumMember);
 
-                                    if (members.size() > 0) {
-                                        vu_s2q15cf.setVisibility(View.VISIBLE);
-
-                                        ArrayList<String> arr_members = new ArrayList<>();
-
-                                        for (Members m : members) {
-                                            arr_members.add(
-                                                    m.getNME());
-                                        }
-
-                                        ArrayAdapter<String> adapter = new ArrayAdapter<>(Section2Activity.this,
-                                                android.R.layout.simple_spinner_item, arr_members);
-                                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                        ddlmembers_cf.setAdapter(adapter);
-
-                                    }
-
-                                    members.clear();
-
-
-                                    db = new MAPPSHelper(this);
-
-                                    members = db.getAll_Female_Members();
-
-                                    if (members.size() > 0) {
-                                        vu_s2q15cm.setVisibility(View.VISIBLE);
-
-                                        ArrayList<String> arr_members = new ArrayList<>();
-
-                                        for (Members m : members) {
-                                            arr_members.add(
-                                                    m.getNME());
-                                        }
-
-                                        ArrayAdapter<String> adapter = new ArrayAdapter<>(Section2Activity.this,
-                                                android.R.layout.simple_spinner_item, arr_members);
-                                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                        ddlmembers_cm.setAdapter(adapter);
-                                    }
-
-                                    CVars var = new CVars();
-                                    var.StoreQ15fid("");
-                                    var.StoreQ15mid("");
-
-                                    vu_s2q15e1.setVisibility(View.GONE);
-                                    vu_s2q15lmp.setVisibility(View.GONE);
-                                    vu_s2q15k.setVisibility(View.GONE);
-                                    vu_s2q15k2.setVisibility(View.GONE);
-                                    vu_s2q15age.setVisibility(View.GONE);
-                                    vu_s2q15joth.setVisibility(View.GONE);
-                                    vu_s2q15gest.setVisibility(View.GONE);
-
-                                    ClearFields();
-
-                                    lbl_hhhead_count.setText("Total Members : " + db.getAllMembers_GetHouseHold().size());
-                                    lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
-
-                                    s2q15a.requestFocus();
-
+                                if (MAPPSApp.totalNumMember != MAPPSApp.countNumMember) {
+                                    btnadd.setVisibility(View.VISIBLE);
+                                    btnnext.setVisibility(View.GONE);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
+                                    btnadd.setVisibility(View.GONE);
+                                    btnnext.setVisibility(View.VISIBLE);
                                 }
+
+
+                                MAPPSHelper db = new MAPPSHelper(this);
+
+                                Collection<Members> members = db.getAll_Male_Members();
+
+                                if (members.size() > 0) {
+                                    vu_s2q15cf.setVisibility(View.VISIBLE);
+
+                                    ArrayList<String> arr_members = new ArrayList<>();
+
+                                    for (Members m : members) {
+                                        arr_members.add(
+                                                m.getNME());
+                                    }
+
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Section2Activity.this,
+                                            android.R.layout.simple_spinner_item, arr_members);
+                                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                    ddlmembers_cf.setAdapter(adapter);
+
+                                }
+
+                                members.clear();
+
+
+                                db = new MAPPSHelper(this);
+
+                                members = db.getAll_Female_Members();
+
+                                if (members.size() > 0) {
+                                    vu_s2q15cm.setVisibility(View.VISIBLE);
+
+                                    ArrayList<String> arr_members = new ArrayList<>();
+
+                                    for (Members m : members) {
+                                        arr_members.add(
+                                                m.getNME());
+                                    }
+
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Section2Activity.this,
+                                            android.R.layout.simple_spinner_item, arr_members);
+                                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                    ddlmembers_cm.setAdapter(adapter);
+                                }
+
+                                CVars var = new CVars();
+                                var.StoreQ15fid("");
+                                var.StoreQ15mid("");
+
+                                vu_s2q15e1.setVisibility(View.GONE);
+                                vu_s2q15lmp.setVisibility(View.GONE);
+                                vu_s2q15k.setVisibility(View.GONE);
+                                vu_s2q15k2.setVisibility(View.GONE);
+                                vu_s2q15age.setVisibility(View.GONE);
+                                vu_s2q15joth.setVisibility(View.GONE);
+                                vu_s2q15gest.setVisibility(View.GONE);
+
+                                ClearFields();
+
+                                lbl_hhhead_count.setText("Total Members : " + db.getAllMembers_GetHouseHold().size());
+                                lbl_hhhead_count.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                                s2q15a.requestFocus();
+
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Unable to update database", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
                     } else {
@@ -1798,9 +1798,13 @@ public class Section2Activity extends Activity {
     private boolean SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
         MAPPSApp.sc = new Section2Contract();
+
         MAPPSApp.sc.setROW_DEVID(MAPPSApp.DEVID);
         MAPPSApp.sc.setROW_UID("N" + MAPPSApp.uid);
+
+
         CVars vars = new CVars();
+
 
         MAPPSApp.sc.setROW_S2CLUSTER(vars.get_mycluster());
         MAPPSApp.sc.setROW_S2LHW(vars.get_mylhw());
@@ -1823,13 +1827,55 @@ public class Section2Activity extends Activity {
                 : rDOS2q15b8.isChecked() ? "8" : rDOS2q15b9.isChecked() ? "9" : rDOS2q15b10.isChecked() ? "10"
                 : rDOS2q15b11.isChecked() ? "11" : rDOS2q15b12.isChecked() ? "12" : "0");
         MAPPSApp.sc.setROW_S2Q15both(s2q15both.getText().toString());
-        MAPPSApp.sc.setROW_fy(ddlmembers_cf.getSelectedItem().toString());
-        MAPPSApp.sc.setROW_fm(ddlmembers_cm.getSelectedItem().toString());
+
+
+        MAPPSApp.sc.setROW_S2Q15cf(vars.Getfid());
+        MAPPSApp.sc.setROW_S2Q15cm(vars.Getmid());
+
+        //MAPPSApp.sc.setROW_fy(ddlmembers_cf.getSelectedItem().toString());
+        //MAPPSApp.sc.setROW_fm(ddlmembers_cm.getSelectedItem().toString());
+
         MAPPSApp.sc.setROW_S2Q15d(rDOS2q15d1.isChecked() ? "1" : rDOS2q15d2.isChecked() ? "2" : "0");
         MAPPSApp.sc.setROW_S2Q15e1(rDOS2q15e11.isChecked() ? "1" : rDOS2q15e12.isChecked() ? "2" : "0");
-        MAPPSApp.sc.setROW_S2Q15e(new SimpleDateFormat("dd-MM-yyyy").format(spDateT));
-        MAPPSApp.sc.setROW_S2Q15fy(s2q15fy.getText().toString());
-        MAPPSApp.sc.setROW_S2Q15fm(s2q15fm.getText().toString());
+
+        //MAPPSApp.sc.setROW_S2Q15e(new SimpleDateFormat("dd-MM-yyyy").format(spDateT));
+
+
+        String var_s2q15e1 = "";
+        switch (radioS2q15e1.getCheckedRadioButtonId()) {
+            case R.id.RDO_s2q15e1_1:
+                var_s2q15e1 = "1";
+                break;
+            case R.id.RDO_s2q15e1_2:
+                var_s2q15e1 = "2";
+                break;
+        }
+
+
+        if (var_s2q15e1.equals("1")) {
+            MAPPSApp.sc.setROW_fy(vars.GetAgeYY());
+            MAPPSApp.sc.setROW_fm(vars.GetAgeMM());
+        } else {
+
+            vars.StoreAgeYY(s2q15fy.getText().toString());
+            vars.StoreAgeMM(s2q15fm.getText().toString());
+
+            MAPPSApp.sc.setROW_fy(s2q15fy.getText().toString());
+            MAPPSApp.sc.setROW_fm(s2q15fm.getText().toString());
+        }
+
+
+        if (var_s2q15e1.equals("1")) {
+            MAPPSApp.sc.setROW_S2Q15e(spDateT);
+        } else {
+            MAPPSApp.sc.setROW_S2Q15e("");
+        }
+
+
+        //MAPPSApp.sc.setROW_S2Q15fy(s2q15fy.getText().toString());
+        //MAPPSApp.sc.setROW_S2Q15fm(s2q15fm.getText().toString());
+
+
         MAPPSApp.sc.setROW_S2Q15g(rDOS2q15g1.isChecked() ? "1" : rDOS2q15g2.isChecked() ? "2" : rDOS2q15g3.isChecked() ? "3"
                 : rDOS2q15g4.isChecked() ? "4" : rDOS2q15g5.isChecked() ? "5" : rDOS2q15g6.isChecked() ? "6"
                 : rDOS2q15g7.isChecked() ? "7" : rDOS2q15g8.isChecked() ? "8" : rDOS2q15g9.isChecked() ? "9"
@@ -1847,8 +1893,31 @@ public class Section2Activity extends Activity {
         MAPPSApp.sc.setROW_S2Q15joth(s2q15joth.getText().toString());
         MAPPSApp.sc.setROW_S2Q15k(rDOS2q15k1.isChecked() ? "1" : rDOS2q15k2.isChecked() ? "2" : rDOS2q15k9.isChecked() ? "9" : "0");
         MAPPSApp.sc.setROW_S2Q15l1(rDOS2q15l11.isChecked() ? "1" : rDOS2q15l12.isChecked() ? "2" : "0");
-        MAPPSApp.sc.setROW_S2Q15lmp(new SimpleDateFormat("dd-MM-yyyy").format(spDateLMP));
+
+
+        String var_s2q15l1 = "";
+        switch (radioS2q15l1.getCheckedRadioButtonId()) {
+            case R.id.RDO_s2q15l1_1:
+                var_s2q15l1 = "1";
+                break;
+            case R.id.RDO_s2q15l1_2:
+                var_s2q15l1 = "2";
+                break;
+        }
+
+
+        if (var_s2q15l1.equals("1")) {
+            MAPPSApp.sc.setROW_S2Q15lmp(spDateLMP);
+        } else {
+            MAPPSApp.sc.setROW_S2Q15lmp("");
+        }
+
+
+        //MAPPSApp.sc.setROW_S2Q15lmp(new SimpleDateFormat("dd-MM-yyyy").format(spDateLMP));
+
+
         MAPPSApp.sc.setROW_S2Q15gest(s2q15gest.getText().toString());
+
         if (rDOS2q15i2.isChecked()) {
             if (Integer.parseInt(vars.GetAgeYY()) < 14 || Integer.parseInt(vars.GetAgeYY()) > 22) {
                 MAPPSApp.sc.setROW_iselig("2");
@@ -1858,8 +1927,8 @@ public class Section2Activity extends Activity {
         } else {
             MAPPSApp.sc.setROW_iselig("2");
         }
-        return true;
 
+        return true;
 
     }
 

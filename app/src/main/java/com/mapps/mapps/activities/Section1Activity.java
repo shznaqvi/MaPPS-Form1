@@ -469,7 +469,7 @@ public class Section1Activity extends Activity {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
         MAPPSApp.fc = new FormContract();
 
-        MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
+        MAPPSApp.fc.setROW_DEVID(MAPPSApp.DEVID);
 
 
         MAPPSHelper db = new MAPPSHelper(this);
@@ -527,7 +527,7 @@ public class Section1Activity extends Activity {
     /*private boolean SaveDraft() {
         MAPPSApp.fc = new FormContract();
 
-        MAPPSApp.fc.setROW_DEVID("N-" + MAPPSApp.DEVID);
+        MAPPSApp.fc.setROW_DEVID(MAPPSApp.DEVID);
 
         MAPPSHelper db = new MAPPSHelper(this);
 

@@ -235,20 +235,23 @@ public class SycForms_Sec2 extends AsyncTask<Void, Void, String> {
         super.onPostExecute(result);
         int sSynced = 0;
         JSONArray json = null;
+        String sSyncedError = "";
         try {
             json = new JSONArray(result);
             MAPPSHelper db = new MAPPSHelper(mContext);
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
-                if (jsonObject.getString("status").equals("1")) {
+                if (jsonObject.getString("status").equals("1") && jsonObject.getString("error").equals("0")) {
                     db.updateSection2(jsonObject.getString("id"));
                     sSynced++;
+                } else {
+                    sSyncedError += jsonObject.getString("message").toString() + "\n";
                 }
             }
-            Toast.makeText(mContext, "Section2\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Section 2 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage("Section2\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced));
-            pd.setTitle("Done uploading Section2 data");
+            pd.setMessage(sSynced + " Section 2 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Section 2 data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();

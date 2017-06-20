@@ -176,9 +176,9 @@ public class MAPPSHelper extends SQLiteOpenHelper {
             + GetLHWEntry.ROW_LHWNAME + " TEXT,"
             + GetLHWEntry.ROW_CLUSTER + " TEXT,"
             + GetLHWEntry.ROW_HCODE + " INTEGER);";
-    private static final String TAG = "Sec1";
     public static final String DATABASE_NAME = "mapps.db";
     public static final String DB_NAME = "mapps_copy.db";
+    private static final String TAG = "Sec1";
     private static final int DATABASE_VERSION = 3;
     private static final String SQL_DELETE_USERS =
             "DROP TABLE IF EXISTS " + singleUser.TABLE_NAME;
@@ -1675,7 +1675,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         values.put(Sec1Entry.COLUMN_SYNC_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = Sec1Entry._ID + " LIKE ?";
+        String where = Sec1Entry._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -1694,7 +1694,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         values.put(Section4Entry.COLUMN_SYNC_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = Section4Entry._ID + " LIKE ?";
+        String where = Section4Entry._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(
@@ -1713,7 +1713,7 @@ public class MAPPSHelper extends SQLiteOpenHelper {
         values.put(Section2Entry.COLUMN_SYNC_DATE, new Date().toString());
 
 // Which row to update, based on the title
-        String where = Section2Entry._ID + " LIKE ?";
+        String where = Section2Entry._ID + " = ?";
         String[] whereArgs = {id};
 
         int count = db.update(

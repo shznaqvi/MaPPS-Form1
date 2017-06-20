@@ -50,12 +50,11 @@ public class SyncStatus extends Activity {
     public class SyncForms extends AsyncTask<Void, Void, String> {
 
         private static final String TAG = "SyncForms";
+        ArrayList<String> arr_members;
+        ArrayList<String> mylst;
         private Context mContext;
         private ProgressDialog pd;
         private ListView lstvu;
-
-        ArrayList<String> arr_members;
-        ArrayList<String> mylst;
 
 
         public SyncForms(Context context) {
@@ -63,11 +62,11 @@ public class SyncStatus extends Activity {
         }
 
         public void longInfo(String str) {
-            if (str.length() > 4000) {
+           /* if (str.length() > 4000) {
                 Log.i("TAG: ", str.substring(0, 4000));
                 longInfo(str.substring(4000));
             } else
-                Log.i("TAG: ", str);
+                Log.i("TAG: ", str);*/
         }
 
 

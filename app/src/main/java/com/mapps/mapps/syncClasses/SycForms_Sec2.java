@@ -23,8 +23,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 
-import com.mapps.mapps.core.MAPPSHelper;
-
 /**
  * Created by isd on 05/11/2016.
  */
@@ -200,11 +198,11 @@ public class SycForms_Sec2 extends AsyncTask<Void, Void, String> {
     }
 
     public static void longInfo(String str) {
-        if (str.length() > 4000) {
+        /*if (str.length() > 4000) {
             Log.i("TAG: ", str.substring(0, 4000));
             longInfo(str.substring(4000));
         } else
-            Log.i("TAG: ", str);
+            Log.i("TAG: ", str);*/
     }
 
     @Override

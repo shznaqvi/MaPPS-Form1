@@ -230,22 +230,25 @@ public class SyncForms_Sec4 extends AsyncTask<Void, Void, String> {
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
         int sSynced = 0;
+        String sSyncedError = "";
         JSONArray json = null;
         try {
             json = new JSONArray(result);
             MAPPSHelper db = new MAPPSHelper(mContext);
             for (int i = 0; i < json.length(); i++) {
                 JSONObject jsonObject = new JSONObject(json.getString(i));
-                if (jsonObject.getString("status").equals("1")) {
+                if (jsonObject.getString("status").equals("1")  && jsonObject.getString("error").equals("0")) {
                     db.updateSection4(jsonObject.getString("id"));
                     Log.d(TAG, "ID: " + jsonObject.getString("id"));
                     sSynced++;
+                } else {
+                    sSyncedError += jsonObject.getString("message").toString() + "\n";
                 }
             }
-            Toast.makeText(mContext,"Section4\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced), Toast.LENGTH_SHORT).show();
+            Toast.makeText(mContext, sSynced + " Section 4 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError, Toast.LENGTH_SHORT).show();
 
-            pd.setMessage("Section4\nsSynced:" + sSynced + ";Errors:" + String.valueOf(json.length() - sSynced));
-            pd.setTitle("Done uploading Section4 data");
+            pd.setMessage(sSynced + " Section 4 synced." + String.valueOf(json.length() - sSynced) + " Errors: " + sSyncedError);
+            pd.setTitle("Done uploading Section 4 data");
             pd.show();
         } catch (JSONException e) {
             e.printStackTrace();

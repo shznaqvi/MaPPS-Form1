@@ -179,7 +179,7 @@ public class FormContract implements BaseColumns {
         json.put(Sec1Entry.ROW_S5, this.ROW_screened_count == null ? JSONObject.NULL : this.ROW_screened_count);
         json.put(Sec1Entry.ROW_USERID, this.ROW_USERID == null ? JSONObject.NULL : this.ROW_USERID);
         json.put(Sec1Entry.ROW_ENTRYDATE, this.ROW_ENTRYDATE == null ? JSONObject.NULL : this.ROW_ENTRYDATE);
-        json.put(Sec1Entry.ROW_S3, this.ROW_S3 == null ? JSONObject.NULL : this.ROW_S3);
+        json.put(Sec1Entry.ROW_S3, this.ROW_S3 == null ? JSONObject.NULL : new JSONObject(this.ROW_S3));
         json.put(Sec1Entry.ROW_UUID, this.ROW_UID == null ? JSONObject.NULL : this.ROW_UID);
         json.put(Sec1Entry.ROW_GPS_LNG, this.ROW_GPS_LANG == null ? JSONObject.NULL : this.ROW_GPS_LANG);
         json.put(Sec1Entry.ROW_GPS_LAT, this.ROW_GPS_LAT == null ? JSONObject.NULL : this.ROW_GPS_LAT);
